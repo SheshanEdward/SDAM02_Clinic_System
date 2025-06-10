@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SDAM02_Clinic_System.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,24 @@ namespace SDAM02_Clinic_System.views
         private void DoctorRegister_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnApproval_Click(object sender, EventArgs e)
+        {
+            DoctorManager manager = new DoctorManager();
+
+            manager.RegisterDoctor(
+                txtFirstname.Text,
+                txtLastname.Text,
+                dtpDoB.Value.Date,
+                txtEmail.Text,
+                txtMobile.Text,
+                txtNICnumber.Text,
+                txtAddress.Text,
+                cmbSpecialization.SelectedIndex,
+                txtSLMCnumber.Text,
+                txtPassword.Text
+                );
         }
     }
 }

@@ -48,6 +48,8 @@
             txtMobile = new TextBox();
             txtAddress = new TextBox();
             dtpDoB = new DateTimePicker();
+            label11 = new Label();
+            txtPassword = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -63,7 +65,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(48, 69);
+            label2.Location = new Point(48, 51);
             label2.Name = "label2";
             label2.Size = new Size(73, 20);
             label2.TabIndex = 1;
@@ -72,7 +74,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(444, 67);
+            label3.Location = new Point(444, 49);
             label3.Name = "label3";
             label3.Size = new Size(72, 20);
             label3.TabIndex = 2;
@@ -81,7 +83,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(33, 117);
+            label4.Location = new Point(33, 99);
             label4.Name = "label4";
             label4.Size = new Size(88, 20);
             label4.TabIndex = 3;
@@ -90,7 +92,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(391, 113);
+            label5.Location = new Point(391, 95);
             label5.Name = "label5";
             label5.Size = new Size(125, 20);
             label5.TabIndex = 4;
@@ -99,7 +101,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(75, 231);
+            label6.Location = new Point(75, 213);
             label6.Name = "label6";
             label6.Size = new Size(46, 20);
             label6.TabIndex = 5;
@@ -108,7 +110,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(460, 227);
+            label7.Location = new Point(460, 209);
             label7.Name = "label7";
             label7.Size = new Size(56, 20);
             label7.TabIndex = 6;
@@ -117,7 +119,7 @@
             // cmbSpecialization
             // 
             cmbSpecialization.FormattingEnabled = true;
-            cmbSpecialization.Location = new Point(127, 166);
+            cmbSpecialization.Location = new Point(127, 148);
             cmbSpecialization.Name = "cmbSpecialization";
             cmbSpecialization.Size = new Size(223, 28);
             cmbSpecialization.TabIndex = 7;
@@ -125,7 +127,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(478, 169);
+            label8.Location = new Point(478, 151);
             label8.Name = "label8";
             label8.Size = new Size(38, 20);
             label8.TabIndex = 8;
@@ -134,7 +136,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(59, 282);
+            label9.Location = new Point(59, 264);
             label9.Name = "label9";
             label9.Size = new Size(62, 20);
             label9.TabIndex = 9;
@@ -143,7 +145,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(19, 171);
+            label10.Location = new Point(19, 153);
             label10.Name = "label10";
             label10.Size = new Size(102, 20);
             label10.TabIndex = 10;
@@ -152,74 +154,93 @@
             // btnApproval
             // 
             btnApproval.Font = new Font("Segoe UI", 12F);
-            btnApproval.Location = new Point(301, 352);
+            btnApproval.Location = new Point(301, 381);
             btnApproval.Name = "btnApproval";
             btnApproval.Size = new Size(212, 39);
             btnApproval.TabIndex = 11;
             btnApproval.Text = "Submit for Approval";
             btnApproval.UseVisualStyleBackColor = true;
+            btnApproval.Click += btnApproval_Click;
             // 
             // txtFirstname
             // 
-            txtFirstname.Location = new Point(127, 64);
+            txtFirstname.Location = new Point(127, 46);
             txtFirstname.Name = "txtFirstname";
             txtFirstname.Size = new Size(223, 27);
             txtFirstname.TabIndex = 12;
             // 
             // txtLastname
             // 
-            txtLastname.Location = new Point(522, 62);
+            txtLastname.Location = new Point(522, 44);
             txtLastname.Name = "txtLastname";
             txtLastname.Size = new Size(251, 27);
             txtLastname.TabIndex = 13;
             // 
             // txtNICnumber
             // 
-            txtNICnumber.Location = new Point(127, 113);
+            txtNICnumber.Location = new Point(127, 95);
             txtNICnumber.Name = "txtNICnumber";
             txtNICnumber.Size = new Size(221, 27);
             txtNICnumber.TabIndex = 14;
             // 
             // txtSLMCnumber
             // 
-            txtSLMCnumber.Location = new Point(522, 110);
+            txtSLMCnumber.Location = new Point(522, 92);
             txtSLMCnumber.Name = "txtSLMCnumber";
             txtSLMCnumber.Size = new Size(251, 27);
             txtSLMCnumber.TabIndex = 15;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(127, 224);
+            txtEmail.Location = new Point(127, 206);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(223, 27);
             txtEmail.TabIndex = 16;
             // 
             // txtMobile
             // 
-            txtMobile.Location = new Point(522, 221);
+            txtMobile.Location = new Point(522, 203);
             txtMobile.Name = "txtMobile";
             txtMobile.Size = new Size(251, 27);
             txtMobile.TabIndex = 17;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(127, 279);
+            txtAddress.Location = new Point(127, 261);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(646, 27);
             txtAddress.TabIndex = 18;
             // 
             // dtpDoB
             // 
-            dtpDoB.Location = new Point(522, 164);
+            dtpDoB.Location = new Point(522, 146);
             dtpDoB.Name = "dtpDoB";
             dtpDoB.Size = new Size(251, 27);
             dtpDoB.TabIndex = 19;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(51, 324);
+            label11.Name = "label11";
+            label11.Size = new Size(70, 20);
+            label11.TabIndex = 20;
+            label11.Text = "Password";
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(127, 321);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(223, 27);
+            txtPassword.TabIndex = 21;
             // 
             // DoctorRegister
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtPassword);
+            Controls.Add(label11);
             Controls.Add(dtpDoB);
             Controls.Add(txtAddress);
             Controls.Add(txtMobile);
@@ -269,5 +290,7 @@
         private TextBox txtMobile;
         private TextBox txtAddress;
         private DateTimePicker dtpDoB;
+        private Label label11;
+        private TextBox txtPassword;
     }
 }

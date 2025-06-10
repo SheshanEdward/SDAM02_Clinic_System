@@ -9,7 +9,7 @@ namespace SDAM02_Clinic_System.models
 {
     internal class DoctorManager
     {
-        public void RegisterDoctor(string firstname, string lastname, DateTime dob, string email, string mobile, string nic, string address, int specialization, string SLMCno, string password)
+        public void RegisterDoctor(string firstname, string lastname, DateTime dob, string email, string mobile, string nic, string address, string specialization, string SLMCno, string password)
         {
             string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
 
@@ -20,28 +20,28 @@ namespace SDAM02_Clinic_System.models
                     conn.Open();
 
                     // Generating ID
-                    string getLastIdQuery = "SELECT doctor_id FROM doctor_information ORDER BY doctor_id DESC LIMIT 1;";
-                    string newDoctorId = "D001";
+                    //string getLastIdQuery = "SELECT doctor_id FROM doctor_creation_approval ORDER BY doctor_id DESC LIMIT 1;";
+                    //string newDoctorId = "DCR001";
 
-                    using (MySqlCommand getLastIdCmd = new MySqlCommand(getLastIdQuery, conn))
-                    {
-                        object result = getLastIdCmd.ExecuteScalar();
-                        if (result != null)
-                        {
-                            string lastId = result.ToString();
-                            int numericPart = int.Parse(lastId.Substring(1));
-                            numericPart++;
-                            newDoctorId = "D" + numericPart.ToString("D3");
-                        }
-                    }
+                    //using (MySqlCommand getLastIdCmd = new MySqlCommand(getLastIdQuery, conn))
+                    //{
+                       // object result = getLastIdCmd.ExecuteScalar();
+                        //if (result != null)
+                        //{
+                            //string lastId = result.ToString();
+                            //int numericPart = int.Parse(lastId.Substring(1));
+                            //numericPart++;
+                            //newDoctorId = "DCR" + numericPart.ToString("D3");
+                        //}
+                    //}
 
-                    string insertQuery = @"INSERT INTO doctor_information 
-                    (doctor_id, firstname, lastname, dob, email, mobile, nic, address, specialization, SLMCno, password)
-                    VALUES (@doctor_id, @firstname, @lastname, @dob, @email, @mobile, @nic, @address, @specialization, @SLMCno, @password);";
+                    string insertQuery = @"INSERT INTO doctor_creation_request 
+                    (firstname, lastname, dob, email, mobile, nic, address, specialization, SLMCno, password)
+                    VALUES (@firstname, @lastname, @dob, @email, @mobile, @nic, @address, @specialization, @SLMCno, @password);";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
-                        cmd.Parameters.AddWithValue("@doctor_id", newDoctorId);
+                        //cmd.Parameters.AddWithValue("@doctor_id", newDoctorId);
                         cmd.Parameters.AddWithValue("@firstname", firstname);
                         cmd.Parameters.AddWithValue("@lastname", lastname);
                         cmd.Parameters.AddWithValue("@dob", dob);
@@ -54,7 +54,7 @@ namespace SDAM02_Clinic_System.models
                         cmd.Parameters.AddWithValue("@password", password); // Consider hashing
 
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show($"Admin registered successfully! ID: {newDoctorId}");
+                        MessageBox.Show("Account creation request submitted successfully!");
                     }
                 }
                 catch (Exception ex)

@@ -45,7 +45,7 @@ namespace SDAM02_Clinic_System.views
                 txtMobile.Text,
                 txtNICnumber.Text,
                 txtAddress.Text,
-                cmbSpecialization.SelectedIndex,
+                cmbSpecialization.SelectedItem.ToString(),
                 txtSLMCnumber.Text,
                 txtPassword.Text
                 );

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using SDAM02_Clinic_System.models;
 
 namespace SDAM02_Clinic_System.views
 {
@@ -21,39 +22,18 @@ namespace SDAM02_Clinic_System.views
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
+            AdminManager manager = new AdminManager();
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-
-                    string insertQuery = @"INSERT INTO admin_information 
-                (firstname, lastname, dob, email, mobile, nic, address, username, password)
-                VALUES (@firstname, @lastname, @dob, @email, @mobile, @nic, @address, @username, @password);";
-
-                    using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
-                        cmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
-                        cmd.Parameters.AddWithValue("@dob", dtpDoB.Value.Date);
-                        cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                        cmd.Parameters.AddWithValue("@mobile", txtMobile.Text);
-                        cmd.Parameters.AddWithValue("@nic", txtNICnumber.Text);
-                        cmd.Parameters.AddWithValue("@address", txtAddress.Text);
-                        cmd.Parameters.AddWithValue("@username", txtUsername.Text);
-                        cmd.Parameters.AddWithValue("@password", txtPassword.Text); // Have to asterisk pwd in real time
-
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Admin registered successfully!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
+            manager.RegisterAdmin(
+                txtFirstname.Text,
+                txtLastname.Text,
+                dtpDoB.Value.Date,
+                txtEmail.Text,
+                txtMobile.Text,
+                txtNICnumber.Text,
+                txtAddress.Text,
+                txtPassword.Text
+            );
         }
     }
 }

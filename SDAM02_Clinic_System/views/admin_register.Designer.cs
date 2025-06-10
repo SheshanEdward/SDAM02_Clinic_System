@@ -36,7 +36,6 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            label9 = new Label();
             label10 = new Label();
             btnRegister = new Button();
             txtFirstname = new TextBox();
@@ -45,7 +44,6 @@
             txtMobile = new TextBox();
             txtEmail = new TextBox();
             txtAddress = new TextBox();
-            txtUsername = new TextBox();
             txtPassword = new TextBox();
             dtpDoB = new DateTimePicker();
             SuspendLayout();
@@ -123,19 +121,10 @@
             label8.TabIndex = 7;
             label8.Text = "Address";
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(38, 304);
-            label9.Name = "label9";
-            label9.Size = new Size(75, 20);
-            label9.TabIndex = 8;
-            label9.Text = "Username";
-            // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(422, 304);
+            label10.Location = new Point(43, 293);
             label10.Name = "label10";
             label10.Size = new Size(70, 20);
             label10.TabIndex = 9;
@@ -194,16 +183,9 @@
             txtAddress.Size = new Size(665, 27);
             txtAddress.TabIndex = 16;
             // 
-            // txtUsername
-            // 
-            txtUsername.Location = new Point(119, 301);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(251, 27);
-            txtUsername.TabIndex = 17;
-            // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(498, 301);
+            txtPassword.Location = new Point(119, 290);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(286, 27);
             txtPassword.TabIndex = 18;
@@ -222,7 +204,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(dtpDoB);
             Controls.Add(txtPassword);
-            Controls.Add(txtUsername);
             Controls.Add(txtAddress);
             Controls.Add(txtEmail);
             Controls.Add(txtMobile);
@@ -231,7 +212,6 @@
             Controls.Add(txtFirstname);
             Controls.Add(btnRegister);
             Controls.Add(label10);
-            Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -256,7 +236,6 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private Label label9;
         private Label label10;
         private Button btnRegister;
         private TextBox txtFirstname;
@@ -265,7 +244,6 @@
         private TextBox txtMobile;
         private TextBox txtEmail;
         private TextBox txtAddress;
-        private TextBox txtUsername;
         private TextBox txtPassword;
         private DateTimePicker dtpDoB;
     }

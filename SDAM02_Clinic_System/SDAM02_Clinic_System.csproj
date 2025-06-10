@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Folder Include="models\" />
+    <Folder Include="Controller\" />
   </ItemGroup>
 
   <ItemGroup>

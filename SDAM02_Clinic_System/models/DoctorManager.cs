@@ -9,7 +9,7 @@ namespace SDAM02_Clinic_System.models
 {
     internal class DoctorManager
     {
-        public void RegisterRequest(string firstname, string lastname, DateTime dob, string email, string mobile, string nic, string address, string specialization, string SLMCno, string password)
+        public void RegisterRequest(Doctor doctor)
         {
             string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
 
@@ -36,22 +36,22 @@ namespace SDAM02_Clinic_System.models
                     //}
 
                     string insertQuery = @"INSERT INTO doctor_creation_request 
-                    (firstname, lastname, dob, email, mobile, nic, address, specialization, SLMCno, password)
-                    VALUES (@firstname, @lastname, @dob, @email, @mobile, @nic, @address, @specialization, @SLMCno, @password);";
+                    (nic, SLMCno, firstname, lastname, specialization, dob, email, mobile, address, password)
+                    VALUES (@nic, @SLMCno, @firstname, @lastname, @specialization, @dob, @email, @mobile, @address, @password);";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         //cmd.Parameters.AddWithValue("@doctor_id", newDoctorId);
-                        cmd.Parameters.AddWithValue("@firstname", firstname);
-                        cmd.Parameters.AddWithValue("@lastname", lastname);
-                        cmd.Parameters.AddWithValue("@dob", dob);
-                        cmd.Parameters.AddWithValue("@email", email);
-                        cmd.Parameters.AddWithValue("@mobile", mobile);
-                        cmd.Parameters.AddWithValue("@nic", nic);
-                        cmd.Parameters.AddWithValue("@address", address);
-                        cmd.Parameters.AddWithValue("@specialization", specialization);
-                        cmd.Parameters.AddWithValue("@SLMCno", SLMCno);
-                        cmd.Parameters.AddWithValue("@password", password); // Consider hashing
+                        cmd.Parameters.AddWithValue("@firstname", doctor.Firstname);
+                        cmd.Parameters.AddWithValue("@lastname", doctor.Lastname);
+                        cmd.Parameters.AddWithValue("@dob", doctor.dob);
+                        cmd.Parameters.AddWithValue("@email", doctor.Email);
+                        cmd.Parameters.AddWithValue("@mobile", doctor.Mobile);
+                        cmd.Parameters.AddWithValue("@nic", doctor.nic);
+                        cmd.Parameters.AddWithValue("@address", doctor.Address);
+                        cmd.Parameters.AddWithValue("@specialization", doctor.Specialization);
+                        cmd.Parameters.AddWithValue("@SLMCno", doctor.Slmcregno);
+                        cmd.Parameters.AddWithValue("@password", doctor.Password); // If there is time, have to mask
 
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Account creation request submitted successfully!");

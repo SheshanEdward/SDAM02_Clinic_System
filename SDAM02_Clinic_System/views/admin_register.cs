@@ -19,23 +19,27 @@ namespace SDAM02_Clinic_System.views
         {
             InitializeComponent();
 
-            //AdminManager manager = new AdminManager();
+            cmbGender.Items.Add("Female");
+            cmbGender.Items.Add("Male");
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            AdminManager manager = new AdminManager();
-
-            manager.RegisterAdmin(
+            Admin newAdmin = new Admin(
+                txtNICnumber.Text,
                 txtFirstname.Text,
                 txtLastname.Text,
                 dtpDoB.Value.Date,
                 txtEmail.Text,
                 txtMobile.Text,
-                txtNICnumber.Text,
                 txtAddress.Text,
-                txtPassword.Text
-            );
+                txtPassword.Text,
+                cmbGender.SelectedItem.ToString(),
+                txtPostalcode.Text);
+
+            AdminManager manager = new AdminManager();
+
+            manager.RegisterAdmin(newAdmin);
         }
 
         private void dtpDoB_ValueChanged(object sender, EventArgs e)

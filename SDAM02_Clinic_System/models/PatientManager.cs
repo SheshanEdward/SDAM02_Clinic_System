@@ -21,7 +21,7 @@ namespace SDAM02_Clinic_System.models
                     conn.Open();
 
                     // Generating ID
-                    string getLastIdQuery = "SELECT patient_id FROM patient_data ORDER BY patient_id DESC LIMIT 1;";
+                    string getLastIdQuery = "SELECT patient_id FROM patient_profile ORDER BY patient_id DESC LIMIT 1;";
                     string newPatientId = "P001";
 
                     using (MySqlCommand getLastIdCmd = new MySqlCommand(getLastIdQuery, conn))
@@ -36,9 +36,9 @@ namespace SDAM02_Clinic_System.models
                         }
                     }
 
-                    string insertQuery = @"INSERT INTO patient_data 
-                    (patient_id, firstname, lastname, dob, gender, bloodtype, height, weight, email, mobile, nic, address, password)
-                    VALUES (@patient_id, @firstname, @lastname, @dob, @gender, @bloodtype, @height, @weight, @email, @mobile, @nic, @address, @password);";
+                    string insertQuery = @"INSERT INTO patient_profile 
+                    (patient_id, nic, firstname, lastname, dob, gender, bloodtype, height, weight, email, mobile, address, password)
+                    VALUES (@patient_id, @nic, @firstname, @lastname, @dob, @gender, @bloodtype, @height, @weight, @email, @mobile, @address, @password);";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {

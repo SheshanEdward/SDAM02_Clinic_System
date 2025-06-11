@@ -46,6 +46,10 @@
             txtAddress = new TextBox();
             txtPassword = new TextBox();
             dtpDoB = new DateTimePicker();
+            label9 = new Label();
+            cmbGender = new ComboBox();
+            label11 = new Label();
+            txtPostalcode = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -115,7 +119,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(51, 230);
+            label8.Location = new Point(51, 278);
             label8.Name = "label8";
             label8.Size = new Size(62, 20);
             label8.TabIndex = 7;
@@ -124,7 +128,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(43, 293);
+            label10.Location = new Point(43, 341);
             label10.Name = "label10";
             label10.Size = new Size(70, 20);
             label10.TabIndex = 9;
@@ -133,7 +137,7 @@
             // btnRegister
             // 
             btnRegister.Font = new Font("Segoe UI", 12F);
-            btnRegister.Location = new Point(345, 380);
+            btnRegister.Location = new Point(353, 388);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(97, 38);
             btnRegister.TabIndex = 10;
@@ -178,14 +182,14 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(119, 227);
+            txtAddress.Location = new Point(119, 275);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(665, 27);
             txtAddress.TabIndex = 16;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(119, 290);
+            txtPassword.Location = new Point(119, 338);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(286, 27);
             txtPassword.TabIndex = 18;
@@ -198,11 +202,48 @@
             dtpDoB.TabIndex = 19;
             dtpDoB.ValueChanged += dtpDoB_ValueChanged;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(56, 224);
+            label9.Name = "label9";
+            label9.Size = new Size(57, 20);
+            label9.TabIndex = 20;
+            label9.Text = "Gender";
+            // 
+            // cmbGender
+            // 
+            cmbGender.FormattingEnabled = true;
+            cmbGender.Location = new Point(119, 221);
+            cmbGender.Name = "cmbGender";
+            cmbGender.Size = new Size(251, 28);
+            cmbGender.TabIndex = 21;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(407, 224);
+            label11.Name = "label11";
+            label11.Size = new Size(85, 20);
+            label11.TabIndex = 22;
+            label11.Text = "Postal code";
+            // 
+            // txtPostalcode
+            // 
+            txtPostalcode.Location = new Point(498, 221);
+            txtPostalcode.Name = "txtPostalcode";
+            txtPostalcode.Size = new Size(286, 27);
+            txtPostalcode.TabIndex = 23;
+            // 
             // admin_register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtPostalcode);
+            Controls.Add(label11);
+            Controls.Add(cmbGender);
+            Controls.Add(label9);
             Controls.Add(dtpDoB);
             Controls.Add(txtPassword);
             Controls.Add(txtAddress);
@@ -247,5 +288,9 @@
         private TextBox txtAddress;
         private TextBox txtPassword;
         private DateTimePicker dtpDoB;
+        private Label label9;
+        private ComboBox cmbGender;
+        private Label label11;
+        private TextBox txtPostalcode;
     }
 }

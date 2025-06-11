@@ -35,20 +35,23 @@ namespace SDAM02_Clinic_System.views
 
         private void btnApproval_Click(object sender, EventArgs e)
         {
-            DoctorManager manager = new DoctorManager();
-
-            manager.RegisterRequest(
+            Doctor newDoctor = new Doctor(
+                txtNICnumber.Text,
                 txtFirstname.Text,
                 txtLastname.Text,
                 dtpDoB.Value.Date,
                 txtEmail.Text,
                 txtMobile.Text,
-                txtNICnumber.Text,
                 txtAddress.Text,
-                cmbSpecialization.SelectedItem.ToString(),
+                txtPassword.Text,
                 txtSLMCnumber.Text,
-                txtPassword.Text
-                );
+                cmbSpecialization.SelectedItem.ToString()
+             );
+
+
+            DoctorManager manager = new DoctorManager();
+
+            manager.RegisterRequest( newDoctor );
         }
     }
 }

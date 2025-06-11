@@ -36,5 +36,20 @@ namespace SDAM02_Clinic_System.views
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void doblbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Registerbtn_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

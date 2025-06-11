@@ -35,5 +35,10 @@ namespace SDAM02_Clinic_System.views
                 txtPassword.Text
             );
         }
+
+        private void dtpDoB_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

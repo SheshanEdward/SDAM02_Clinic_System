@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            firstNameTxt = new TextBox();
+            heightTxt = new TextBox();
+            contactTxt = new TextBox();
+            emailTxt = new TextBox();
             FirstNamelbl = new Label();
             doblbl = new Label();
             Heightlbl = new Label();
@@ -40,52 +39,47 @@
             Emaillbl = new Label();
             registerPatientlbl = new Label();
             LastNamelbl = new Label();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
+            lastNameTxt = new TextBox();
+            nicTxt = new TextBox();
+            weightTxt = new TextBox();
             NIClbl = new Label();
             Weightlbl = new Label();
             BloodGrouplbl = new Label();
             mhlbl = new Label();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
+            bloodGroupTxt = new TextBox();
+            medicalHistoryTxt = new TextBox();
             Registerbtn = new Button();
+            dobTxt = new ComboBox();
             SuspendLayout();
             // 
-            // textBox1
+            // firstNameTxt
             // 
-            textBox1.Location = new Point(114, 71);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(239, 27);
-            textBox1.TabIndex = 0;
+            firstNameTxt.Location = new Point(114, 71);
+            firstNameTxt.Name = "firstNameTxt";
+            firstNameTxt.Size = new Size(239, 27);
+            firstNameTxt.TabIndex = 0;
+            firstNameTxt.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // heightTxt
             // 
-            textBox2.Location = new Point(121, 129);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(232, 27);
-            textBox2.TabIndex = 1;
+            heightTxt.Location = new Point(120, 191);
+            heightTxt.Name = "heightTxt";
+            heightTxt.Size = new Size(232, 27);
+            heightTxt.TabIndex = 2;
             // 
-            // textBox3
+            // contactTxt
             // 
-            textBox3.Location = new Point(120, 191);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(232, 27);
-            textBox3.TabIndex = 2;
+            contactTxt.Location = new Point(121, 255);
+            contactTxt.Name = "contactTxt";
+            contactTxt.Size = new Size(232, 27);
+            contactTxt.TabIndex = 3;
             // 
-            // textBox4
+            // emailTxt
             // 
-            textBox4.Location = new Point(121, 255);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(232, 27);
-            textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(495, 251);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(239, 27);
-            textBox5.TabIndex = 4;
+            emailTxt.Location = new Point(495, 251);
+            emailTxt.Name = "emailTxt";
+            emailTxt.Size = new Size(239, 27);
+            emailTxt.TabIndex = 4;
             // 
             // FirstNamelbl
             // 
@@ -105,6 +99,7 @@
             doblbl.Size = new Size(40, 20);
             doblbl.TabIndex = 6;
             doblbl.Text = "DOB";
+            doblbl.Click += doblbl_Click;
             // 
             // Heightlbl
             // 
@@ -153,26 +148,26 @@
             LastNamelbl.TabIndex = 11;
             LastNamelbl.Text = "Last Name ";
             // 
-            // textBox6
+            // lastNameTxt
             // 
-            textBox6.Location = new Point(484, 68);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(248, 27);
-            textBox6.TabIndex = 12;
+            lastNameTxt.Location = new Point(484, 68);
+            lastNameTxt.Name = "lastNameTxt";
+            lastNameTxt.Size = new Size(248, 27);
+            lastNameTxt.TabIndex = 12;
             // 
-            // textBox7
+            // nicTxt
             // 
-            textBox7.Location = new Point(489, 127);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(243, 27);
-            textBox7.TabIndex = 13;
+            nicTxt.Location = new Point(489, 127);
+            nicTxt.Name = "nicTxt";
+            nicTxt.Size = new Size(243, 27);
+            nicTxt.TabIndex = 13;
             // 
-            // textBox8
+            // weightTxt
             // 
-            textBox8.Location = new Point(493, 191);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(239, 27);
-            textBox8.TabIndex = 14;
+            weightTxt.Location = new Point(493, 191);
+            weightTxt.Name = "weightTxt";
+            weightTxt.Size = new Size(239, 27);
+            weightTxt.TabIndex = 14;
             // 
             // NIClbl
             // 
@@ -211,46 +206,56 @@
             mhlbl.Text = "Medical History ";
             mhlbl.Click += mhlbl_Click;
             // 
-            // textBox9
+            // bloodGroupTxt
             // 
-            textBox9.Location = new Point(121, 306);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(231, 27);
-            textBox9.TabIndex = 19;
+            bloodGroupTxt.Location = new Point(121, 306);
+            bloodGroupTxt.Name = "bloodGroupTxt";
+            bloodGroupTxt.Size = new Size(231, 27);
+            bloodGroupTxt.TabIndex = 19;
             // 
-            // textBox10
+            // medicalHistoryTxt
             // 
-            textBox10.Location = new Point(492, 306);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(240, 27);
-            textBox10.TabIndex = 20;
+            medicalHistoryTxt.Location = new Point(492, 306);
+            medicalHistoryTxt.Name = "medicalHistoryTxt";
+            medicalHistoryTxt.Size = new Size(240, 27);
+            medicalHistoryTxt.TabIndex = 20;
             // 
             // Registerbtn
             // 
             Registerbtn.BackColor = Color.SkyBlue;
             Registerbtn.Font = new Font("Segoe UI", 12F);
-            Registerbtn.Location = new Point(352, 379);
+            Registerbtn.Location = new Point(346, 379);
             Registerbtn.Name = "Registerbtn";
             Registerbtn.Size = new Size(110, 43);
             Registerbtn.TabIndex = 21;
             Registerbtn.Text = "Register ";
             Registerbtn.UseVisualStyleBackColor = false;
+            Registerbtn.Click += Registerbtn_Click;
+            // 
+            // dobTxt
+            // 
+            dobTxt.FormattingEnabled = true;
+            dobTxt.Location = new Point(120, 132);
+            dobTxt.Name = "dobTxt";
+            dobTxt.Size = new Size(233, 28);
+            dobTxt.TabIndex = 22;
             // 
             // patient_register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dobTxt);
             Controls.Add(Registerbtn);
-            Controls.Add(textBox10);
-            Controls.Add(textBox9);
+            Controls.Add(medicalHistoryTxt);
+            Controls.Add(bloodGroupTxt);
             Controls.Add(mhlbl);
             Controls.Add(BloodGrouplbl);
             Controls.Add(Weightlbl);
             Controls.Add(NIClbl);
-            Controls.Add(textBox8);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
+            Controls.Add(weightTxt);
+            Controls.Add(nicTxt);
+            Controls.Add(lastNameTxt);
             Controls.Add(LastNamelbl);
             Controls.Add(registerPatientlbl);
             Controls.Add(Emaillbl);
@@ -258,11 +263,10 @@
             Controls.Add(Heightlbl);
             Controls.Add(doblbl);
             Controls.Add(FirstNamelbl);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(emailTxt);
+            Controls.Add(contactTxt);
+            Controls.Add(heightTxt);
+            Controls.Add(firstNameTxt);
             Name = "patient_register";
             Text = "patient_register";
             Load += patient_register_Load;
@@ -272,11 +276,10 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox firstNameTxt;
+        private TextBox heightTxt;
+        private TextBox contactTxt;
+        private TextBox emailTxt;
         private Label FirstNamelbl;
         private Label doblbl;
         private Label Heightlbl;
@@ -284,15 +287,16 @@
         private Label Emaillbl;
         private Label registerPatientlbl;
         private Label LastNamelbl;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
+        private TextBox lastNameTxt;
+        private TextBox nicTxt;
+        private TextBox weightTxt;
         private Label NIClbl;
         private Label Weightlbl;
         private Label BloodGrouplbl;
         private Label mhlbl;
-        private TextBox textBox9;
-        private TextBox textBox10;
+        private TextBox bloodGroupTxt;
+        private TextBox medicalHistoryTxt;
         private Button Registerbtn;
+        private ComboBox dobTxt;
     }
 }

@@ -37,7 +37,7 @@ namespace SDAM02_Clinic_System.views
         {
             DoctorManager manager = new DoctorManager();
 
-            manager.RegisterDoctor(
+            manager.RegisterRequest(
                 txtFirstname.Text,
                 txtLastname.Text,
                 dtpDoB.Value.Date,

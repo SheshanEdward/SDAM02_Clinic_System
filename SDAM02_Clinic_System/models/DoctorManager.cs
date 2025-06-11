@@ -9,7 +9,7 @@ namespace SDAM02_Clinic_System.models
 {
     internal class DoctorManager
     {
-        public void RegisterDoctor(string firstname, string lastname, DateTime dob, string email, string mobile, string nic, string address, string specialization, string SLMCno, string password)
+        public void RegisterRequest(string firstname, string lastname, DateTime dob, string email, string mobile, string nic, string address, string specialization, string SLMCno, string password)
         {
             string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
 

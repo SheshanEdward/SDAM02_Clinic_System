@@ -36,6 +36,7 @@ namespace SDAM02_Clinic_System.models
                         }
                     }
 
+                    // Insert query
                     string insertQuery = @"INSERT INTO patient_data 
                     (patient_id, firstname, lastname, dob, email, mobile, nic, gender, bloodtype, height, weight, address, password)
                     VALUES (@patient_id, @firstname, @lastname, @dob, @email, @mobile, @nic, @address, @password);";
@@ -66,5 +67,6 @@ namespace SDAM02_Clinic_System.models
                 }
             }
         }
+
     }
 }

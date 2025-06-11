@@ -196,6 +196,7 @@
             dtpDoB.Name = "dtpDoB";
             dtpDoB.Size = new Size(251, 27);
             dtpDoB.TabIndex = 19;
+            dtpDoB.ValueChanged += dtpDoB_ValueChanged;
             // 
             // admin_register
             // 

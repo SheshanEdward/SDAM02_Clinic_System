@@ -15,5 +15,10 @@ namespace SDAM02_Clinic_System
             select_user.Show();
             this.Hide();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -100,6 +100,7 @@
             btnLogin.TabIndex = 6;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnRegister
             // 
@@ -109,7 +110,7 @@
             btnRegister.TabIndex = 7;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = true;
-            btnRegister.Click += this.btnRegister_Click;
+            btnRegister.Click += btnRegister_Click;
             // 
             // welcome
             // 

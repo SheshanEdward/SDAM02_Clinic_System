@@ -26,5 +26,10 @@ namespace SDAM02_Clinic_System.views
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

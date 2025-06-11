@@ -10,7 +10,7 @@ namespace SDAM02_Clinic_System.models
 {
     internal class PatientManager
     {
-        public void RegisterPatient(string firstname, string lastname, DateTime dob, string email, string mobile, string nic, string gender, string bloodtype, double height, double weight, string address, string password)
+        public void RegisterPatient(Patient patient)
         {
             string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
 
@@ -36,26 +36,25 @@ namespace SDAM02_Clinic_System.models
                         }
                     }
 
-                    // Insert query
                     string insertQuery = @"INSERT INTO patient_data 
-                    (patient_id, firstname, lastname, dob, email, mobile, nic, gender, bloodtype, height, weight, address, password)
-                    VALUES (@patient_id, @firstname, @lastname, @dob, @email, @mobile, @nic, @address, @password);";
+                    (patient_id, firstname, lastname, dob, gender, bloodtype, height, weight, email, mobile, nic, address, password)
+                    VALUES (@patient_id, @firstname, @lastname, @dob, @gender, @bloodtype, @height, @weight, @email, @mobile, @nic, @address, @password);";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@patient_id", newPatientId);
-                        cmd.Parameters.AddWithValue("@firstname", firstname);
-                        cmd.Parameters.AddWithValue("@lastname", lastname);
-                        cmd.Parameters.AddWithValue("@dob", dob);
-                        cmd.Parameters.AddWithValue("@email", email);
-                        cmd.Parameters.AddWithValue("@mobile", mobile);
-                        cmd.Parameters.AddWithValue("@nic", nic);
-                        cmd.Parameters.AddWithValue("@gender", gender);
-                        cmd.Parameters.AddWithValue("@bloodtype", bloodtype);
-                        cmd.Parameters.AddWithValue("@height", height);
-                        cmd.Parameters.AddWithValue("@weight", weight);
-                        cmd.Parameters.AddWithValue("@address", address);
-                        cmd.Parameters.AddWithValue("@password", password); // Consider hashing
+                        cmd.Parameters.AddWithValue("@firstname", patient.Firstname);
+                        cmd.Parameters.AddWithValue("@lastname", patient.Lastname);
+                        cmd.Parameters.AddWithValue("@dob", patient.dob);
+                        cmd.Parameters.AddWithValue("@email", patient.Email);
+                        cmd.Parameters.AddWithValue("@mobile", patient.Mobile);
+                        cmd.Parameters.AddWithValue("@nic", patient.nic);
+                        cmd.Parameters.AddWithValue("@gender", patient.Gender);
+                        cmd.Parameters.AddWithValue("@bloodtype", patient.Bloodtype);
+                        cmd.Parameters.AddWithValue("@height", patient.Height);
+                        cmd.Parameters.AddWithValue("@weight", patient.Weight);
+                        cmd.Parameters.AddWithValue("@address", patient.Address);
+                        cmd.Parameters.AddWithValue("@password", patient.Password); // Try to figure real time masking
 
                         cmd.ExecuteNonQuery();
                         MessageBox.Show($"Admin registered successfully! ID: {newPatientId}");

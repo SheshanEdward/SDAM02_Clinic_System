@@ -18,6 +18,8 @@ namespace SDAM02_Clinic_System.views
         public admin_register()
         {
             InitializeComponent();
+
+            //AdminManager manager = new AdminManager();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

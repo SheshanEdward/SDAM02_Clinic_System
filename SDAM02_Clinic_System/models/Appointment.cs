@@ -12,13 +12,12 @@ namespace SDAM02_Clinic_System.models
         public string PatientId { get; set; }
         public string DoctorId { get; set; }
         public int ServiceId { get; set; }
-
         public DateTime AppointmentDate { get; set; }
 
-        // Optional: Notes added by admin or doctor (e.g., special instructions or cancellation reasons)
+        // Optional notes from doctor/admin
         public string Notes { get; set; }
 
-        // Appointment status (Scheduled, Cancelled, Completed, etc.)
+        // Status: Scheduled, Cancelled, etc.
         public string Status { get; set; }
 
         public static class AppointmentStatuses
@@ -27,6 +26,11 @@ namespace SDAM02_Clinic_System.models
             public const string Cancelled = "Cancelled";
             public const string Completed = "Completed";
             public const string NoShow = "No Show";
+        }
+
+        public override string ToString()
+        {
+            return $"[ID: {AppointmentId}] {AppointmentDate:dd MMM yyyy hh:mm tt} - Patient: {PatientId}, Doctor: {DoctorId}, Status: {Status}";
         }
     }
 }

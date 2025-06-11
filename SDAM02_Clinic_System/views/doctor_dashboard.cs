@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SDAM02_Clinic_System.views
+{
+    public partial class doctor_dashboard: Form
+    {
+        public doctor_dashboard()
+        {
+            InitializeComponent();
+        }
+    }
+}

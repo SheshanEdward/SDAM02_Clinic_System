@@ -89,6 +89,7 @@
             btnDoctors.TabIndex = 5;
             btnDoctors.Text = "Doctors";
             btnDoctors.UseVisualStyleBackColor = true;
+            btnDoctors.Click += btnDoctors_Click;
             // 
             // AdminDashboard
             // 

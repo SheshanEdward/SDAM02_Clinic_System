@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace SDAM02_Clinic_System.views
 {
-    public partial class AdminDashboard : Form
+    public partial class AdminDoctorDashboard : Form
     {
-        public AdminDashboard()
+        public AdminDoctorDashboard()
         {
             InitializeComponent();
         }
 
-        private void btnDoctors_Click(object sender, EventArgs e)
+        private void btnCreationrequest_Click(object sender, EventArgs e)
         {
-            AdminDoctorDashboard viewDashboard = new AdminDoctorDashboard();
-            viewDashboard.Show();
+            DoctorCreationRequests displayRequests = new DoctorCreationRequests();
+            displayRequests.Show();
             this.Hide();
         }
     }

@@ -40,7 +40,7 @@ namespace SDAM02_Clinic_System.models
                                 SessionManager.LoggedIn = ID;
                                 SessionManager.UserType = "Patient";
                                 MessageBox.Show("Patient login successful!");
-                                patient_dashboard patientUser = new patient_dashboard();
+                                PatientDashboard patientUser = new PatientDashboard();
                                 patientUser.Show();
                                 IsLoggedIn = true;
                             }
@@ -71,7 +71,7 @@ namespace SDAM02_Clinic_System.models
                                 SessionManager.LoggedIn = ID;
                                 SessionManager.UserType = "Admin";
                                 MessageBox.Show("Admin login successful!");
-                                admin_dashboard adminUser = new admin_dashboard();
+                                AdminDashboard adminUser = new AdminDashboard();
                                 adminUser.Show();
                                 IsLoggedIn = true;
                             }
@@ -102,7 +102,7 @@ namespace SDAM02_Clinic_System.models
                                 SessionManager.LoggedIn = ID;
                                 SessionManager.UserType = "Doctor";
                                 MessageBox.Show("Doctor login successful!");
-                                doctor_dashboard doctorUser = new doctor_dashboard();
+                                DoctorDashboard doctorUser = new DoctorDashboard();
                                 doctorUser.Show();
                                 IsLoggedIn = true;
                             }

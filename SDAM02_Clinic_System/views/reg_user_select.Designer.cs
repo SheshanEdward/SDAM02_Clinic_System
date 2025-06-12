@@ -88,6 +88,7 @@
             Controls.Add(label1);
             Name = "reg_user_select";
             Text = "reg_user_select";
+            Load += reg_user_select_Load;
             ResumeLayout(false);
             PerformLayout();
         }

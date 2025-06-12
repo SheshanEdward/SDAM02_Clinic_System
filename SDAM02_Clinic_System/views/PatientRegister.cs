@@ -17,7 +17,12 @@ namespace SDAM02_Clinic_System.views
         {
             InitializeComponent();
 
-            // Populate gender and blood type combo boxes
+            // Populate gender and blood type combo boxes only once during form initialization
+            InitializeComboBoxes();
+        }
+
+        private void InitializeComboBoxes()
+        {
             cmbBloodtype.Items.AddRange(new string[]
             {
                 "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"
@@ -31,25 +36,44 @@ namespace SDAM02_Clinic_System.views
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (!ValidateForm()) return;
+            if (!ValidateForm())
+                return;
 
-            Patient patient = new Patient(
-                txtNICnumber.Text.Trim(),
-                txtFirstname.Text.Trim(),
-                txtLastname.Text.Trim(),
-                dtpDoB.Value.Date,
-                txtEmail.Text.Trim(),
-                txtMobile.Text.Trim(),
-                txtAddress.Text.Trim(),
-                txtPassword.Text.Trim(),
-                cmbGender.SelectedItem.ToString(),
-                cmbBloodtype.SelectedItem.ToString(),
-                double.Parse(txtHeight.Text.Trim()),
-                double.Parse(txtWeight.Text.Trim())
-            );
+            try
+            {
+                // Create a Patient object with form data
+                Patient patient = new Patient(
+                    txtNICnumber.Text.Trim(),
+                    txtFirstname.Text.Trim(),
+                    txtLastname.Text.Trim(),
+                    dtpDoB.Value.Date,
+                    txtEmail.Text.Trim(),
+                    txtMobile.Text.Trim(),
+                    txtAddress.Text.Trim(),
+                    txtPassword.Text.Trim(),
+                    cmbGender.SelectedItem.ToString(),
+                    cmbBloodtype.SelectedItem.ToString(),
+                    double.Parse(txtHeight.Text.Trim()),
+                    double.Parse(txtWeight.Text.Trim())
+                );
 
-            PatientManager manager = new PatientManager();
-            manager.RegisterPatient(patient);
+                // Register patient using PatientManager
+                PatientManager manager = new PatientManager();
+                manager.RegisterPatient(patient);
+
+                MessageBox.Show("Patient registered successfully!", "Success");
+
+                // Optionally clear form or close after successful registration
+                ClearForm();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Height and Weight must be valid numbers.", "Input Error");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while registering the patient: {ex.Message}", "Error");
+            }
         }
 
         private bool ValidateForm()
@@ -70,13 +94,15 @@ namespace SDAM02_Clinic_System.views
                 return false;
             }
 
+            // Validate Height and Weight numeric values
             if (!double.TryParse(txtHeight.Text, out _) || !double.TryParse(txtWeight.Text, out _))
             {
                 MessageBox.Show("Height and weight must be valid numbers.", "Validation Error");
                 return false;
             }
 
-            if (!txtEmail.Text.Contains("@"))
+            // Basic email validation
+            if (!txtEmail.Text.Contains("@") || !txtEmail.Text.Contains("."))
             {
                 MessageBox.Show("Please enter a valid email address.", "Validation Error");
                 return false;
@@ -85,9 +111,26 @@ namespace SDAM02_Clinic_System.views
             return true;
         }
 
+        private void ClearForm()
+        {
+            txtNICnumber.Clear();
+            txtFirstname.Clear();
+            txtLastname.Clear();
+            dtpDoB.Value = DateTime.Today;
+            txtEmail.Clear();
+            txtMobile.Clear();
+            txtAddress.Clear();
+            txtPassword.Clear();
+            cmbGender.SelectedIndex = -1;
+            cmbBloodtype.SelectedIndex = -1;
+            txtHeight.Clear();
+            txtWeight.Clear();
+        }
+
+        // Optional: handle form load event if needed
         private void PatientRegister_Load(object sender, EventArgs e)
         {
-            // Optional if needed during form load
+            // If any logic needed on load, add here
         }
     }
 }

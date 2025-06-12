@@ -33,9 +33,14 @@ namespace SDAM02_Clinic_System.views
 
         private void btnPatient_Click(object sender, EventArgs e)
         {
-            PatientRegister newPatient = new PatientRegister();
-            newPatient.Show();
-            this.Hide();
+            PatientRegister register_new_patient = new PatientRegister(); 
+            register_new_patient.Show(); 
+            this.Hide(); 
+        }
+        
+        private void reg_user_select_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

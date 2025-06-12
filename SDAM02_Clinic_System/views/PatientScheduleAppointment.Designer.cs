@@ -32,9 +32,10 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            dtpAppointmentdate = new DateTimePicker();
+            dtAppointmentdate = new DateTimePicker();
             cmbService = new ComboBox();
             cmbDoctor = new ComboBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -73,12 +74,12 @@
             label4.TabIndex = 3;
             label4.Text = "Date";
             // 
-            // dtpAppointmentdate
+            // dtAppointmentdate
             // 
-            dtpAppointmentdate.Location = new Point(285, 222);
-            dtpAppointmentdate.Name = "dtpAppointmentdate";
-            dtpAppointmentdate.Size = new Size(250, 27);
-            dtpAppointmentdate.TabIndex = 4;
+            dtAppointmentdate.Location = new Point(285, 222);
+            dtAppointmentdate.Name = "dtAppointmentdate";
+            dtAppointmentdate.Size = new Size(250, 27);
+            dtAppointmentdate.TabIndex = 4;
             // 
             // cmbService
             // 
@@ -96,20 +97,31 @@
             cmbDoctor.Size = new Size(250, 28);
             cmbDoctor.TabIndex = 6;
             // 
+            // button1
+            // 
+            button1.Location = new Point(354, 328);
+            button1.Name = "button1";
+            button1.Size = new Size(101, 32);
+            button1.TabIndex = 7;
+            button1.Text = "Schedule";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // PatientScheduleAppointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(cmbDoctor);
             Controls.Add(cmbService);
-            Controls.Add(dtpAppointmentdate);
+            Controls.Add(dtAppointmentdate);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "PatientScheduleAppointment";
             Text = "PatientScheduleAppointment";
+            Load += PatientScheduleAppointment_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -120,8 +132,9 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private DateTimePicker dtpAppointmentdate;
+        private DateTimePicker dtAppointmentdate;
         private ComboBox cmbService;
         private ComboBox cmbDoctor;
+        private Button button1;
     }
 }

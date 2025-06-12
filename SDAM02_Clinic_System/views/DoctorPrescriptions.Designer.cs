@@ -32,6 +32,7 @@
             dataGridView1 = new DataGridView();
             button1 = new Button();
             btnEditprescription = new Button();
+            btnDeletePrescription = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F);
-            label1.Location = new Point(317, 9);
+            label1.Location = new Point(340, 9);
             label1.Name = "label1";
             label1.Size = new Size(126, 25);
             label1.TabIndex = 0;
@@ -67,16 +68,26 @@
             // 
             btnEditprescription.Location = new Point(560, 340);
             btnEditprescription.Name = "btnEditprescription";
-            btnEditprescription.Size = new Size(174, 38);
+            btnEditprescription.Size = new Size(174, 40);
             btnEditprescription.TabIndex = 3;
             btnEditprescription.Text = "Edit prescription ";
             btnEditprescription.UseVisualStyleBackColor = true;
+            // 
+            // btnDeletePrescription
+            // 
+            btnDeletePrescription.Location = new Point(327, 344);
+            btnDeletePrescription.Name = "btnDeletePrescription";
+            btnDeletePrescription.Size = new Size(168, 34);
+            btnDeletePrescription.TabIndex = 4;
+            btnDeletePrescription.Text = "Delete Prescription ";
+            btnDeletePrescription.UseVisualStyleBackColor = true;
             // 
             // DoctorPrescriptions
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnDeletePrescription);
             Controls.Add(btnEditprescription);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
@@ -94,5 +105,6 @@
         private DataGridView dataGridView1;
         private Button button1;
         private Button btnEditprescription;
+        private Button btnDeletePrescription;
     }
 }

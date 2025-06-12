@@ -304,6 +304,7 @@
             Controls.Add(label1);
             Name = "PatientRegister";
             Text = "PatientRegister";
+            Load += PatientRegister_Load;
             ResumeLayout(false);
             PerformLayout();
         }

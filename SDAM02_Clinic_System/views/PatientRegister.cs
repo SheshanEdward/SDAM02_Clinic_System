@@ -17,42 +17,77 @@ namespace SDAM02_Clinic_System.views
         {
             InitializeComponent();
 
-            cmbBloodtype.Items.Add("A+");
-            cmbBloodtype.Items.Add("A-");
-            cmbBloodtype.Items.Add("B+");
-            cmbBloodtype.Items.Add("B-");
-            cmbBloodtype.Items.Add("AB+");
-            cmbBloodtype.Items.Add("AB-");
-            cmbBloodtype.Items.Add("O+");
-            cmbBloodtype.Items.Add("O-");
+            // Populate gender and blood type combo boxes
+            cmbBloodtype.Items.AddRange(new string[]
+            {
+                "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"
+            });
 
-            cmbGender.Items.Add("Female");
-            cmbGender.Items.Add("Male");
-            //cmbGender.Items.Add("Other");
+            cmbGender.Items.AddRange(new string[]
+            {
+                "Female", "Male"
+            });
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            if (!ValidateForm()) return;
+
             Patient patient = new Patient(
-                txtNICnumber.Text,
-                txtFirstname.Text,
-                txtLastname.Text,
+                txtNICnumber.Text.Trim(),
+                txtFirstname.Text.Trim(),
+                txtLastname.Text.Trim(),
                 dtpDoB.Value.Date,
-                txtEmail.Text,
-                txtMobile.Text,
-                txtAddress.Text,
-                txtPassword.Text,
+                txtEmail.Text.Trim(),
+                txtMobile.Text.Trim(),
+                txtAddress.Text.Trim(),
+                txtPassword.Text.Trim(),
                 cmbGender.SelectedItem.ToString(),
                 cmbBloodtype.SelectedItem.ToString(),
-                double.Parse(txtHeight.Text),
-                double.Parse(txtWeight.Text)
+                double.Parse(txtHeight.Text.Trim()),
+                double.Parse(txtWeight.Text.Trim())
             );
 
-
-
             PatientManager manager = new PatientManager();
-
             manager.RegisterPatient(patient);
+        }
+
+        private bool ValidateForm()
+        {
+            if (string.IsNullOrWhiteSpace(txtFirstname.Text) ||
+                string.IsNullOrWhiteSpace(txtLastname.Text) ||
+                string.IsNullOrWhiteSpace(txtNICnumber.Text) ||
+                cmbGender.SelectedItem == null ||
+                cmbBloodtype.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(txtHeight.Text) ||
+                string.IsNullOrWhiteSpace(txtWeight.Text) ||
+                string.IsNullOrWhiteSpace(txtMobile.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtAddress.Text) ||
+                string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                MessageBox.Show("Please fill in all fields.", "Validation Error");
+                return false;
+            }
+
+            if (!double.TryParse(txtHeight.Text, out _) || !double.TryParse(txtWeight.Text, out _))
+            {
+                MessageBox.Show("Height and weight must be valid numbers.", "Validation Error");
+                return false;
+            }
+
+            if (!txtEmail.Text.Contains("@"))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Validation Error");
+                return false;
+            }
+
+            return true;
+        }
+
+        private void PatientRegister_Load(object sender, EventArgs e)
+        {
+            // Optional if needed during form load
         }
     }
 }

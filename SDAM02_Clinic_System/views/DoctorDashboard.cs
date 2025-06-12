@@ -16,5 +16,16 @@ namespace SDAM02_Clinic_System.views
         {
             InitializeComponent();
         }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrescription_Click(object sender, EventArgs e)
+        {
+            DoctorPrescriptions prescriptionsForm = new DoctorPrescriptions();
+            prescriptionsForm.Show();
+        }
     }
 }

@@ -71,6 +71,7 @@
             btnPrescription.TabIndex = 3;
             btnPrescription.Text = "Prescription";
             btnPrescription.UseVisualStyleBackColor = true;
+            btnPrescription.Click += btnPrescription_Click;
             // 
             // btnPatients
             // 
@@ -89,6 +90,7 @@
             btnAppointments.TabIndex = 5;
             btnAppointments.Text = "Appointments";
             btnAppointments.UseVisualStyleBackColor = true;
+            btnAppointments.Click += btnAppointments_Click;
             // 
             // DoctorDashboard
             // 

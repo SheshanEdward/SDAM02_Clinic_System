@@ -1,3 +1,4 @@
+using SDAM02_Clinic_System.models;
 using SDAM02_Clinic_System.views;
 
 namespace SDAM02_Clinic_System
@@ -18,7 +19,15 @@ namespace SDAM02_Clinic_System
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string ID = txtUsername.Text.Trim();
+            string PWD = txtPassword.Text;
 
+            SessionManager.DetectUser(ID, PWD);
+
+            if (SessionManager.IsLoggedIn == true)
+            {
+                this.Hide();
+            }
         }
     }
 }

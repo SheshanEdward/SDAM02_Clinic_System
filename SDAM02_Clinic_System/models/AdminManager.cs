@@ -63,6 +63,12 @@ namespace SDAM02_Clinic_System.models
                 }
             }
         }
+
+
+        public void ApproveDoctorCreation()
+        {
+
+        }
     }
 
 

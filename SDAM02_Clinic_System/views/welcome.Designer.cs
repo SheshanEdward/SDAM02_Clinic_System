@@ -33,9 +33,9 @@
             label3 = new Label();
             label4 = new Label();
             txtUsername = new TextBox();
-            txtPassword = new TextBox();
             btnLogin = new Button();
             btnRegister = new Button();
+            txtPassword = new MaskedTextBox();
             SuspendLayout();
             // 
             // label1
@@ -84,13 +84,6 @@
             txtUsername.Size = new Size(298, 27);
             txtUsername.TabIndex = 4;
             // 
-            // txtPassword
-            // 
-            txtPassword.Location = new Point(310, 201);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(298, 27);
-            txtPassword.TabIndex = 5;
-            // 
             // btnLogin
             // 
             btnLogin.Font = new Font("Segoe UI", 15F);
@@ -112,14 +105,22 @@
             btnRegister.UseVisualStyleBackColor = true;
             btnRegister.Click += btnRegister_Click;
             // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(310, 201);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(298, 27);
+            txtPassword.TabIndex = 8;
+            txtPassword.UseSystemPasswordChar = true;
+            // 
             // welcome
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtPassword);
             Controls.Add(btnRegister);
             Controls.Add(btnLogin);
-            Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -138,8 +139,8 @@
         private Label label3;
         private Label label4;
         private TextBox txtUsername;
-        private TextBox txtPassword;
         private Button btnLogin;
         private Button btnRegister;
+        private MaskedTextBox txtPassword;
     }
 }

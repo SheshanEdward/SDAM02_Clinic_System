@@ -37,6 +37,23 @@ namespace SDAM02_Clinic_System.views
         private void DoctorCreationRequests_Load(object sender, EventArgs e)
         {
             LoadCreationRequests();
+
+            dgvCreationrequests.CellDoubleClick += dgvDoctorRequests_CellDoubleClick;
         }
+
+        private void dgvDoctorRequests_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvCreationrequests.Rows[e.RowIndex];
+                int requestId = Convert.ToInt32(row.Cells["id"].Value);
+
+                ReviewDoctor reviewForm = new ReviewDoctor(requestId);
+                reviewForm.ShowDialog();
+
+                LoadCreationRequests(); // Refresh after approval/decline
+            }
+        }
+
     }
 }

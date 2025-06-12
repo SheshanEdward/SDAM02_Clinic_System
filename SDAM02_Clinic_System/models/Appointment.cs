@@ -14,10 +14,7 @@ namespace SDAM02_Clinic_System.models
         public int ServiceId { get; set; }
         public DateTime AppointmentDate { get; set; }
 
-        // Optional notes from doctor/admin
-        public string Notes { get; set; }
-
-        // Status: Scheduled, Cancelled, etc.
+        // Status: Scheduled, Cancelled
         public string Status { get; set; }
 
         public static class AppointmentStatuses

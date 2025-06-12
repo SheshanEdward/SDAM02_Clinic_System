@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace SDAM02_Clinic_System.views
 {
-    public partial class admin_dashboard : Form
+    public partial class PatientDashboard : Form
     {
-        public admin_dashboard()
+        public PatientDashboard()
         {
             InitializeComponent();
-        }
-
-        private void adminProfilebtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void doctorsbtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SDAM02_Clinic_System.views
 {
-    public partial class patient_dashboard: Form
+    public partial class PatientScheduleAppointment : Form
     {
-        public patient_dashboard()
+        public PatientScheduleAppointment()
         {
             InitializeComponent();
         }

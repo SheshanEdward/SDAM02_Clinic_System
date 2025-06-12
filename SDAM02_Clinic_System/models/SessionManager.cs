@@ -19,7 +19,7 @@ namespace SDAM02_Clinic_System.models
 
         public static void DetectUser(string ID, string PWD)
         {
-
+            //Need to shrink the code and make it to work using variables and fucntions instead of repeating code.
             string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
 
             if (ID.StartsWith("P"))

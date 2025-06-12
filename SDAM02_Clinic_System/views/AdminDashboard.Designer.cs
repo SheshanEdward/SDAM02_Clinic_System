@@ -53,6 +53,7 @@
             btnProfile.TabIndex = 1;
             btnProfile.Text = "Profile";
             btnProfile.UseVisualStyleBackColor = true;
+            btnProfile.Click += btnProfile_Click;
             // 
             // btnPatients
             // 

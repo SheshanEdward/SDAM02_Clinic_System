@@ -4,6 +4,7 @@ using SDAM02_Clinic_System.views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -115,5 +116,45 @@ namespace SDAM02_Clinic_System.models
                 }
             }
         }
+
+        public static Admin GetLoggedInAdminProfile()
+        {
+            string id = LoggedIn;
+            string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
+            string query = "SELECT * FROM admin_profiles WHERE admin_id = @id";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Map to your Admin constructor
+                            string nic = reader["nic"].ToString();
+                            string fname = reader["firstname"].ToString();
+                            string lname = reader["lastname"].ToString();
+                            DateTime dob = Convert.ToDateTime(reader["dob"]);
+                            string email = reader["email"].ToString();
+                            string mobile = reader["mobile"].ToString();
+                            string address = reader["address"].ToString();
+                            string pwd = ""; // Password excluded, or set to empty
+                            string gender = reader["gender"].ToString();
+                            string postal = reader["postal_code"].ToString();
+
+                            return new Admin(nic, fname, lname, dob, email, mobile, address, pwd, gender, postal);
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+
     }
 }

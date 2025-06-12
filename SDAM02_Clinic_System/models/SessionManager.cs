@@ -24,7 +24,7 @@ namespace SDAM02_Clinic_System.models
 
             if (ID.StartsWith("P"))
             {
-                string query = "SELECT * FROM patient_profile WHERE patient_id = @id AND password = @password";
+                string query = "SELECT * FROM patient_profiles WHERE patient_id = @id AND password = @password";
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
@@ -55,7 +55,7 @@ namespace SDAM02_Clinic_System.models
 
             else if (ID.StartsWith("A"))
             {
-                string query = "SELECT * FROM admin_profile WHERE admin_id = @id AND password = @password";
+                string query = "SELECT * FROM admin_profiles WHERE admin_id = @id AND password = @password";
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
@@ -86,7 +86,7 @@ namespace SDAM02_Clinic_System.models
 
             else if (ID.StartsWith("D"))
             {
-                string query = "SELECT * FROM doctor_profile WHERE doctor_id = @id AND password = @password";
+                string query = "SELECT * FROM doctor_profiles WHERE doctor_id = @id AND password = @password";
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();

@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Ocsp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace SDAM02_Clinic_System.models
                         //}
                     //}
 
-                    string insertQuery = @"INSERT INTO doctor_creation_request 
+                    string insertQuery = @"INSERT INTO doctor_creation_requests 
                     (nic, SLMCno, firstname, lastname, specialization, dob, email, mobile, address, password)
                     VALUES (@nic, @SLMCno, @firstname, @lastname, @specialization, @dob, @email, @mobile, @address, @password);";
 

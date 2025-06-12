@@ -39,12 +39,12 @@
             dgvCreationrequests.Location = new Point(12, 12);
             dgvCreationrequests.Name = "dgvCreationrequests";
             dgvCreationrequests.RowHeadersWidth = 51;
-            dgvCreationrequests.Size = new Size(776, 349);
+            dgvCreationrequests.Size = new Size(1187, 349);
             dgvCreationrequests.TabIndex = 0;
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(347, 389);
+            btnRefresh.Location = new Point(553, 397);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(94, 29);
             btnRefresh.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1204, 450);
             Controls.Add(btnRefresh);
             Controls.Add(dgvCreationrequests);
             Name = "DoctorCreationRequests";

@@ -212,6 +212,7 @@
             btnApprove.TabIndex = 21;
             btnApprove.Text = "Approve";
             btnApprove.UseVisualStyleBackColor = true;
+            btnApprove.Click += btnApprove_Click;
             // 
             // btnDecline
             // 
@@ -221,6 +222,7 @@
             btnDecline.TabIndex = 22;
             btnDecline.Text = "Decline";
             btnDecline.UseVisualStyleBackColor = true;
+            btnDecline.Click += btnDecline_Click;
             // 
             // ReviewDoctor
             // 

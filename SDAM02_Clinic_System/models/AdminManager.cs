@@ -20,7 +20,7 @@ namespace SDAM02_Clinic_System.models
                     conn.Open();
 
                     // Generating ID
-                    string getLastIdQuery = "SELECT admin_id FROM admin_profile ORDER BY admin_id DESC LIMIT 1;";
+                    string getLastIdQuery = "SELECT admin_id FROM admin_profiles ORDER BY admin_id DESC LIMIT 1;";
                     string newAdminId = "A001";
 
                     using (MySqlCommand getLastIdCmd = new MySqlCommand(getLastIdQuery, conn))
@@ -35,7 +35,7 @@ namespace SDAM02_Clinic_System.models
                         }
                     }
 
-                    string insertQuery = @"INSERT INTO admin_profile 
+                    string insertQuery = @"INSERT INTO admin_profiles 
                     (admin_id, nic, firstname, lastname, dob, gender, email, mobile, address, postal_code, password)
                     VALUES (@admin_id, @nic, @firstname, @lastname, @dob, @gender, @email, @mobile, @address, @postal_code, @password);";
 

@@ -20,12 +20,24 @@ namespace SDAM02_Clinic_System.models
                 {
                     conn.Open();
 
+                    // Optional: Check for existing NIC
+                    string checkQuery = "SELECT COUNT(*) FROM patients WHERE nic = @nic";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@nic", patient.nic);
+                        long count = (long)checkCmd.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            throw new Exception("A patient with this NIC already exists.");
+                        }
+                    }
+
                     string insertQuery = @"
-                        INSERT INTO patients 
-                        (nic, firstname, lastname, dob, email, mobile, address, password, gender, bloodtype, height, weight)
-                        VALUES 
-                        (@nic, @firstname, @lastname, @dob, @email, @mobile, @address, @password, @gender, @bloodtype, @height, @weight);
-                    ";
+                INSERT INTO patients 
+                (nic, firstname, lastname, dob, email, mobile, address, password, gender, bloodtype, height, weight)
+                VALUES 
+                (@nic, @firstname, @lastname, @dob, @email, @mobile, @address, @password, @gender, @bloodtype, @height, @weight);
+            ";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
@@ -43,13 +55,11 @@ namespace SDAM02_Clinic_System.models
                         cmd.Parameters.AddWithValue("@weight", patient.Weight);
 
                         cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Patient registered successfully!");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error registering patient: " + ex.Message);
+                    throw new Exception("Error registering patient: " + ex.Message);
                 }
             }
         }

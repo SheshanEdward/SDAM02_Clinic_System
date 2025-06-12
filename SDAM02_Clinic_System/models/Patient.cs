@@ -48,5 +48,7 @@ namespace SDAM02_Clinic_System.models
             get { return weight; }
             set { weight = value; }
         }
+
+        public object Dob { get; internal set; }
     }
 }

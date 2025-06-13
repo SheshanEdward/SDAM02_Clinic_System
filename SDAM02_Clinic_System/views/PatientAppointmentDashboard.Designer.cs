@@ -30,12 +30,11 @@
         {
             btnSchedule = new Button();
             btnEdit = new Button();
-            btnDelete = new Button();
             SuspendLayout();
             // 
             // btnSchedule
             // 
-            btnSchedule.Location = new Point(130, 183);
+            btnSchedule.Location = new Point(193, 137);
             btnSchedule.Name = "btnSchedule";
             btnSchedule.Size = new Size(113, 54);
             btnSchedule.TabIndex = 0;
@@ -44,28 +43,18 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(364, 185);
+            btnEdit.Location = new Point(401, 137);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(109, 55);
             btnEdit.TabIndex = 1;
             btnEdit.Text = "Edit Appointment";
             btnEdit.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
-            // 
-            btnDelete.Location = new Point(595, 185);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(111, 52);
-            btnDelete.TabIndex = 2;
-            btnDelete.Text = "Delete Appointment";
-            btnDelete.UseVisualStyleBackColor = true;
-            // 
             // PatientAppointmentDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnSchedule);
             Name = "PatientAppointmentDashboard";
@@ -77,6 +66,5 @@
 
         private Button btnSchedule;
         private Button btnEdit;
-        private Button btnDelete;
     }
 }

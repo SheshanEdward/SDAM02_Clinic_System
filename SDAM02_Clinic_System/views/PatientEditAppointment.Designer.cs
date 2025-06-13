@@ -37,6 +37,7 @@
             dtpDatetime = new DateTimePicker();
             btnSaveeditedappointment = new Button();
             btnDeleteappointment = new Button();
+            btnHome = new Button();
             SuspendLayout();
             // 
             // label1
@@ -100,28 +101,38 @@
             // 
             // btnSaveeditedappointment
             // 
-            btnSaveeditedappointment.Location = new Point(182, 307);
+            btnSaveeditedappointment.Location = new Point(84, 334);
             btnSaveeditedappointment.Name = "btnSaveeditedappointment";
-            btnSaveeditedappointment.Size = new Size(215, 50);
+            btnSaveeditedappointment.Size = new Size(215, 35);
             btnSaveeditedappointment.TabIndex = 7;
             btnSaveeditedappointment.Text = "Save Edited Appointment ";
             btnSaveeditedappointment.UseVisualStyleBackColor = true;
             // 
             // btnDeleteappointment
             // 
-            btnDeleteappointment.Location = new Point(470, 307);
+            btnDeleteappointment.Location = new Point(361, 334);
             btnDeleteappointment.Name = "btnDeleteappointment";
-            btnDeleteappointment.Size = new Size(167, 50);
+            btnDeleteappointment.Size = new Size(161, 35);
             btnDeleteappointment.TabIndex = 8;
             btnDeleteappointment.Text = "Delete Appointment ";
             btnDeleteappointment.UseVisualStyleBackColor = true;
             btnDeleteappointment.Click += btnDeleteappointment_Click;
+            // 
+            // btnHome
+            // 
+            btnHome.Location = new Point(598, 334);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(94, 35);
+            btnHome.TabIndex = 9;
+            btnHome.Text = "Home";
+            btnHome.UseVisualStyleBackColor = true;
             // 
             // PatientEditAppointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnHome);
             Controls.Add(btnDeleteappointment);
             Controls.Add(btnSaveeditedappointment);
             Controls.Add(dtpDatetime);
@@ -148,5 +159,6 @@
         private DateTimePicker dtpDatetime;
         private Button btnSaveeditedappointment;
         private Button btnDeleteappointment;
+        private Button btnHome;
     }
 }

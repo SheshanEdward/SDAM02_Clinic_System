@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SDAM02_Clinic_System.views
 {
-    public partial class PatientDoctor: Form
+    public partial class q : Form
     {
-        public PatientDoctor()
+        public q()
         {
             InitializeComponent();
+        }
+
+        private void PatientDoctor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,6 +36,7 @@
             cmbService = new ComboBox();
             cmbDoctor = new ComboBox();
             button1 = new Button();
+            btnHome = new Button();
             SuspendLayout();
             // 
             // label1
@@ -99,18 +100,28 @@
             // 
             // button1
             // 
-            button1.Location = new Point(354, 328);
+            button1.Location = new Point(203, 326);
             button1.Name = "button1";
             button1.Size = new Size(101, 32);
             button1.TabIndex = 7;
             button1.Text = "Schedule";
             button1.UseVisualStyleBackColor = true;
             // 
+            // btnHome
+            // 
+            btnHome.Location = new Point(468, 326);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(94, 29);
+            btnHome.TabIndex = 8;
+            btnHome.Text = "Home ";
+            btnHome.UseVisualStyleBackColor = true;
+            // 
             // PatientScheduleAppointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnHome);
             Controls.Add(button1);
             Controls.Add(cmbDoctor);
             Controls.Add(cmbService);
@@ -136,5 +147,6 @@
         private ComboBox cmbService;
         private ComboBox cmbDoctor;
         private Button button1;
+        private Button btnHome;
     }
 }

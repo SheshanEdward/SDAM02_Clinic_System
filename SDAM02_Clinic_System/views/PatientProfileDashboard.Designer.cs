@@ -53,9 +53,9 @@
             label13 = new Label();
             txtAddress = new TextBox();
             txtPassword = new TextBox();
-            btnEditAccount = new Button();
+            btnSaveEditedAccount = new Button();
             btnDeleteAccount = new Button();
-            btnSave = new Button();
+            btnBack = new Button();
             SuspendLayout();
             // 
             // label1
@@ -262,14 +262,14 @@
             txtPassword.Size = new Size(435, 27);
             txtPassword.TabIndex = 24;
             // 
-            // btnEditAccount
+            // btnSaveEditedAccount
             // 
-            btnEditAccount.Location = new Point(64, 403);
-            btnEditAccount.Name = "btnEditAccount";
-            btnEditAccount.Size = new Size(143, 29);
-            btnEditAccount.TabIndex = 25;
-            btnEditAccount.Text = "Edit Account ";
-            btnEditAccount.UseVisualStyleBackColor = true;
+            btnSaveEditedAccount.Location = new Point(64, 403);
+            btnSaveEditedAccount.Name = "btnSaveEditedAccount";
+            btnSaveEditedAccount.Size = new Size(143, 29);
+            btnSaveEditedAccount.TabIndex = 25;
+            btnSaveEditedAccount.Text = "Save Edited  Account ";
+            btnSaveEditedAccount.UseVisualStyleBackColor = true;
             // 
             // btnDeleteAccount
             // 
@@ -280,23 +280,23 @@
             btnDeleteAccount.Text = "Delete Account ";
             btnDeleteAccount.UseVisualStyleBackColor = true;
             // 
-            // btnSave
+            // btnBack
             // 
-            btnSave.Location = new Point(621, 402);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(94, 29);
-            btnSave.TabIndex = 27;
-            btnSave.Text = "Save ";
-            btnSave.UseVisualStyleBackColor = true;
+            btnBack.Location = new Point(621, 402);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 27;
+            btnBack.Text = "Back ";
+            btnBack.UseVisualStyleBackColor = true;
             // 
             // PatientProfileDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnSave);
+            Controls.Add(btnBack);
             Controls.Add(btnDeleteAccount);
-            Controls.Add(btnEditAccount);
+            Controls.Add(btnSaveEditedAccount);
             Controls.Add(txtPassword);
             Controls.Add(txtAddress);
             Controls.Add(label13);
@@ -356,8 +356,8 @@
         private Label label13;
         private TextBox txtAddress;
         private TextBox txtPassword;
-        private Button btnEditAccount;
+        private Button btnSaveEditedAccount;
         private Button btnDeleteAccount;
-        private Button btnSave;
+        private Button btnBack;
     }
 }

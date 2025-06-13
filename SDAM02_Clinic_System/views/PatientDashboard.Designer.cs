@@ -31,7 +31,6 @@
             label1 = new Label();
             btnProfile = new Button();
             btnAppointments = new Button();
-            btnSchedule = new Button();
             btnPrescriptions = new Button();
             btnDoctors = new Button();
             SuspendLayout();
@@ -39,7 +38,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(364, 48);
+            label1.Location = new Point(333, 29);
             label1.Name = "label1";
             label1.Size = new Size(82, 20);
             label1.TabIndex = 0;
@@ -47,7 +46,7 @@
             // 
             // btnProfile
             // 
-            btnProfile.Location = new Point(119, 127);
+            btnProfile.Location = new Point(66, 127);
             btnProfile.Name = "btnProfile";
             btnProfile.Size = new Size(94, 29);
             btnProfile.TabIndex = 1;
@@ -56,25 +55,16 @@
             // 
             // btnAppointments
             // 
-            btnAppointments.Location = new Point(322, 127);
+            btnAppointments.Location = new Point(228, 127);
             btnAppointments.Name = "btnAppointments";
             btnAppointments.Size = new Size(114, 29);
             btnAppointments.TabIndex = 2;
             btnAppointments.Text = "Appointments";
             btnAppointments.UseVisualStyleBackColor = true;
             // 
-            // btnSchedule
-            // 
-            btnSchedule.Location = new Point(554, 127);
-            btnSchedule.Name = "btnSchedule";
-            btnSchedule.Size = new Size(94, 29);
-            btnSchedule.TabIndex = 3;
-            btnSchedule.Text = "Schedule";
-            btnSchedule.UseVisualStyleBackColor = true;
-            // 
             // btnPrescriptions
             // 
-            btnPrescriptions.Location = new Point(219, 235);
+            btnPrescriptions.Location = new Point(405, 127);
             btnPrescriptions.Name = "btnPrescriptions";
             btnPrescriptions.Size = new Size(111, 29);
             btnPrescriptions.TabIndex = 4;
@@ -83,7 +73,7 @@
             // 
             // btnDoctors
             // 
-            btnDoctors.Location = new Point(463, 235);
+            btnDoctors.Location = new Point(579, 127);
             btnDoctors.Name = "btnDoctors";
             btnDoctors.Size = new Size(94, 29);
             btnDoctors.TabIndex = 5;
@@ -97,7 +87,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnDoctors);
             Controls.Add(btnPrescriptions);
-            Controls.Add(btnSchedule);
             Controls.Add(btnAppointments);
             Controls.Add(btnProfile);
             Controls.Add(label1);
@@ -112,7 +101,6 @@
         private Label label1;
         private Button btnProfile;
         private Button btnAppointments;
-        private Button btnSchedule;
         private Button btnPrescriptions;
         private Button btnDoctors;
     }

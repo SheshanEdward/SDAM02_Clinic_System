@@ -44,6 +44,7 @@ namespace SDAM02_Clinic_System.views
                     {
                         if (reader.Read())
                         {
+                            lblPatientid.Text = reader["patient_id"].ToString();
                             lblFirstname.Text = reader["firstname"].ToString();
                             lblLastname.Text = reader["lastname"].ToString();
                             lblDoB.Text = Convert.ToDateTime(reader["dob"]).ToString("yyyy-MM-dd");

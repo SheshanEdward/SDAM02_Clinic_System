@@ -49,8 +49,6 @@ namespace SDAM02_Clinic_System.views
 
                 ViewIndividualPatient viewPatient = new ViewIndividualPatient(patient_Id);
                 viewPatient.ShowDialog();
-
-                //LoadAllPatients(); 
             }
         }
     }

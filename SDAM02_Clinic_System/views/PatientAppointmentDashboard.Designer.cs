@@ -34,7 +34,7 @@
             // 
             // btnSchedule
             // 
-            btnSchedule.Location = new Point(193, 137);
+            btnSchedule.Location = new Point(215, 138);
             btnSchedule.Name = "btnSchedule";
             btnSchedule.Size = new Size(113, 54);
             btnSchedule.TabIndex = 0;
@@ -43,7 +43,7 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(401, 137);
+            btnEdit.Location = new Point(414, 147);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(109, 55);
             btnEdit.TabIndex = 1;

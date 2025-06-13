@@ -44,18 +44,18 @@ namespace SDAM02_Clinic_System.views
                     {
                         if (reader.Read())
                         {
-                            lblPatientid.Text = reader["patient_id"].ToString();
-                            lblFirstname.Text = reader["firstname"].ToString();
-                            lblLastname.Text = reader["lastname"].ToString();
-                            lblDoB.Text = Convert.ToDateTime(reader["dob"]).ToString("yyyy-MM-dd");
-                            lblNICnumber.Text = reader["nic"].ToString();
-                            lblAddress.Text = reader["address"].ToString();
-                            lblEmail.Text = reader["email"].ToString();
-                            lblMobile.Text = reader["mobile"].ToString();
-                            lblGender.Text = reader["gender"].ToString();
-                            lblBloodtype.Text = reader["bloodtype"].ToString();
-                            lblHeight.Text = reader["height"].ToString();
-                            lblWeight.Text = reader["weight"].ToString();
+                            lblPAtientID.Text = reader["patient_id"].ToString();
+                            txtFirstname.Text = reader["firstname"].ToString();
+                            txtLastname.Text = reader["lastname"].ToString();
+                            txtDoB.Text = Convert.ToDateTime(reader["dob"]).ToString("yyyy-MM-dd");
+                            txtNICnumber.Text = reader["nic"].ToString();
+                            txtAddress.Text = reader["address"].ToString();
+                            txtEmail.Text = reader["email"].ToString();
+                            txtMobile.Text = reader["mobile"].ToString();
+                            txtGender.Text = reader["gender"].ToString();
+                            txtBloodtype.Text = reader["bloodtype"].ToString();
+                            txtHeight.Text = reader["height"].ToString();
+                            txtWeight.Text = reader["weight"].ToString();
 
                             // Add more if needed
                         }

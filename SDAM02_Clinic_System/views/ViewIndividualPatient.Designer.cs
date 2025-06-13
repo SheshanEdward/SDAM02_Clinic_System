@@ -38,29 +38,29 @@
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
-            lblBloodtype = new Label();
             label12 = new Label();
-            lblGender = new Label();
-            lblFirstname = new Label();
-            lblMobile = new Label();
             label16 = new Label();
-            lblHeight = new Label();
             label18 = new Label();
-            lblNICnumber = new Label();
-            lblDoB = new Label();
-            lblWeight = new Label();
-            lblPatientid = new Label();
-            lblLastname = new Label();
-            lblEmail = new Label();
-            lblAddress = new Label();
             btnEdit = new Button();
             btnDelete = new Button();
+            txtFirstname = new TextBox();
+            txtNICnumber = new TextBox();
+            txtMobile = new TextBox();
+            txtDoB = new TextBox();
+            txtHeight = new TextBox();
+            txtBloodtype = new TextBox();
+            txtLastname = new TextBox();
+            txtEmail = new TextBox();
+            txtGender = new TextBox();
+            txtWeight = new TextBox();
+            txtAddress = new TextBox();
+            lblPAtientID = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(336, 9);
+            label1.Location = new Point(354, 9);
             label1.Name = "label1";
             label1.Size = new Size(101, 20);
             label1.TabIndex = 0;
@@ -69,7 +69,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(69, 54);
+            label2.Location = new Point(27, 52);
             label2.Name = "label2";
             label2.Size = new Size(73, 20);
             label2.TabIndex = 1;
@@ -78,7 +78,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(449, 54);
+            label3.Location = new Point(426, 52);
             label3.Name = "label3";
             label3.Size = new Size(72, 20);
             label3.TabIndex = 2;
@@ -87,7 +87,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(54, 104);
+            label4.Location = new Point(12, 102);
             label4.Name = "label4";
             label4.Size = new Size(88, 20);
             label4.TabIndex = 3;
@@ -96,7 +96,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(64, 302);
+            label5.Location = new Point(22, 300);
             label5.Name = "label5";
             label5.Size = new Size(78, 20);
             label5.TabIndex = 4;
@@ -105,7 +105,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(86, 150);
+            label6.Location = new Point(44, 148);
             label6.Name = "label6";
             label6.Size = new Size(56, 20);
             label6.TabIndex = 5;
@@ -114,7 +114,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(475, 150);
+            label7.Location = new Point(452, 148);
             label7.Name = "label7";
             label7.Size = new Size(46, 20);
             label7.TabIndex = 6;
@@ -123,7 +123,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(85, 202);
+            label8.Location = new Point(62, 203);
             label8.Name = "label8";
             label8.Size = new Size(38, 20);
             label8.TabIndex = 7;
@@ -132,7 +132,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(464, 202);
+            label9.Location = new Point(441, 200);
             label9.Name = "label9";
             label9.Size = new Size(57, 20);
             label9.TabIndex = 8;
@@ -141,146 +141,38 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(88, 256);
+            label10.Location = new Point(46, 254);
             label10.Name = "label10";
             label10.Size = new Size(54, 20);
             label10.TabIndex = 9;
             label10.Text = "Height";
             // 
-            // lblBloodtype
-            // 
-            lblBloodtype.AutoSize = true;
-            lblBloodtype.Location = new Point(148, 302);
-            lblBloodtype.Name = "lblBloodtype";
-            lblBloodtype.Size = new Size(58, 20);
-            lblBloodtype.TabIndex = 10;
-            lblBloodtype.Text = "label11";
-            // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(84, 355);
+            label12.Location = new Point(42, 353);
             label12.Name = "label12";
             label12.Size = new Size(62, 20);
             label12.TabIndex = 11;
             label12.Text = "Address";
             // 
-            // lblGender
-            // 
-            lblGender.AutoSize = true;
-            lblGender.Location = new Point(527, 202);
-            lblGender.Name = "lblGender";
-            lblGender.Size = new Size(58, 20);
-            lblGender.TabIndex = 12;
-            lblGender.Text = "label13";
-            // 
-            // lblFirstname
-            // 
-            lblFirstname.AutoSize = true;
-            lblFirstname.Location = new Point(148, 54);
-            lblFirstname.Name = "lblFirstname";
-            lblFirstname.Size = new Size(58, 20);
-            lblFirstname.TabIndex = 13;
-            lblFirstname.Text = "label14";
-            // 
-            // lblMobile
-            // 
-            lblMobile.AutoSize = true;
-            lblMobile.Location = new Point(148, 150);
-            lblMobile.Name = "lblMobile";
-            lblMobile.Size = new Size(58, 20);
-            lblMobile.TabIndex = 14;
-            lblMobile.Text = "label15";
-            // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(448, 104);
+            label16.Location = new Point(425, 102);
             label16.Name = "label16";
             label16.Size = new Size(73, 20);
             label16.TabIndex = 15;
             label16.Text = "Patient ID";
             // 
-            // lblHeight
-            // 
-            lblHeight.AutoSize = true;
-            lblHeight.Location = new Point(148, 256);
-            lblHeight.Name = "lblHeight";
-            lblHeight.Size = new Size(58, 20);
-            lblHeight.TabIndex = 16;
-            lblHeight.Text = "label17";
-            // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(465, 256);
+            label18.Location = new Point(442, 254);
             label18.Name = "label18";
             label18.Size = new Size(56, 20);
             label18.TabIndex = 17;
             label18.Text = "Weight";
-            // 
-            // lblNICnumber
-            // 
-            lblNICnumber.AutoSize = true;
-            lblNICnumber.Location = new Point(148, 104);
-            lblNICnumber.Name = "lblNICnumber";
-            lblNICnumber.Size = new Size(58, 20);
-            lblNICnumber.TabIndex = 18;
-            lblNICnumber.Text = "label19";
-            // 
-            // lblDoB
-            // 
-            lblDoB.AutoSize = true;
-            lblDoB.Location = new Point(148, 202);
-            lblDoB.Name = "lblDoB";
-            lblDoB.Size = new Size(58, 20);
-            lblDoB.TabIndex = 19;
-            lblDoB.Text = "label20";
-            // 
-            // lblWeight
-            // 
-            lblWeight.AutoSize = true;
-            lblWeight.Location = new Point(527, 256);
-            lblWeight.Name = "lblWeight";
-            lblWeight.Size = new Size(58, 20);
-            lblWeight.TabIndex = 20;
-            lblWeight.Text = "label21";
-            // 
-            // lblPatientid
-            // 
-            lblPatientid.AutoSize = true;
-            lblPatientid.Location = new Point(527, 104);
-            lblPatientid.Name = "lblPatientid";
-            lblPatientid.Size = new Size(58, 20);
-            lblPatientid.TabIndex = 21;
-            lblPatientid.Text = "label22";
-            // 
-            // lblLastname
-            // 
-            lblLastname.AutoSize = true;
-            lblLastname.Location = new Point(527, 54);
-            lblLastname.Name = "lblLastname";
-            lblLastname.Size = new Size(58, 20);
-            lblLastname.TabIndex = 22;
-            lblLastname.Text = "label23";
-            // 
-            // lblEmail
-            // 
-            lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(527, 150);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(58, 20);
-            lblEmail.TabIndex = 23;
-            lblEmail.Text = "label24";
-            // 
-            // lblAddress
-            // 
-            lblAddress.AutoSize = true;
-            lblAddress.Location = new Point(152, 355);
-            lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(58, 20);
-            lblAddress.TabIndex = 24;
-            lblAddress.Text = "label25";
             // 
             // btnEdit
             // 
@@ -300,28 +192,114 @@
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
             // 
+            // txtFirstname
+            // 
+            txtFirstname.Location = new Point(106, 52);
+            txtFirstname.Name = "txtFirstname";
+            txtFirstname.Size = new Size(289, 27);
+            txtFirstname.TabIndex = 27;
+            // 
+            // txtNICnumber
+            // 
+            txtNICnumber.Location = new Point(106, 99);
+            txtNICnumber.Name = "txtNICnumber";
+            txtNICnumber.Size = new Size(289, 27);
+            txtNICnumber.TabIndex = 28;
+            // 
+            // txtMobile
+            // 
+            txtMobile.Location = new Point(106, 145);
+            txtMobile.Name = "txtMobile";
+            txtMobile.Size = new Size(289, 27);
+            txtMobile.TabIndex = 29;
+            // 
+            // txtDoB
+            // 
+            txtDoB.Location = new Point(106, 200);
+            txtDoB.Name = "txtDoB";
+            txtDoB.Size = new Size(289, 27);
+            txtDoB.TabIndex = 30;
+            // 
+            // txtHeight
+            // 
+            txtHeight.Location = new Point(106, 254);
+            txtHeight.Name = "txtHeight";
+            txtHeight.Size = new Size(289, 27);
+            txtHeight.TabIndex = 31;
+            // 
+            // txtBloodtype
+            // 
+            txtBloodtype.Location = new Point(106, 300);
+            txtBloodtype.Name = "txtBloodtype";
+            txtBloodtype.Size = new Size(289, 27);
+            txtBloodtype.TabIndex = 32;
+            // 
+            // txtLastname
+            // 
+            txtLastname.Location = new Point(504, 49);
+            txtLastname.Name = "txtLastname";
+            txtLastname.Size = new Size(284, 27);
+            txtLastname.TabIndex = 33;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(504, 145);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(284, 27);
+            txtEmail.TabIndex = 35;
+            // 
+            // txtGender
+            // 
+            txtGender.Location = new Point(504, 196);
+            txtGender.Name = "txtGender";
+            txtGender.Size = new Size(284, 27);
+            txtGender.TabIndex = 36;
+            // 
+            // txtWeight
+            // 
+            txtWeight.Location = new Point(504, 251);
+            txtWeight.Name = "txtWeight";
+            txtWeight.Size = new Size(284, 27);
+            txtWeight.TabIndex = 37;
+            // 
+            // txtAddress
+            // 
+            txtAddress.Location = new Point(110, 350);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(678, 27);
+            txtAddress.TabIndex = 38;
+            // 
+            // lblPAtientID
+            // 
+            lblPAtientID.AutoSize = true;
+            lblPAtientID.Location = new Point(510, 102);
+            lblPAtientID.Name = "lblPAtientID";
+            lblPAtientID.Size = new Size(73, 20);
+            lblPAtientID.TabIndex = 39;
+            lblPAtientID.Text = "Patient ID";
+            // 
             // ViewIndividualPatient
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblPAtientID);
+            Controls.Add(txtAddress);
+            Controls.Add(txtWeight);
+            Controls.Add(txtGender);
+            Controls.Add(txtEmail);
+            Controls.Add(txtLastname);
+            Controls.Add(txtBloodtype);
+            Controls.Add(txtHeight);
+            Controls.Add(txtDoB);
+            Controls.Add(txtMobile);
+            Controls.Add(txtNICnumber);
+            Controls.Add(txtFirstname);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
-            Controls.Add(lblAddress);
-            Controls.Add(lblEmail);
-            Controls.Add(lblLastname);
-            Controls.Add(lblPatientid);
-            Controls.Add(lblWeight);
-            Controls.Add(lblDoB);
-            Controls.Add(lblNICnumber);
             Controls.Add(label18);
-            Controls.Add(lblHeight);
             Controls.Add(label16);
-            Controls.Add(lblMobile);
-            Controls.Add(lblFirstname);
-            Controls.Add(lblGender);
             Controls.Add(label12);
-            Controls.Add(lblBloodtype);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -351,22 +329,22 @@
         private Label label8;
         private Label label9;
         private Label label10;
-        private Label lblBloodtype;
         private Label label12;
-        private Label lblGender;
-        private Label lblFirstname;
-        private Label lblMobile;
         private Label label16;
-        private Label lblHeight;
         private Label label18;
-        private Label lblNICnumber;
-        private Label lblDoB;
-        private Label lblWeight;
-        private Label lblPatientid;
-        private Label lblLastname;
-        private Label lblEmail;
-        private Label lblAddress;
         private Button btnEdit;
         private Button btnDelete;
+        private TextBox txtFirstname;
+        private TextBox txtNICnumber;
+        private TextBox txtMobile;
+        private TextBox txtDoB;
+        private TextBox txtHeight;
+        private TextBox txtBloodtype;
+        private TextBox txtLastname;
+        private TextBox txtEmail;
+        private TextBox txtGender;
+        private TextBox txtWeight;
+        private TextBox txtAddress;
+        private Label lblPAtientID;
     }
 }

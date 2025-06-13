@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SDAM02_Clinic_System.views
 {
-    public partial class PatientDashboard : Form
+    public partial class AdminIndividualDoc : Form
     {
-        public PatientDashboard()
+        public AdminIndividualDoc()
         {
             InitializeComponent();
         }

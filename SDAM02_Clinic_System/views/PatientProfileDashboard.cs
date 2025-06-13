@@ -115,7 +115,7 @@ namespace SDAM02_Clinic_System.views
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            PatientDashboard dashboard = new PatientDashboard(patientId);
+            PatientDashboard dashboard = new PatientDashboard();
             dashboard.Show();
             this.Hide();
         }

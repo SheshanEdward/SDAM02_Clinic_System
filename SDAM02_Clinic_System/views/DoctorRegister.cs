@@ -51,7 +51,7 @@ namespace SDAM02_Clinic_System.views
 
             DoctorManager manager = new DoctorManager();
 
-            manager.RegisterRequest( newDoctor );
+            manager.RegisterRequest(newDoctor);
             this.Close();
         }
     }

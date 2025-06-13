@@ -36,6 +36,20 @@ namespace SDAM02_Clinic_System.views
         private void AdminViewDoctors_Load(object sender, EventArgs e)
         {
             LoadAllDoctors();
+
+            dgvViewdoctors.CellDoubleClick += dgvViewalldoctors_CellDoubleClick;
+        }
+
+        private void dgvViewalldoctors_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvViewdoctors.Rows[e.RowIndex];
+                string doctor_Id = Convert.ToString(row.Cells["doctor_id"].Value);
+
+                AdminIndividualDoc viewDoctor = new AdminIndividualDoc(doctor_Id);
+                viewDoctor.ShowDialog();
+            }
         }
     }
 }

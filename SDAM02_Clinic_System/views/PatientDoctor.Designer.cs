@@ -1,4 +1,5 @@
-﻿namespace SDAM02_Clinic_System.views
+﻿
+namespace SDAM02_Clinic_System.views
 {
     partial class PatientDoctor
     {
@@ -60,6 +61,7 @@
             btnBack.TabIndex = 2;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click_1;
             // 
             // PatientDoctor
             // 
@@ -74,6 +76,11 @@
             Load += PatientDoctor_Load;
             ((System.ComponentModel.ISupportInitialize)dgvViewalldoctors).EndInit();
             ResumeLayout(false);
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

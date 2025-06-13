@@ -32,6 +32,7 @@
             label2 = new Label();
             btnBack = new Button();
             dgvViewPrescription = new DataGridView();
+            btnload = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvViewPrescription).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(346, 355);
+            btnBack.Location = new Point(659, 348);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(111, 45);
             btnBack.TabIndex = 5;
@@ -71,17 +72,28 @@
             dgvViewPrescription.Size = new Size(727, 248);
             dgvViewPrescription.TabIndex = 6;
             // 
+            // btnload
+            // 
+            btnload.Location = new Point(46, 348);
+            btnload.Name = "btnload";
+            btnload.Size = new Size(97, 45);
+            btnload.TabIndex = 7;
+            btnload.Text = "Load";
+            btnload.UseVisualStyleBackColor = true;
+            // 
             // PatientPrescription
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnload);
             Controls.Add(dgvViewPrescription);
             Controls.Add(btnBack);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "PatientPrescription";
             Text = "PatientPrescription";
+            Load += PatientPrescription_Load;
             ((System.ComponentModel.ISupportInitialize)dgvViewPrescription).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -93,5 +105,6 @@
         private Label label2;
         private Button btnBack;
         private DataGridView dgvViewPrescription;
+        private Button btnload;
     }
 }

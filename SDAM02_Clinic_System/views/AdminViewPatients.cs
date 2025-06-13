@@ -45,10 +45,10 @@ namespace SDAM02_Clinic_System.views
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvAllpatients.Rows[e.RowIndex];
-                int requestId = Convert.ToInt32(row.Cells["id"].Value);
+                string patient_Id = Convert.ToString(row.Cells["patient_id"].Value);
 
-                AdminViewPatients AllPatients = new AdminViewPatients();
-                AllPatients.ShowDialog();
+                ViewIndividualPatient viewPatient = new ViewIndividualPatient(patient_Id);
+                viewPatient.ShowDialog();
 
                 //LoadAllPatients(); 
             }

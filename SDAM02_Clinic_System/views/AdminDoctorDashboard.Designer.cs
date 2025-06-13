@@ -71,6 +71,7 @@
             btnView.TabIndex = 3;
             btnView.Text = "View Doctors";
             btnView.UseVisualStyleBackColor = true;
+            btnView.Click += btnView_Click;
             // 
             // AdminDoctorDashboard
             // 

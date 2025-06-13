@@ -1,4 +1,5 @@
-﻿namespace SDAM02_Clinic_System.views
+﻿
+namespace SDAM02_Clinic_System.views
 {
     partial class PatientEditAppointment
     {
@@ -161,6 +162,11 @@
             ((System.ComponentModel.ISupportInitialize)dgvViewallappointments).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

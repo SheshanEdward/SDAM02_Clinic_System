@@ -40,6 +40,7 @@
             btnSchedule.TabIndex = 0;
             btnSchedule.Text = "Schedule Appointment";
             btnSchedule.UseVisualStyleBackColor = true;
+            btnSchedule.Click += btnSchedule_Click;
             // 
             // btnEdit
             // 
@@ -49,6 +50,7 @@
             btnEdit.TabIndex = 1;
             btnEdit.Text = "Edit Appointment";
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // PatientAppointmentDashboard
             // 

@@ -12,9 +12,23 @@ namespace SDAM02_Clinic_System.views
 {
     public partial class PatientAppointmentDashboard : Form
     {
-        public PatientAppointmentDashboard()
+        private string patientId;
+
+        public PatientAppointmentDashboard(int patientId)
         {
             InitializeComponent();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new PatientEditAppointment(patientId).Show();
+        }
+
+        private void btnSchedule_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new PatientScheduleAppointment(patientId).Show();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿namespace SDAM02_Clinic_System.views
+﻿
+namespace SDAM02_Clinic_System.views
 {
     partial class PatientProfileDashboard
     {
@@ -266,7 +267,7 @@
             // 
             btnSaveEditedAccount.Location = new Point(64, 403);
             btnSaveEditedAccount.Name = "btnSaveEditedAccount";
-            btnSaveEditedAccount.Size = new Size(143, 29);
+            btnSaveEditedAccount.Size = new Size(185, 29);
             btnSaveEditedAccount.TabIndex = 25;
             btnSaveEditedAccount.Text = "Save Edited  Account ";
             btnSaveEditedAccount.UseVisualStyleBackColor = true;
@@ -327,6 +328,16 @@
             Load += PatientProfileDashboard_Load;
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void PatientProfileDashboard_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

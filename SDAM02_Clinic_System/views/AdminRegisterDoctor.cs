@@ -11,13 +11,12 @@ using System.Windows.Forms;
 
 namespace SDAM02_Clinic_System.views
 {
-    public partial class DoctorRegister : Form
+    public partial class AdminRegisterDoctor : Form
     {
-        public DoctorRegister()
+        public AdminRegisterDoctor()
         {
             InitializeComponent();
 
-            //Values for the specialization
             cmbSpecialization.Items.Add("General Physician");
             cmbSpecialization.Items.Add("Cardiologist");
             cmbSpecialization.Items.Add("Dermatologist");
@@ -25,15 +24,9 @@ namespace SDAM02_Clinic_System.views
             cmbSpecialization.Items.Add("Pediatrician");
             cmbSpecialization.Items.Add("Physiatrist");
             cmbSpecialization.Items.Add("Psychiatrist");
-
         }
 
-        private void DoctorRegister_Load(object sender, EventArgs e)
-        {
-            //Don't delete this
-        }
-
-        private void btnApproval_Click(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
             Doctor newDoctor = new Doctor(
                 txtNICnumber.Text,
@@ -48,11 +41,8 @@ namespace SDAM02_Clinic_System.views
                 cmbSpecialization.SelectedItem.ToString()
              );
 
-
-            DoctorManager manager = new DoctorManager();
-
-            manager.RegisterRequest( newDoctor );
-            this.Close();
+            AdminManager manager = new AdminManager();
+            manager.RegisterDoctor(newDoctor);
         }
     }
 }

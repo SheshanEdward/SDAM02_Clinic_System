@@ -23,5 +23,12 @@ namespace SDAM02_Clinic_System.views
             displayRequests.Show();
             this.Hide();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            AdminRegisterDoctor newDoctor = new AdminRegisterDoctor();
+            newDoctor.Show();
+            this.Hide();
+        }
     }
 }

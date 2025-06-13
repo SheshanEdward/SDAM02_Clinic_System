@@ -41,7 +41,7 @@
             label12 = new Label();
             label16 = new Label();
             label18 = new Label();
-            btnEdit = new Button();
+            btnSave = new Button();
             btnDelete = new Button();
             txtFirstname = new TextBox();
             txtNICnumber = new TextBox();
@@ -174,20 +174,20 @@
             label18.TabIndex = 17;
             label18.Text = "Weight";
             // 
-            // btnEdit
+            // btnSave
             // 
-            btnEdit.Location = new Point(232, 398);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(94, 29);
-            btnEdit.TabIndex = 25;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
+            btnSave.Location = new Point(279, 389);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(99, 49);
+            btnSave.TabIndex = 25;
+            btnSave.Text = "Save Changes";
+            btnSave.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(427, 398);
+            btnDelete.Location = new Point(404, 389);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(94, 29);
+            btnDelete.Size = new Size(94, 49);
             btnDelete.TabIndex = 26;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -282,7 +282,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(805, 482);
             Controls.Add(lblPAtientID);
             Controls.Add(txtAddress);
             Controls.Add(txtWeight);
@@ -296,7 +296,7 @@
             Controls.Add(txtNICnumber);
             Controls.Add(txtFirstname);
             Controls.Add(btnDelete);
-            Controls.Add(btnEdit);
+            Controls.Add(btnSave);
             Controls.Add(label18);
             Controls.Add(label16);
             Controls.Add(label12);
@@ -332,7 +332,7 @@
         private Label label12;
         private Label label16;
         private Label label18;
-        private Button btnEdit;
+        private Button btnSave;
         private Button btnDelete;
         private TextBox txtFirstname;
         private TextBox txtNICnumber;

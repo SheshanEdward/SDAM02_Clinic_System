@@ -71,6 +71,7 @@
             Controls.Add(dgvViewalldoctors);
             Name = "PatientDoctor";
             Text = "PatientDoctor";
+            Load += PatientDoctor_Load;
             ((System.ComponentModel.ISupportInitialize)dgvViewalldoctors).EndInit();
             ResumeLayout(false);
         }

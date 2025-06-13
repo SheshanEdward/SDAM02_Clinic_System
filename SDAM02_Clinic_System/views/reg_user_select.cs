@@ -40,7 +40,7 @@ namespace SDAM02_Clinic_System.views
         
         private void reg_user_select_Load(object sender, EventArgs e)
         {
-
+            //Dont erase this code
         }
     }
 }

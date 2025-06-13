@@ -63,6 +63,7 @@
             btnPatients.TabIndex = 2;
             btnPatients.Text = "Patients";
             btnPatients.UseVisualStyleBackColor = true;
+            btnPatients.Click += btnPatients_Click;
             // 
             // btnAppointments
             // 

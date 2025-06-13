@@ -90,7 +90,7 @@ namespace SDAM02_Clinic_System.views
 
             string doctorId = ((ComboBoxItem)cmbDoctor.SelectedItem).Value;
             int serviceId = int.Parse(((ComboBoxItem)cmbService.SelectedItem).Value);
-            DateTime appointmentDate = dtAppointmentdate.Value;
+            DateTime appointmentDate = dtpAppointmentdate.Value;
 
             // Use the patient ID passed in the constructor
             string patientId = currentLoggedInPatientId;

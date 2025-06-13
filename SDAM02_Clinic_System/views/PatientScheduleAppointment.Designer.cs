@@ -32,10 +32,10 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            dtAppointmentdate = new DateTimePicker();
+            dtpAppointmentdate = new DateTimePicker();
             cmbService = new ComboBox();
             cmbDoctor = new ComboBox();
-            button1 = new Button();
+            btnschedule = new Button();
             btnHome = new Button();
             SuspendLayout();
             // 
@@ -75,12 +75,12 @@
             label4.TabIndex = 3;
             label4.Text = "Date";
             // 
-            // dtAppointmentdate
+            // dtpAppointmentdate
             // 
-            dtAppointmentdate.Location = new Point(285, 222);
-            dtAppointmentdate.Name = "dtAppointmentdate";
-            dtAppointmentdate.Size = new Size(250, 27);
-            dtAppointmentdate.TabIndex = 4;
+            dtpAppointmentdate.Location = new Point(285, 222);
+            dtpAppointmentdate.Name = "dtpAppointmentdate";
+            dtpAppointmentdate.Size = new Size(250, 27);
+            dtpAppointmentdate.TabIndex = 4;
             // 
             // cmbService
             // 
@@ -98,14 +98,14 @@
             cmbDoctor.Size = new Size(250, 28);
             cmbDoctor.TabIndex = 6;
             // 
-            // button1
+            // btnschedule
             // 
-            button1.Location = new Point(203, 326);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 32);
-            button1.TabIndex = 7;
-            button1.Text = "Schedule";
-            button1.UseVisualStyleBackColor = true;
+            btnschedule.Location = new Point(203, 326);
+            btnschedule.Name = "btnschedule";
+            btnschedule.Size = new Size(101, 32);
+            btnschedule.TabIndex = 7;
+            btnschedule.Text = "Schedule";
+            btnschedule.UseVisualStyleBackColor = true;
             // 
             // btnHome
             // 
@@ -122,10 +122,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnHome);
-            Controls.Add(button1);
+            Controls.Add(btnschedule);
             Controls.Add(cmbDoctor);
             Controls.Add(cmbService);
-            Controls.Add(dtAppointmentdate);
+            Controls.Add(dtpAppointmentdate);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -143,10 +143,10 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private DateTimePicker dtAppointmentdate;
+        private DateTimePicker dtpAppointmentdate;
         private ComboBox cmbService;
         private ComboBox cmbDoctor;
-        private Button button1;
+        private Button btnschedule;
         private Button btnHome;
     }
 }

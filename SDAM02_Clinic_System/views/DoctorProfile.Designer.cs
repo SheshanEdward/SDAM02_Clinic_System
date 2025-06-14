@@ -280,6 +280,7 @@
             btnSave.TabIndex = 26;
             btnSave.Text = "Save Changes";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnDelete
             // 
@@ -289,6 +290,7 @@
             btnDelete.TabIndex = 27;
             btnDelete.Text = "Delete Account";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // DoctorProfile
             // 

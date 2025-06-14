@@ -105,6 +105,13 @@ namespace SDAM02_Clinic_System.views
                 MessageBox.Show("Failed to schedule appointment.\n" + message);
             }
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            PatientDashboard dashboard = new PatientDashboard();
+            dashboard.Show();
+            this.Hide();
+        }
     }
 
     class ComboBoxItem

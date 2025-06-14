@@ -115,6 +115,7 @@
             btnHome.TabIndex = 8;
             btnHome.Text = "Home ";
             btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
             // 
             // PatientScheduleAppointment
             // 

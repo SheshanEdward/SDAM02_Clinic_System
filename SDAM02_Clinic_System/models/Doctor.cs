@@ -10,12 +10,15 @@ namespace SDAM02_Clinic_System.models
     {
         private string specialization;
         private string slmcregno;
+        private List<DayOfWeek> availableDays;
 
 
-        public Doctor(string NIC, string firstname, string lastname, DateTime DoB, string email, string mobile, string address, string password, string slmcregno, string specialization) : base(NIC, firstname, lastname, DoB, email, mobile, address, password)
+        public Doctor(string NIC, string firstname, string lastname, DateTime DoB, string email, string mobile, string address, string password, string slmcregno, string specialization, List<DayOfWeek> availableDays) : base(NIC, firstname, lastname, DoB, email, mobile, address, password)
         {
             this.specialization = specialization;
             this.slmcregno = slmcregno;
+            this.availableDays = availableDays;
+
         }
 
 

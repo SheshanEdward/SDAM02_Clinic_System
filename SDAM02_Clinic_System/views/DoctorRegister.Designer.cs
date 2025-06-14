@@ -50,6 +50,7 @@
             dtpDoB = new DateTimePicker();
             label11 = new Label();
             txtPassword = new TextBox();
+            clbDays = new CheckedListBox();
             SuspendLayout();
             // 
             // label1
@@ -154,7 +155,7 @@
             // btnApproval
             // 
             btnApproval.Font = new Font("Segoe UI", 12F);
-            btnApproval.Location = new Point(301, 381);
+            btnApproval.Location = new Point(301, 497);
             btnApproval.Name = "btnApproval";
             btnApproval.Size = new Size(212, 39);
             btnApproval.TabIndex = 11;
@@ -234,11 +235,21 @@
             txtPassword.Size = new Size(223, 27);
             txtPassword.TabIndex = 21;
             // 
+            // clbDays
+            // 
+            clbDays.FormattingEnabled = true;
+            clbDays.Items.AddRange(new object[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" });
+            clbDays.Location = new Point(636, 321);
+            clbDays.Name = "clbDays";
+            clbDays.Size = new Size(107, 158);
+            clbDays.TabIndex = 22;
+            // 
             // DoctorRegister
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(799, 569);
+            Controls.Add(clbDays);
             Controls.Add(txtPassword);
             Controls.Add(label11);
             Controls.Add(dtpDoB);
@@ -292,5 +303,6 @@
         private DateTimePicker dtpDoB;
         private Label label11;
         private TextBox txtPassword;
+        private CheckedListBox clbDays;
     }
 }

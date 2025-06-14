@@ -8,26 +8,53 @@ namespace SDAM02_Clinic_System.models
 {
     internal class Appointment
     {
-        public string AppointmentId { get; set; }
-        public string PatientId { get; set; }
-        public string DoctorId { get; set; }
-        public int ServiceId { get; set; }
-        public DateTime AppointmentDate { get; set; }
+        private string AppointmentId;
+        private string PatientId;
+        private string DoctorId;
+        private DateTime AppointmentDate;
 
-        // Status: Scheduled, Cancelled
-        public string Status { get; set; }
+        //public static class AppointmentStatuses
+        //{
+        //public const string Scheduled = "Scheduled";
+        //public const string Cancelled = "Cancelled";
+        //public const string Completed = "Completed";
+        //public const string NoShow = "No Show";
+        //}
 
-        public static class AppointmentStatuses
+        //public override string ToString()
+        //{
+        //  return $"[ID: {AppointmentId}] {AppointmentDate:dd MMM yyyy hh:mm tt} - Patient: {PatientId}, Doctor: {DoctorId}, Status: {Status}";
+        //}
+
+        public Appointment(string AppointmentId, string PatientId, string DoctorId, DateTime AppointmentDate)
         {
-            public const string Scheduled = "Scheduled";
-            public const string Cancelled = "Cancelled";
-            public const string Completed = "Completed";
-            public const string NoShow = "No Show";
+            this.AppointmentId = AppointmentId;
+            this.PatientId = PatientId;
+            this.DoctorId = DoctorId;
         }
 
-        public override string ToString()
+        public string appointmentId
         {
-            return $"[ID: {AppointmentId}] {AppointmentDate:dd MMM yyyy hh:mm tt} - Patient: {PatientId}, Doctor: {DoctorId}, Status: {Status}";
+            get { return AppointmentId; }
+            set { AppointmentId = value; }
+        }
+
+        public string patientId
+        {
+            get { return PatientId; }
+            set { PatientId = value; }
+        }
+
+        public string doctor_Id
+        {
+            get { return DoctorId; }
+            set { DoctorId = value; }
+        }
+
+        public DateTime appointmentDate
+        {
+            get { return AppointmentDate; }
+            set { AppointmentDate = value; }
         }
     }
 }

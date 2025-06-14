@@ -35,9 +35,9 @@
             // 
             // btnSchedule
             // 
-            btnSchedule.Location = new Point(218, 149);
+            btnSchedule.Location = new Point(613, 409);
             btnSchedule.Name = "btnSchedule";
-            btnSchedule.Size = new Size(113, 54);
+            btnSchedule.Size = new Size(175, 29);
             btnSchedule.TabIndex = 0;
             btnSchedule.Text = "Schedule Appointment";
             btnSchedule.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(447, 148);
+            btnEdit.Location = new Point(414, 403);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(109, 55);
+            btnEdit.Size = new Size(145, 35);
             btnEdit.TabIndex = 1;
             btnEdit.Text = "Edit Appointment";
             btnEdit.UseVisualStyleBackColor = true;
@@ -55,7 +55,7 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(356, 381);
+            btnBack.Location = new Point(12, 409);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
             btnBack.TabIndex = 2;

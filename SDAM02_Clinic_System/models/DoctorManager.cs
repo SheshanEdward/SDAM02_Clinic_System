@@ -26,38 +26,43 @@ namespace SDAM02_Clinic_System.models
                     using (MySqlCommand getLastIdCmd = new MySqlCommand(getLastIdQuery, conn))
                     {
                         object result = getLastIdCmd.ExecuteScalar();
-                        if (result != null)
+                        string lastId = result?.ToString() ?? "";
+
+                        if (!string.IsNullOrEmpty(lastId) && lastId.StartsWith("D") && lastId.Length > 1)
                         {
-                            string lastId = result.ToString();
-                            int numericPart = int.Parse(lastId.Substring(1));
-                            numericPart++;
-                            newDoctorId = "D" + numericPart.ToString("D3");
+                            int numericPart;
+                            if (int.TryParse(lastId.Substring(1), out numericPart))
+                            {
+                                numericPart++;
+                                newDoctorId = "D" + numericPart.ToString("D3");
+                            }
                         }
-                    }
 
-                    string insertQuery = @"INSERT INTO doctor_profiles 
-                    (nic, SLMCno, firstname, lastname, specialization, dob, email, mobile, address, password, available_days, start_time, end_time)
-                    VALUES (@nic, @SLMCno, @firstname, @lastname, @specialization, @dob, @email, @mobile, @address, @password, @available_days, start_time, @end_time);";
+                        string insertQuery = @"INSERT INTO doctor_profiles 
+                    (doctor_id, nic, SLMCno, firstname, lastname, specialization, dob, email, mobile, address, password, available_days, start_time, end_time)
+                    VALUES (@doctor_id, @nic, @SLMCno, @firstname, @lastname, @specialization, @dob, @email, @mobile, @address, @password, @available_days, start_time, @end_time);";
 
-                    using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
-                    {
-                        //cmd.Parameters.AddWithValue("@doctor_id", newDoctorId);
-                        cmd.Parameters.AddWithValue("@firstname", doctor.Firstname);
-                        cmd.Parameters.AddWithValue("@lastname", doctor.Lastname);
-                        cmd.Parameters.AddWithValue("@dob", doctor.dob);
-                        cmd.Parameters.AddWithValue("@email", doctor.Email);
-                        cmd.Parameters.AddWithValue("@mobile", doctor.Mobile);
-                        cmd.Parameters.AddWithValue("@nic", doctor.nic);
-                        cmd.Parameters.AddWithValue("@address", doctor.Address);
-                        cmd.Parameters.AddWithValue("@specialization", doctor.Specialization);
-                        cmd.Parameters.AddWithValue("@SLMCno", doctor.Slmcregno);
-                        cmd.Parameters.AddWithValue("@password", doctor.Password);
-                        cmd.Parameters.AddWithValue("@available_days", doctor.AvailableDays);
-                        cmd.Parameters.AddWithValue("@start_time", doctor.StartTime);
-                        cmd.Parameters.AddWithValue("@end_time", doctor.EndTime);
+                        using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
+                        {
+                            
+                            cmd.Parameters.AddWithValue("@doctor_id", newDoctorId);
+                            cmd.Parameters.AddWithValue("@firstname", doctor.Firstname);
+                            cmd.Parameters.AddWithValue("@lastname", doctor.Lastname);
+                            cmd.Parameters.AddWithValue("@dob", doctor.dob);
+                            cmd.Parameters.AddWithValue("@email", doctor.Email);
+                            cmd.Parameters.AddWithValue("@mobile", doctor.Mobile);
+                            cmd.Parameters.AddWithValue("@nic", doctor.nic);
+                            cmd.Parameters.AddWithValue("@address", doctor.Address);
+                            cmd.Parameters.AddWithValue("@specialization", doctor.Specialization);
+                            cmd.Parameters.AddWithValue("@SLMCno", doctor.Slmcregno);
+                            cmd.Parameters.AddWithValue("@password", doctor.Password);
+                            cmd.Parameters.AddWithValue("@available_days", doctor.AvailableDays);
+                            cmd.Parameters.AddWithValue("@start_time", doctor.StartTime);
+                            cmd.Parameters.AddWithValue("@end_time", doctor.EndTime);
 
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Account created successfully!");
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Account created successfully!");
+                        }
                     }
 
                 }

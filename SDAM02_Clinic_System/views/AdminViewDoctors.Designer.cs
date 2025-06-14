@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             dgvViewdoctors = new DataGridView();
-            button1 = new Button();
+            btnBack = new Button();
+            btnRegister = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvViewdoctors).BeginInit();
             SuspendLayout();
             // 
@@ -42,21 +43,33 @@
             dgvViewdoctors.Size = new Size(1158, 434);
             dgvViewdoctors.TabIndex = 0;
             // 
-            // button1
+            // btnBack
             // 
-            button1.Location = new Point(527, 451);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnBack.Location = new Point(12, 451);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 1;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
+            // btnRegister
+            // 
+            btnRegister.Location = new Point(501, 451);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(155, 29);
+            btnRegister.TabIndex = 2;
+            btnRegister.Text = "Register a Doctor";
+            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.Click += btnRegister_Click;
             // 
             // AdminViewDoctors
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 492);
-            Controls.Add(button1);
+            Controls.Add(btnRegister);
+            Controls.Add(btnBack);
             Controls.Add(dgvViewdoctors);
             Name = "AdminViewDoctors";
             Text = "AdminViewDoctors";
@@ -68,6 +81,7 @@
         #endregion
 
         private DataGridView dgvViewdoctors;
-        private Button button1;
+        private Button btnBack;
+        private Button btnRegister;
     }
 }

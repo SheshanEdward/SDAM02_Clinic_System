@@ -52,6 +52,12 @@
             btnSave = new Button();
             btnDelete = new Button();
             btnBack = new Button();
+            label12 = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            txtAvailable = new TextBox();
+            txtFrom = new TextBox();
+            txtTo = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -227,7 +233,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(367, 390);
+            btnSave.Location = new Point(365, 529);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(94, 48);
             btnSave.TabIndex = 21;
@@ -237,7 +243,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(698, 390);
+            btnDelete.Location = new Point(689, 529);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(90, 48);
             btnDelete.TabIndex = 22;
@@ -247,18 +253,72 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(21, 390);
+            btnBack.Location = new Point(22, 529);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(103, 48);
             btnBack.TabIndex = 23;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(35, 443);
+            label12.Name = "label12";
+            label12.Size = new Size(101, 20);
+            label12.TabIndex = 24;
+            label12.Text = "Available Day";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(365, 443);
+            label13.Name = "label13";
+            label13.Size = new Size(43, 20);
+            label13.TabIndex = 25;
+            label13.Text = "From";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(591, 443);
+            label14.Name = "label14";
+            label14.Size = new Size(25, 20);
+            label14.TabIndex = 26;
+            label14.Text = "To";
+            // 
+            // txtAvailable
+            // 
+            txtAvailable.Location = new Point(142, 440);
+            txtAvailable.Name = "txtAvailable";
+            txtAvailable.Size = new Size(125, 27);
+            txtAvailable.TabIndex = 27;
+            // 
+            // txtFrom
+            // 
+            txtFrom.Location = new Point(419, 440);
+            txtFrom.Name = "txtFrom";
+            txtFrom.Size = new Size(125, 27);
+            txtFrom.TabIndex = 28;
+            // 
+            // txtTo
+            // 
+            txtTo.Location = new Point(622, 440);
+            txtTo.Name = "txtTo";
+            txtTo.Size = new Size(125, 27);
+            txtTo.TabIndex = 29;
+            // 
             // AdminIndividualDoc
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 607);
+            Controls.Add(txtTo);
+            Controls.Add(txtFrom);
+            Controls.Add(txtAvailable);
+            Controls.Add(label14);
+            Controls.Add(label13);
+            Controls.Add(label12);
             Controls.Add(btnBack);
             Controls.Add(btnDelete);
             Controls.Add(btnSave);
@@ -315,5 +375,11 @@
         private Button btnSave;
         private Button btnDelete;
         private Button btnBack;
+        private Label label12;
+        private Label label13;
+        private Label label14;
+        private TextBox txtAvailable;
+        private TextBox txtFrom;
+        private TextBox txtTo;
     }
 }

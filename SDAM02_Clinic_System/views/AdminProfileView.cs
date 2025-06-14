@@ -90,6 +90,13 @@ namespace SDAM02_Clinic_System.views
                 }
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.Show();
+            this.Close();
+        }
     }
 
 

@@ -53,6 +53,7 @@
             btnProfile.TabIndex = 1;
             btnProfile.Text = "Profile";
             btnProfile.UseVisualStyleBackColor = true;
+            btnProfile.Click += btnProfile_Click;
             // 
             // btnSchedule
             // 
@@ -62,6 +63,7 @@
             btnSchedule.TabIndex = 2;
             btnSchedule.Text = "Schedule";
             btnSchedule.UseVisualStyleBackColor = true;
+            btnSchedule.Click += btnSchedule_Click;
             // 
             // btnPrescription
             // 
@@ -81,6 +83,7 @@
             btnPatients.TabIndex = 4;
             btnPatients.Text = "Patients";
             btnPatients.UseVisualStyleBackColor = true;
+            btnPatients.Click += btnPatients_Click;
             // 
             // btnAppointments
             // 

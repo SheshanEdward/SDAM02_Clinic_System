@@ -33,6 +33,7 @@
             button1 = new Button();
             btnEditprescription = new Button();
             btnDeletePrescription = new Button();
+            btnBack = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -82,11 +83,22 @@
             btnDeletePrescription.Text = "Delete Prescription ";
             btnDeletePrescription.UseVisualStyleBackColor = true;
             // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(19, 414);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 5;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // DoctorPrescriptions
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnBack);
             Controls.Add(btnDeletePrescription);
             Controls.Add(btnEditprescription);
             Controls.Add(button1);
@@ -106,5 +118,6 @@
         private Button button1;
         private Button btnEditprescription;
         private Button btnDeletePrescription;
+        private Button btnBack;
     }
 }

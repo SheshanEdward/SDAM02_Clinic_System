@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "DoctorAssignedPatients";
+            btnBack = new Button();
+            SuspendLayout();
+            // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(18, 411);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 0;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
+            // DoctorAssignedPatients
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnBack);
+            Name = "DoctorAssignedPatients";
+            Text = "DoctorAssignedPatients";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnBack;
     }
 }

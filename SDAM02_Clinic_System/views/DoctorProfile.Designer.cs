@@ -1,6 +1,6 @@
 ﻿namespace SDAM02_Clinic_System.views
 {
-    partial class DoctorAppointments
+    partial class DoctorProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -41,14 +41,14 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
-            // DoctorAppointments
+            // DoctorProfile
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnBack);
-            Name = "DoctorAppointments";
-            Text = "DoctorAppointments";
+            Name = "DoctorProfile";
+            Text = "DoctorProfile";
             ResumeLayout(false);
         }
 

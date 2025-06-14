@@ -23,5 +23,10 @@ namespace SDAM02_Clinic_System.views
             doctorDashboard.Show();
             this.Close();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            //Accidental, do not delete.
+        }
     }
 }

@@ -45,7 +45,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1060, 462);
             Controls.Add(btnBack);
             Name = "DoctorSchedule";
             Text = "DoctorSchedule";

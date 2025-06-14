@@ -21,7 +21,7 @@ namespace SDAM02_Clinic_System.views
         private void LoadAllDoctors()
         {
             string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
-            string query = "SELECT doctor_id, nic, SLMCno, firstname, lastname, specialization, dob, email, mobile, address FROM doctor_profiles";
+            string query = "SELECT doctor_id, nic, SLMCno, firstname, lastname, specialization, dob, email, mobile, address, available_days, start_time, end_time FROM doctor_profiles";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {

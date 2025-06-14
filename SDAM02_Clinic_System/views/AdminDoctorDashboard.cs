@@ -19,9 +19,9 @@ namespace SDAM02_Clinic_System.views
 
         private void btnCreationrequest_Click(object sender, EventArgs e)
         {
-            DoctorCreationRequests displayRequests = new DoctorCreationRequests();
-            displayRequests.Show();
-            this.Hide();
+            //DoctorCreationRequests displayRequests = new DoctorCreationRequests();
+           // displayRequests.Show();
+            //this.Hide();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

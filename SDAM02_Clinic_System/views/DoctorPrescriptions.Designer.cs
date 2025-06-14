@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
+            dgvViewprescriptions = new DataGridView();
+            btnCreateprescription = new Button();
             btnEditprescription = new Button();
             btnDeletePrescription = new Button();
             btnBack = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvViewprescriptions).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -47,23 +47,23 @@
             label1.TabIndex = 0;
             label1.Text = "Prescriptions ";
             // 
-            // dataGridView1
+            // dgvViewprescriptions
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(63, 91);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(671, 203);
-            dataGridView1.TabIndex = 1;
+            dgvViewprescriptions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvViewprescriptions.Location = new Point(63, 91);
+            dgvViewprescriptions.Name = "dgvViewprescriptions";
+            dgvViewprescriptions.RowHeadersWidth = 51;
+            dgvViewprescriptions.Size = new Size(671, 203);
+            dgvViewprescriptions.TabIndex = 1;
             // 
-            // button1
+            // btnCreateprescription
             // 
-            button1.Location = new Point(63, 339);
-            button1.Name = "button1";
-            button1.Size = new Size(199, 41);
-            button1.TabIndex = 2;
-            button1.Text = "Create new prescription";
-            button1.UseVisualStyleBackColor = true;
+            btnCreateprescription.Location = new Point(63, 339);
+            btnCreateprescription.Name = "btnCreateprescription";
+            btnCreateprescription.Size = new Size(199, 41);
+            btnCreateprescription.TabIndex = 2;
+            btnCreateprescription.Text = "Create new prescription";
+            btnCreateprescription.UseVisualStyleBackColor = true;
             // 
             // btnEditprescription
             // 
@@ -101,12 +101,12 @@
             Controls.Add(btnBack);
             Controls.Add(btnDeletePrescription);
             Controls.Add(btnEditprescription);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(btnCreateprescription);
+            Controls.Add(dgvViewprescriptions);
             Controls.Add(label1);
             Name = "DoctorPrescriptions";
             Text = "DoctorPrescriptions";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvViewprescriptions).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -114,8 +114,8 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
-        private Button button1;
+        private DataGridView dgvViewprescriptions;
+        private Button btnCreateprescription;
         private Button btnEditprescription;
         private Button btnDeletePrescription;
         private Button btnBack;

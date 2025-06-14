@@ -142,6 +142,7 @@
             Controls.Add(Drug);
             Name = "DoctorEditPrescription";
             Text = "DoctorEditPrescription";
+            Load += DoctorEditPrescription_Load;
             ResumeLayout(false);
             PerformLayout();
         }

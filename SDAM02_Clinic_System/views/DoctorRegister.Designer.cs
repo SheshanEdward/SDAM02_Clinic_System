@@ -164,7 +164,7 @@
             btnApproval.Name = "btnApproval";
             btnApproval.Size = new Size(212, 39);
             btnApproval.TabIndex = 11;
-            btnApproval.Text = "Submit for Approval";
+            btnApproval.Text = "Register";
             btnApproval.UseVisualStyleBackColor = true;
             btnApproval.Click += btnApproval_Click;
             // 

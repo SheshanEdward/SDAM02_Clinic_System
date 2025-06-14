@@ -12,7 +12,7 @@ namespace SDAM02_Clinic_System.views
 {
     public partial class DoctorDashboard : Form
     {
-        public DoctorDashboard()
+        public DoctorDashboard(string doctorId)
         {
             InitializeComponent();
         }

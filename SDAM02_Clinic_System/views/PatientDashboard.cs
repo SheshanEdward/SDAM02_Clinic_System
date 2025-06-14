@@ -14,7 +14,7 @@ namespace SDAM02_Clinic_System.views
     {
         private string patientId;
 
-        public PatientDashboard()
+        public PatientDashboard(object currentLoggedInPatientI)
         {
             InitializeComponent();
         }
@@ -43,6 +43,11 @@ namespace SDAM02_Clinic_System.views
         {
             this.Hide();
             new PatientDoctor().Show();
+        }
+
+        internal void show()
+        {
+            throw new NotImplementedException();
         }
     }
 }

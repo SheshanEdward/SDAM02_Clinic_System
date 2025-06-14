@@ -18,6 +18,7 @@ namespace SDAM02_Clinic_System.views
 
         // Add this private field for the logged-in patient ID
         private string currentLoggedInPatientId;
+        private object currentLoggedInPatientI;
 
         // Replace the parameterless constructor with this one:
         public PatientScheduleAppointment(string patientId)
@@ -108,9 +109,8 @@ namespace SDAM02_Clinic_System.views
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            PatientDashboard dashboard = new PatientDashboard();
-            dashboard.Show();
             this.Hide();
+            new PatientDashboard(currentLoggedInPatientI).show();
         }
     }
 

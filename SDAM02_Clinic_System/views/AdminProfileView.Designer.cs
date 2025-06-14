@@ -252,6 +252,7 @@
             btnBack.TabIndex = 31;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // AdminProfileView
             // 

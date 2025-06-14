@@ -48,7 +48,9 @@ namespace SDAM02_Clinic_System.views
                             txtMobile.Text = reader["mobile"].ToString();
                             txtSpecialization.Text = reader["specialization"].ToString();
                             txtSLMCnumber.Text = reader["SLMCno"].ToString();
-
+                            txtAvailable.Text = reader["available_days"].ToString();
+                            txtFrom.Text = reader["start_time"].ToString();
+                            txtTo.Text = reader["end_time"].ToString();
                             // Add more if needed
                         }
                     }
@@ -68,7 +70,10 @@ namespace SDAM02_Clinic_System.views
                          email = @email,
                          mobile = @mobile,
                          specialization = @specialization,
-                         SLMCno = @slmcno
+                         SLMCno = @slmcno,
+                         available_days = @available_days,
+                         start_time = @start_time,
+                         end_time = @end_time
                      WHERE doctor_id = @doctor_id";
 
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -85,6 +90,9 @@ namespace SDAM02_Clinic_System.views
                     cmd.Parameters.AddWithValue("@mobile", txtMobile.Text.Trim());
                     cmd.Parameters.AddWithValue("@specialization", txtSpecialization.Text.Trim());
                     cmd.Parameters.AddWithValue("@slmcno", txtSLMCnumber.Text.Trim());
+                    cmd.Parameters.AddWithValue("@available_days", txtAvailable.Text.Trim());
+                    cmd.Parameters.AddWithValue("@start_time", txtFrom.Text.Trim());
+                    cmd.Parameters.AddWithValue("@end_time", txtTo.Text.Trim());
                     cmd.Parameters.AddWithValue("@doctor_id", doctor_Id);
 
                     int rowsAffected = cmd.ExecuteNonQuery();

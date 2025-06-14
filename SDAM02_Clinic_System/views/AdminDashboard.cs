@@ -19,8 +19,8 @@ namespace SDAM02_Clinic_System.views
 
         private void btnDoctors_Click(object sender, EventArgs e)
         {
-            AdminDoctorDashboard viewDashboard = new AdminDoctorDashboard();
-            viewDashboard.Show();
+            AdminViewDoctors viewDoctors = new AdminViewDoctors();
+            viewDoctors.Show();
             this.Hide();
         }
 

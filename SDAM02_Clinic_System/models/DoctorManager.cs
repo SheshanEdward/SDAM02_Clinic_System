@@ -37,8 +37,8 @@ namespace SDAM02_Clinic_System.models
                     //}
 
                     string insertQuery = @"INSERT INTO doctor_creation_requests 
-                    (nic, SLMCno, firstname, lastname, specialization, dob, email, mobile, address, password)
-                    VALUES (@nic, @SLMCno, @firstname, @lastname, @specialization, @dob, @email, @mobile, @address, @password);";
+                    (nic, SLMCno, firstname, lastname, specialization, dob, email, mobile, address, password, available_days, start_time, end_time)
+                    VALUES (@nic, @SLMCno, @firstname, @lastname, @specialization, @dob, @email, @mobile, @address, @password, @available_days, start_time, @end_time);";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
@@ -52,11 +52,15 @@ namespace SDAM02_Clinic_System.models
                         cmd.Parameters.AddWithValue("@address", doctor.Address);
                         cmd.Parameters.AddWithValue("@specialization", doctor.Specialization);
                         cmd.Parameters.AddWithValue("@SLMCno", doctor.Slmcregno);
-                        cmd.Parameters.AddWithValue("@password", doctor.Password); // If there is time, have to mask
+                        cmd.Parameters.AddWithValue("@password", doctor.Password);
+                        cmd.Parameters.AddWithValue("@available_days", doctor.AvailableDays);
+                        cmd.Parameters.AddWithValue("@start_time", doctor.StartTime);
+                        cmd.Parameters.AddWithValue("@end_time", doctor.EndTime);
 
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Account creation request submitted successfully!");
                     }
+
                 }
                 catch (Exception ex)
                 {

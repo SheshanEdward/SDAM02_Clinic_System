@@ -50,7 +50,12 @@
             dtpDoB = new DateTimePicker();
             label11 = new Label();
             txtPassword = new TextBox();
-            clbDays = new CheckedListBox();
+            clbAvailability = new CheckedListBox();
+            dtpStart = new DateTimePicker();
+            dtpEnd = new DateTimePicker();
+            dgvSchedule = new DataGridView();
+            btnAddschedule = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvSchedule).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -155,7 +160,7 @@
             // btnApproval
             // 
             btnApproval.Font = new Font("Segoe UI", 12F);
-            btnApproval.Location = new Point(301, 497);
+            btnApproval.Location = new Point(268, 720);
             btnApproval.Name = "btnApproval";
             btnApproval.Size = new Size(212, 39);
             btnApproval.TabIndex = 11;
@@ -235,21 +240,59 @@
             txtPassword.Size = new Size(223, 27);
             txtPassword.TabIndex = 21;
             // 
-            // clbDays
+            // clbAvailability
             // 
-            clbDays.FormattingEnabled = true;
-            clbDays.Items.AddRange(new object[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" });
-            clbDays.Location = new Point(636, 321);
-            clbDays.Name = "clbDays";
-            clbDays.Size = new Size(107, 158);
-            clbDays.TabIndex = 22;
+            clbAvailability.FormattingEnabled = true;
+            clbAvailability.Location = new Point(127, 382);
+            clbAvailability.Name = "clbAvailability";
+            clbAvailability.Size = new Size(150, 114);
+            clbAvailability.TabIndex = 22;
+            // 
+            // dtpStart
+            // 
+            dtpStart.Format = DateTimePickerFormat.Time;
+            dtpStart.Location = new Point(444, 398);
+            dtpStart.Name = "dtpStart";
+            dtpStart.Size = new Size(80, 27);
+            dtpStart.TabIndex = 23;
+            // 
+            // dtpEnd
+            // 
+            dtpEnd.Format = DateTimePickerFormat.Time;
+            dtpEnd.Location = new Point(444, 454);
+            dtpEnd.Name = "dtpEnd";
+            dtpEnd.Size = new Size(80, 27);
+            dtpEnd.TabIndex = 24;
+            // 
+            // dgvSchedule
+            // 
+            dgvSchedule.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSchedule.Location = new Point(213, 515);
+            dgvSchedule.Name = "dgvSchedule";
+            dgvSchedule.RowHeadersWidth = 51;
+            dgvSchedule.Size = new Size(300, 188);
+            dgvSchedule.TabIndex = 25;
+            // 
+            // btnAddschedule
+            // 
+            btnAddschedule.Location = new Point(582, 410);
+            btnAddschedule.Name = "btnAddschedule";
+            btnAddschedule.Size = new Size(94, 60);
+            btnAddschedule.TabIndex = 26;
+            btnAddschedule.Text = "Add to availability";
+            btnAddschedule.UseVisualStyleBackColor = true;
+            btnAddschedule.Click += btnAddschedule_Click;
             // 
             // DoctorRegister
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(799, 569);
-            Controls.Add(clbDays);
+            ClientSize = new Size(799, 771);
+            Controls.Add(btnAddschedule);
+            Controls.Add(dgvSchedule);
+            Controls.Add(dtpEnd);
+            Controls.Add(dtpStart);
+            Controls.Add(clbAvailability);
             Controls.Add(txtPassword);
             Controls.Add(label11);
             Controls.Add(dtpDoB);
@@ -275,6 +318,7 @@
             Name = "DoctorRegister";
             Text = "DoctorRegister";
             Load += DoctorRegister_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvSchedule).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -303,6 +347,10 @@
         private DateTimePicker dtpDoB;
         private Label label11;
         private TextBox txtPassword;
-        private CheckedListBox clbDays;
+        private CheckedListBox clbAvailability;
+        private DateTimePicker dtpStart;
+        private DateTimePicker dtpEnd;
+        private DataGridView dgvSchedule;
+        private Button btnAddschedule;
     }
 }

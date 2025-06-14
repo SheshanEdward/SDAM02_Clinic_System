@@ -51,6 +51,7 @@
             lblDoctorid = new Label();
             btnSave = new Button();
             btnDelete = new Button();
+            btnBack = new Button();
             SuspendLayout();
             // 
             // label1
@@ -226,7 +227,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(269, 381);
+            btnSave.Location = new Point(367, 390);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(94, 48);
             btnSave.TabIndex = 21;
@@ -236,18 +237,29 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(427, 381);
+            btnDelete.Location = new Point(698, 390);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(84, 48);
+            btnDelete.Size = new Size(90, 48);
             btnDelete.TabIndex = 22;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(21, 390);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(103, 48);
+            btnBack.TabIndex = 23;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
             // 
             // AdminIndividualDoc
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnBack);
             Controls.Add(btnDelete);
             Controls.Add(btnSave);
             Controls.Add(lblDoctorid);
@@ -302,5 +314,6 @@
         private Label lblDoctorid;
         private Button btnSave;
         private Button btnDelete;
+        private Button btnBack;
     }
 }

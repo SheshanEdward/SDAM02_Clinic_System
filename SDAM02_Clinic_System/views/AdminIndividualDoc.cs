@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SDAM02_Clinic_System.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -92,11 +93,49 @@ namespace SDAM02_Clinic_System.views
                     {
                         MessageBox.Show("Doctor details updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close(); // Optional: close the form after update
-                        
+
                     }
                     else
                     {
                         MessageBox.Show("Update failed. No rows affected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("Are you sure you want to delete this account?",
+                                          "Confirm Deletion",
+                                          MessageBoxButtons.YesNo,
+                                          MessageBoxIcon.Warning);
+
+            if (confirm == DialogResult.Yes)
+            {
+                string connStr = "server=localhost;user=root;password=;database=clinic_system_db;";
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    try
+                    {
+                        conn.Open();
+                        string deleteQuery = "DELETE FROM doctor_profiles WHERE doctor_id = @id";
+
+                        using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@id", doctor_Id);
+                            cmd.ExecuteNonQuery();
+
+                            MessageBox.Show("Your account has been deleted.", "Deleted");
+
+                            // Redirect to Welcome dashboard 
+                            welcome dashboard = new welcome();
+                            dashboard.Show();
+                            this.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error deleting account: " + ex.Message);
                     }
                 }
             }

@@ -46,5 +46,10 @@ namespace SDAM02_Clinic_System.views
         {
             //Do not delete this, the form will crash!!!!!
         }
+
+        private void admin_register_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

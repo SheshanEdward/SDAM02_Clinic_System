@@ -264,6 +264,7 @@
             Controls.Add(label1);
             Name = "admin_register";
             Text = "admin_register";
+            Load += admin_register_Load;
             ResumeLayout(false);
             PerformLayout();
         }

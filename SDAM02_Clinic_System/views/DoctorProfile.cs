@@ -18,6 +18,7 @@ namespace SDAM02_Clinic_System.views
         public DoctorProfile()
         {
             InitializeComponent();
+            LoadDoctorData();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -58,6 +58,7 @@ namespace SDAM02_Clinic_System.views
                                 txtNICnumber.Text = reader["nic"].ToString();
                                 txtSLMCnumber.Text = reader["SLMCno"].ToString();
                                 txtSpecialization.Text = reader["specialization"].ToString();
+                                txtMobile.Text = reader["mobile"].ToString();
                                 txtEmail.Text = reader["email"].ToString();
                                 txtAddress.Text = reader["address"].ToString();
                                 txtPassword.Text = reader["password"].ToString();

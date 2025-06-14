@@ -29,5 +29,10 @@ namespace SDAM02_Clinic_System
                 this.Hide();
             }
         }
+
+        private void welcome_Load(object sender, EventArgs e)
+        {
+            //Do not delete!!!!!!
+        }
     }
 }

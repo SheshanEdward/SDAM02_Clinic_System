@@ -128,6 +128,7 @@
             Controls.Add(label1);
             Name = "welcome";
             Text = "Welcome";
+            Load += welcome_Load;
             ResumeLayout(false);
             PerformLayout();
         }

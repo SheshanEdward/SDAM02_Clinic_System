@@ -12,7 +12,7 @@ namespace SDAM02_Clinic_System.views
 {
     public partial class DoctorEditPrescription : Form
     {
-        public DoctorEditPrescription()
+        public DoctorEditPrescription(string doctorId, string? prescriptionId)
         {
             InitializeComponent();
         }

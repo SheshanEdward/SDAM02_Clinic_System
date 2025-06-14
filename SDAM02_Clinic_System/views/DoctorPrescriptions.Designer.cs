@@ -34,6 +34,7 @@
             btnEditprescription = new Button();
             btnDeletePrescription = new Button();
             btnBack = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)dgvViewprescriptions).BeginInit();
             SuspendLayout();
             // 
@@ -106,6 +107,7 @@
             Controls.Add(label1);
             Name = "DoctorPrescriptions";
             Text = "DoctorPrescriptions";
+            Load += DoctorPrescriptions_Load;
             ((System.ComponentModel.ISupportInitialize)dgvViewprescriptions).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -119,5 +121,6 @@
         private Button btnEditprescription;
         private Button btnDeletePrescription;
         private Button btnBack;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -32,6 +32,7 @@
             btnEditrequest = new Button();
             btnRegister = new Button();
             btnView = new Button();
+            btnBack = new Button();
             SuspendLayout();
             // 
             // btnCreationrequest
@@ -73,11 +74,21 @@
             btnView.UseVisualStyleBackColor = true;
             btnView.Click += btnView_Click;
             // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(354, 386);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 4;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            // 
             // AdminDoctorDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnBack);
             Controls.Add(btnView);
             Controls.Add(btnRegister);
             Controls.Add(btnEditrequest);
@@ -93,5 +104,6 @@
         private Button btnEditrequest;
         private Button btnRegister;
         private Button btnView;
+        private Button btnBack;
     }
 }

@@ -62,6 +62,7 @@
             btnBack.TabIndex = 5;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click_1;
             // 
             // dgvViewPrescription
             // 

@@ -30,6 +30,7 @@
         {
             dataGridView1 = new DataGridView();
             btnConfirm = new Button();
+            btnBack = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -51,11 +52,22 @@
             btnConfirm.Text = "Confirm ";
             btnConfirm.UseVisualStyleBackColor = true;
             // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(40, 395);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 2;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // PatientDeleteAppointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnBack);
             Controls.Add(btnConfirm);
             Controls.Add(dataGridView1);
             Name = "PatientDeleteAppointment";
@@ -68,5 +80,6 @@
 
         private DataGridView dataGridView1;
         private Button btnConfirm;
+        private Button btnBack;
     }
 }

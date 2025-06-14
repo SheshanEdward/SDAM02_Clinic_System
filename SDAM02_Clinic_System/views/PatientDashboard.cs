@@ -12,17 +12,18 @@ namespace SDAM02_Clinic_System.views
 {
     public partial class PatientDashboard : Form
     {
-        private int patientId;
+        private string patientId;
 
-        public PatientDashboard(string patientId)
+        public PatientDashboard()
         {
             InitializeComponent();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            PatientProfileView profile = new PatientProfileView();
+            profile.Show();
             this.Hide();
-            new PatientProfileDashboard(patientId).Show();
 
         }
 
@@ -41,7 +42,7 @@ namespace SDAM02_Clinic_System.views
         private void btnDoctors_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new PatientDoctor(patientId).Show();
+            new PatientDoctor().Show();
         }
     }
 }

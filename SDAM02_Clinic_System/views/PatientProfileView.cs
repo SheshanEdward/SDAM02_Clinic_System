@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SDAM02_Clinic_System.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,17 +12,16 @@ using System.Windows.Forms;
 
 namespace SDAM02_Clinic_System.views
 {
-    public partial class PatientProfileDashboard : Form
+    public partial class PatientProfileView : Form
     {
-
-        private int patientId;
-
-        public PatientProfileDashboard(int id)
+        private string patientId;
+        public PatientProfileView()
         {
             InitializeComponent();
-            patientId = id;
+            patientId = SessionManager.LoggedIn.ToString();
             LoadPatientData();
         }
+
 
         private void LoadPatientData()
         {
@@ -41,13 +41,12 @@ namespace SDAM02_Clinic_System.views
                             {
                                 txtFirstname.Text = reader["firstname"].ToString();
                                 txtLastname.Text = reader["lastname"].ToString();
-                                dtpDoB.Value = Convert.ToDateTime(reader["dob"]);
-                                txtNic.Text = reader["nic"].ToString();
-                                cmbGender.Text = reader["gender"].ToString();
-                                cmbBloodtype.Text = reader["blood_group"].ToString();
+                                txtDoB.Text = reader["dob"].ToString();
+                                txtNICnumber.Text = reader["nic"].ToString();
+                                txtGender.Text = reader["gender"].ToString();
+                                txtBloodtype.Text = reader["bloodtype"].ToString();
                                 txtHeight.Text = reader["height"].ToString();
                                 txtWeight.Text = reader["weight"].ToString();
-                                txtMobile.Text = reader["contact"].ToString();
                                 txtEmail.Text = reader["email"].ToString();
                                 txtAddress.Text = reader["address"].ToString();
                                 txtPassword.Text = reader["password"].ToString();
@@ -62,7 +61,7 @@ namespace SDAM02_Clinic_System.views
             }
         }
 
-        private void btnSaveEditedAccount_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             string connStr = "server=localhost;user=root;password=;database=clinic_system_db;";
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -90,10 +89,10 @@ namespace SDAM02_Clinic_System.views
                     {
                         cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text.Trim());
                         cmd.Parameters.AddWithValue("@lastname", txtLastname.Text.Trim());
-                        cmd.Parameters.AddWithValue("@dob", dtpDoB.Value.Date);
-                        cmd.Parameters.AddWithValue("@nic", txtNic.Text.Trim());
-                        cmd.Parameters.AddWithValue("@gender", cmbGender.Text);
-                        cmd.Parameters.AddWithValue("@bloodgroup", cmbBloodtype.Text);
+                        cmd.Parameters.AddWithValue("@dob", txtDoB.Text.Trim());
+                        cmd.Parameters.AddWithValue("@nic", txtNICnumber.Text.Trim());
+                        cmd.Parameters.AddWithValue("@gender", txtGender.Text);
+                        cmd.Parameters.AddWithValue("@bloodtype", txtBloodtype.Text);
                         cmd.Parameters.AddWithValue("@height", txtHeight.Text.Trim());
                         cmd.Parameters.AddWithValue("@weight", txtWeight.Text.Trim());
                         cmd.Parameters.AddWithValue("@contact", txtMobile.Text.Trim());
@@ -120,9 +119,7 @@ namespace SDAM02_Clinic_System.views
             this.Hide();
         }
 
-        // Delete Account logic 
-
-        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show("Are you sure you want to delete your account?",
                                           "Confirm Deletion",
@@ -149,7 +146,7 @@ namespace SDAM02_Clinic_System.views
                             // Redirect to Welcome dashboard 
                             welcome dashboard = new welcome();
                             dashboard.Show();
-                            this.Close(); 
+                            this.Close();
                         }
                     }
                     catch (Exception ex)

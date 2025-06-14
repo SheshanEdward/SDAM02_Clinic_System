@@ -13,64 +13,36 @@ namespace SDAM02_Clinic_System.views
 {
     public partial class PatientDoctor : Form
     {
-        private string patientId;
-        public PatientDoctor(string patientId)
+        public PatientDoctor()
         {
             InitializeComponent();
-            this.patientId = patientId;
-        }
-
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            LoadDoctorData();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new PatientDashboard(patientId).Show();  // Redirect back to PatientDashboard
+            PatientDashboard dashboard = new PatientDashboard();
+            dashboard.Show();
+            this.Close();
         }
 
-        private void LoadDoctorData()
+        private void LoadAllDoctors()
         {
             string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
+            string query = "SELECT doctor_id, SLMCno, firstname, lastname, specialization, email, mobile FROM doctor_profiles";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                try
-                {
-                    conn.Open();
-                    string query = @"
-                        SELECT 
-                            doctor_id AS 'Doctor ID', 
-                            firstname AS 'First Name', 
-                            lastname AS 'Last Name', 
-                            specialization AS 'Specialization', 
-                            email AS 'Email', 
-                            mobile AS 'Contact Number' 
-                        FROM doctor_profiles;";
-
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    dgvViewalldoctors.DataSource = dt;
-
-                    dgvViewalldoctors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dgvViewalldoctors.ReadOnly = true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading doctor data: " + ex.Message, "Database Error");
-                }
+                conn.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dgvViewdoctors.DataSource = table;
             }
         }
 
         private void PatientDoctor_Load(object sender, EventArgs e)
         {
-
+            LoadAllDoctors();
         }
-
-        
     }
 }

@@ -14,7 +14,7 @@ namespace SDAM02_Clinic_System.views
     public partial class PatientAllAppointments : Form
     {
         private string patientId;
-        private object dvgPatientappointments;
+        private DataGridView dvgPatientappointments;
 
         public PatientAllAppointments(string patientId)
         {
@@ -36,7 +36,7 @@ namespace SDAM02_Clinic_System.views
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new PatientDashboard(patientId).Show();
+            new PatientDashboard().Show();
         }
 
         private void LoadAppointments()

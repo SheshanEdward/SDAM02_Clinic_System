@@ -30,7 +30,7 @@ namespace SDAM02_Clinic_System.views
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new PatientDashboard(patientId).Show();
+            new PatientDashboard().Show();
         }
 
         // Loads prescription data from the database for the current patient
@@ -77,6 +77,13 @@ namespace SDAM02_Clinic_System.views
         private void PatientPrescription_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            PatientDashboard back = new PatientDashboard();
+            back.Show();
+            this.Hide();
         }
     }
 }

@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace SDAM02_Clinic_System.views
 {
-    public partial class PatientDeleteAppointment: Form
+    public partial class PatientDeleteAppointment : Form
     {
+        private string patientId;
         public PatientDeleteAppointment()
         {
             InitializeComponent();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            PatientAppointmentDashboard back = new PatientAppointmentDashboard(patientId);
+            back.Show();
+            this.Hide();
         }
     }
 }

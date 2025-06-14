@@ -14,9 +14,10 @@ namespace SDAM02_Clinic_System.views
     {
         private string patientId;
 
-        public PatientAppointmentDashboard(int patientId)
+        public PatientAppointmentDashboard(string patientId)
         {
             InitializeComponent();
+            this.patientId = patientId;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -29,6 +30,13 @@ namespace SDAM02_Clinic_System.views
         {
             this.Hide();
             new PatientScheduleAppointment(patientId).Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            PatientDashboard back = new PatientDashboard();
+            back.Show();
+            this.Hide();
         }
     }
 }

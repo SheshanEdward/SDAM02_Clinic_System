@@ -1,5 +1,4 @@
-﻿
-namespace SDAM02_Clinic_System.views
+﻿namespace SDAM02_Clinic_System.views
 {
     partial class PatientDoctor
     {
@@ -29,64 +28,60 @@ namespace SDAM02_Clinic_System.views
         /// </summary>
         private void InitializeComponent()
         {
-            dgvViewalldoctors = new DataGridView();
-            btnLoad = new Button();
+            label1 = new Label();
+            dgvViewdoctors = new DataGridView();
             btnBack = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvViewalldoctors).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvViewdoctors).BeginInit();
             SuspendLayout();
             // 
-            // dgvViewalldoctors
+            // label1
             // 
-            dgvViewalldoctors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvViewalldoctors.Location = new Point(64, 31);
-            dgvViewalldoctors.Name = "dgvViewalldoctors";
-            dgvViewalldoctors.RowHeadersWidth = 51;
-            dgvViewalldoctors.Size = new Size(673, 287);
-            dgvViewalldoctors.TabIndex = 0;
+            label1.AutoSize = true;
+            label1.Location = new Point(333, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
             // 
-            // btnLoad
+            // dgvViewdoctors
             // 
-            btnLoad.Location = new Point(64, 341);
-            btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(94, 29);
-            btnLoad.TabIndex = 1;
-            btnLoad.Text = "Load";
-            btnLoad.UseVisualStyleBackColor = true;
+            dgvViewdoctors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvViewdoctors.Location = new Point(7, 50);
+            dgvViewdoctors.Name = "dgvViewdoctors";
+            dgvViewdoctors.RowHeadersWidth = 51;
+            dgvViewdoctors.Size = new Size(781, 321);
+            dgvViewdoctors.TabIndex = 1;
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(644, 349);
+            btnBack.Location = new Point(347, 396);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
             btnBack.TabIndex = 2;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click_1;
+            btnBack.Click += btnBack_Click;
             // 
             // PatientDoctor
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(795, 450);
             Controls.Add(btnBack);
-            Controls.Add(btnLoad);
-            Controls.Add(dgvViewalldoctors);
+            Controls.Add(dgvViewdoctors);
+            Controls.Add(label1);
             Name = "PatientDoctor";
             Text = "PatientDoctor";
             Load += PatientDoctor_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvViewalldoctors).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvViewdoctors).EndInit();
             ResumeLayout(false);
-        }
-
-        private void btnBack_Click_1(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+            PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dgvViewalldoctors;
-        private Button btnLoad;
+        private Label label1;
+        private DataGridView dgvViewdoctors;
         private Button btnBack;
     }
 }

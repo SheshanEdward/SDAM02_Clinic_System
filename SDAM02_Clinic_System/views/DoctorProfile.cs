@@ -56,7 +56,6 @@ namespace SDAM02_Clinic_System.views
                                 txtLastname.Text = reader["lastname"].ToString();
                                 txtDoB.Text = reader["dob"].ToString();
                                 txtNICnumber.Text = reader["nic"].ToString();
-                                txtSpecialization.Text = reader["gender"].ToString();
                                 txtSLMCnumber.Text = reader["bloodtype"].ToString();
                                 txtEmail.Text = reader["email"].ToString();
                                 txtAddress.Text = reader["address"].ToString();

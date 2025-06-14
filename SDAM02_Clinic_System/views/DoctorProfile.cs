@@ -18,6 +18,7 @@ namespace SDAM02_Clinic_System.views
         public DoctorProfile()
         {
             InitializeComponent();
+            doctorId = SessionManager.LoggedIn.ToString();
             LoadDoctorData();
         }
 
@@ -66,7 +67,7 @@ namespace SDAM02_Clinic_System.views
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error loading patient data: " + ex.Message);
+                    MessageBox.Show("Error loading doctor data: " + ex.Message);
                 }
             }
         }

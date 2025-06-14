@@ -55,6 +55,7 @@
             txtWeight = new TextBox();
             txtAddress = new TextBox();
             lblPAtientID = new Label();
+            btnBack = new Button();
             SuspendLayout();
             // 
             // label1
@@ -176,21 +177,23 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(279, 389);
+            btnSave.Location = new Point(354, 421);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(99, 49);
             btnSave.TabIndex = 25;
             btnSave.Text = "Save Changes";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(404, 389);
+            btnDelete.Location = new Point(694, 421);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 49);
             btnDelete.TabIndex = 26;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // txtFirstname
             // 
@@ -278,11 +281,22 @@
             lblPAtientID.TabIndex = 39;
             lblPAtientID.Text = "Patient ID";
             // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(12, 421);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 49);
+            btnBack.TabIndex = 40;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // ViewIndividualPatient
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(805, 482);
+            Controls.Add(btnBack);
             Controls.Add(lblPAtientID);
             Controls.Add(txtAddress);
             Controls.Add(txtWeight);
@@ -346,5 +360,6 @@
         private TextBox txtWeight;
         private TextBox txtAddress;
         private Label lblPAtientID;
+        private Button btnBack;
     }
 }

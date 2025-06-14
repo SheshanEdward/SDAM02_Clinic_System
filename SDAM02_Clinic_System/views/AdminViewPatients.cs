@@ -51,5 +51,12 @@ namespace SDAM02_Clinic_System.views
                 viewPatient.ShowDialog();
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            AdminDashboard dashBoard = new AdminDashboard();
+            dashBoard.Show();
+            this.Close();
+        }
     }
 }

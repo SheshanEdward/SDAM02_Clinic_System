@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             dgvAllpatients = new DataGridView();
+            btnBack = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvAllpatients).BeginInit();
             SuspendLayout();
             // 
@@ -41,11 +42,22 @@
             dgvAllpatients.Size = new Size(1198, 366);
             dgvAllpatients.TabIndex = 0;
             // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(34, 403);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 1;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // AdminViewPatients
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1222, 450);
+            Controls.Add(btnBack);
             Controls.Add(dgvAllpatients);
             Name = "AdminViewPatients";
             Text = "AdminViewPatients";
@@ -57,5 +69,6 @@
         #endregion
 
         private DataGridView dgvAllpatients;
+        private Button btnBack;
     }
 }

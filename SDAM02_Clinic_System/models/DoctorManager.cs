@@ -76,11 +76,9 @@ namespace SDAM02_Clinic_System.models
                             appointment_id INT AUTO_INCREMENT PRIMARY KEY, 
 
                             patient_id VARCHAR(50), 
-
                             appointment_date DATE, 
-
-                            appointment_time TIME 
-
+                            appointment_time TIME,
+                            medication TEXT
                         );";
 
 

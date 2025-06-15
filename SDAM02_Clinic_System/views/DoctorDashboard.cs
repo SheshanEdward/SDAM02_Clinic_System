@@ -19,24 +19,10 @@ namespace SDAM02_Clinic_System.views
             InitializeComponent();
         }
 
-        private void btnAppointments_Click(object sender, EventArgs e)
-        {
-            DoctorAppointments doctorAppointments = new DoctorAppointments();
-            doctorAppointments.Show();
-            this.Hide();
-        }
-
         private void btnPrescription_Click(object sender, EventArgs e)
         {
             DoctorPrescriptions prescriptionsForm = new DoctorPrescriptions();
             prescriptionsForm.Show();
-            this.Hide();
-        }
-
-        private void btnPatients_Click(object sender, EventArgs e)
-        {
-            DoctorAssignedPatients assignedPatients = new DoctorAssignedPatients();
-            assignedPatients.Show();
             this.Hide();
         }
 

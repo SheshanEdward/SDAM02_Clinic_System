@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SDAM02_Clinic_System.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,67 +14,53 @@ namespace SDAM02_Clinic_System.views
 {
     public partial class PatientPrescription : Form
     {
-        private string patientId;
+        private string patientId = SessionManager.LoggedIn;
         public PatientPrescription(string patientId)
         {
             InitializeComponent();
             this.patientId = patientId;
+            ViewPrescriptions();
         }
 
         // Load button click - loads all prescriptions for the patient
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            LoadPrescriptions();
-        }
+        
 
         // Back button - go back to PatientDashboard
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new PatientDashboard().Show();
+            PatientDashboard dashboard = new PatientDashboard();
+            dashboard.Show();
+            this.Close();
         }
 
         // Loads prescription data from the database for the current patient
-        private void LoadPrescriptions()
+        private void ViewPrescriptions()
         {
             string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
+            string tableName = $"prescriptions_patient_{patientId}";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
+                    string query = $"SELECT * FROM {tableName};";
 
-                    string query = @"
-                        SELECT 
-                            prescription_id AS 'Prescription ID',
-                            drug_name AS 'Drug Name',
-                            dosage AS 'Dosage',
-                            notes AS 'Notes',
-                            date_prescribed AS 'Date Prescribed'
-                        FROM prescriptions
-                        WHERE patient_id = @patient_id;";
-
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@patient_id", patientId);
-
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    dgvViewPrescription.DataSource = dt;
-
-                    dgvViewPrescription.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dgvViewPrescription.ReadOnly = true;
-                    dgvViewPrescription.AllowUserToAddRows = false;
-                    dgvViewPrescription.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dgvViewPrescription.DataSource = dt;
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error loading prescriptions: " + ex.Message, "Database Error");
+                    MessageBox.Show("Error loading appointments: " + ex.Message);
                 }
             }
         }
+
         private void PatientPrescription_Load(object sender, EventArgs e)
         {
 
@@ -83,7 +70,7 @@ namespace SDAM02_Clinic_System.views
         {
             PatientDashboard back = new PatientDashboard();
             back.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

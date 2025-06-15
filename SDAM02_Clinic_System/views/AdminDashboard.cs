@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SDAM02_Clinic_System.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,12 @@ namespace SDAM02_Clinic_System.views
             AdminAllAppointments adminAllAppointments = new AdminAllAppointments();
             adminAllAppointments.Show();
             this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            SessionManager.LogOut();
+            this.Close();
         }
     }
 }

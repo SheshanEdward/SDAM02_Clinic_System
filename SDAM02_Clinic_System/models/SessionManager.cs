@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -153,6 +154,15 @@ namespace SDAM02_Clinic_System.models
             }
 
             return null;
+        }
+
+
+
+        public static void LogOut()
+        {
+            SessionManager.LoggedIn = null;
+            welcome loginpage = new welcome();
+            loginpage.Show();
         }
 
 

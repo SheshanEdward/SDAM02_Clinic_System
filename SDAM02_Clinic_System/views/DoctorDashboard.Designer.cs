@@ -32,6 +32,7 @@
             btnProfile = new Button();
             btnPrescription = new Button();
             btnMyappointments = new Button();
+            btnLogout = new Button();
             SuspendLayout();
             // 
             // label1
@@ -73,11 +74,22 @@
             btnMyappointments.UseVisualStyleBackColor = true;
             btnMyappointments.Click += btnMyappointments_Click;
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new Point(40, 399);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(94, 29);
+            btnLogout.TabIndex = 5;
+            btnLogout.Text = "Log Out";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // DoctorDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnLogout);
             Controls.Add(btnMyappointments);
             Controls.Add(btnPrescription);
             Controls.Add(btnProfile);
@@ -94,5 +106,6 @@
         private Button btnProfile;
         private Button btnPrescription;
         private Button btnMyappointments;
+        private Button btnLogout;
     }
 }

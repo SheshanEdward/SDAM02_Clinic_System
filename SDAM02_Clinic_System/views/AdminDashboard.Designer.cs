@@ -33,6 +33,7 @@
             btnPatients = new Button();
             btnAppointments = new Button();
             btnDoctors = new Button();
+            btnLogout = new Button();
             SuspendLayout();
             // 
             // label1
@@ -66,7 +67,7 @@
             // 
             // btnAppointments
             // 
-            btnAppointments.Location = new Point(324, 260);
+            btnAppointments.Location = new Point(344, 260);
             btnAppointments.Name = "btnAppointments";
             btnAppointments.Size = new Size(114, 29);
             btnAppointments.TabIndex = 3;
@@ -84,11 +85,22 @@
             btnDoctors.UseVisualStyleBackColor = true;
             btnDoctors.Click += btnDoctors_Click;
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new Point(29, 395);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(94, 29);
+            btnLogout.TabIndex = 6;
+            btnLogout.Text = "Log Out";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnLogout);
             Controls.Add(btnDoctors);
             Controls.Add(btnAppointments);
             Controls.Add(btnPatients);
@@ -107,5 +119,6 @@
         private Button btnPatients;
         private Button btnAppointments;
         private Button btnDoctors;
+        private Button btnLogout;
     }
 }

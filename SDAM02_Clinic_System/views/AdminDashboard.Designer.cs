@@ -32,14 +32,13 @@
             btnProfile = new Button();
             btnPatients = new Button();
             btnAppointments = new Button();
-            btnSchedule = new Button();
             btnDoctors = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(367, 34);
+            label1.Location = new Point(344, 22);
             label1.Name = "label1";
             label1.Size = new Size(82, 20);
             label1.TabIndex = 0;
@@ -57,7 +56,7 @@
             // 
             // btnPatients
             // 
-            btnPatients.Location = new Point(292, 124);
+            btnPatients.Location = new Point(344, 124);
             btnPatients.Name = "btnPatients";
             btnPatients.Size = new Size(94, 29);
             btnPatients.TabIndex = 2;
@@ -67,25 +66,16 @@
             // 
             // btnAppointments
             // 
-            btnAppointments.Location = new Point(168, 255);
+            btnAppointments.Location = new Point(324, 260);
             btnAppointments.Name = "btnAppointments";
             btnAppointments.Size = new Size(114, 29);
             btnAppointments.TabIndex = 3;
             btnAppointments.Text = "Appointments";
             btnAppointments.UseVisualStyleBackColor = true;
             // 
-            // btnSchedule
-            // 
-            btnSchedule.Location = new Point(442, 255);
-            btnSchedule.Name = "btnSchedule";
-            btnSchedule.Size = new Size(94, 29);
-            btnSchedule.TabIndex = 4;
-            btnSchedule.Text = "Schedule";
-            btnSchedule.UseVisualStyleBackColor = true;
-            // 
             // btnDoctors
             // 
-            btnDoctors.Location = new Point(539, 124);
+            btnDoctors.Location = new Point(663, 124);
             btnDoctors.Name = "btnDoctors";
             btnDoctors.Size = new Size(94, 29);
             btnDoctors.TabIndex = 5;
@@ -99,7 +89,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnDoctors);
-            Controls.Add(btnSchedule);
             Controls.Add(btnAppointments);
             Controls.Add(btnPatients);
             Controls.Add(btnProfile);
@@ -116,7 +105,6 @@
         private Button btnProfile;
         private Button btnPatients;
         private Button btnAppointments;
-        private Button btnSchedule;
         private Button btnDoctors;
     }
 }

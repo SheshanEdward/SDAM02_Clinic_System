@@ -13,7 +13,9 @@ using System.Windows.Forms;
 namespace SDAM02_Clinic_System.views
 {
     public partial class PatientConfirmAppointment : Form
+
     {
+        public string patientId;
         public string doctor_Id;
         public PatientConfirmAppointment(string id)
         {
@@ -55,13 +57,13 @@ namespace SDAM02_Clinic_System.views
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             string patientId = SessionManager.LoggedIn;
-            string doctorId = lblDoctorid.Text; 
+            string doctorId = lblDoctorid.Text;
 
             DateTime selectedDate = dtpDate.Value;
             DateTime selectedTime = dtpTime.Value;
 
             Appointment newAppointment = new Appointment(
-                "", 
+                "",
                 patientId,
                 doctorId,
                 selectedDate.Date,
@@ -70,6 +72,13 @@ namespace SDAM02_Clinic_System.views
 
             AppointmentManager manager = new AppointmentManager();
             manager.SubmitAppointment(newAppointment);
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new PatientDashboard(patientId).show();
 
         }
     }

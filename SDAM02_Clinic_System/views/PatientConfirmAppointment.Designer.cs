@@ -50,6 +50,7 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
+            btnBack = new Button();
             SuspendLayout();
             // 
             // label1
@@ -213,7 +214,7 @@
             // 
             // btnConfirm
             // 
-            btnConfirm.Location = new Point(375, 402);
+            btnConfirm.Location = new Point(131, 408);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(94, 29);
             btnConfirm.TabIndex = 18;
@@ -248,11 +249,22 @@
             label11.TabIndex = 21;
             label11.Text = "Confirm Appointment";
             // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(656, 409);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 22;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // PatientConfirmAppointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(847, 466);
+            Controls.Add(btnBack);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -305,5 +317,6 @@
         private Label label9;
         private Label label10;
         private Label label11;
+        private Button btnBack;
     }
 }

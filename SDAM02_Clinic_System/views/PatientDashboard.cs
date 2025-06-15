@@ -14,9 +14,10 @@ namespace SDAM02_Clinic_System.views
     {
         private string patientId;
 
-        public PatientDashboard()
+        public PatientDashboard(string patientId)
         {
             InitializeComponent();
+            this.patientId = patientId;
         }
 
         private void btnProfile_Click(object sender, EventArgs e)

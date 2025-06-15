@@ -77,8 +77,9 @@ namespace SDAM02_Clinic_System.views
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new PatientDashboard().show();
+            PatientAllAppointments patientAllAppointments = new PatientAllAppointments();
+            patientAllAppointments.Show();
+            this.Close();
 
         }
     }

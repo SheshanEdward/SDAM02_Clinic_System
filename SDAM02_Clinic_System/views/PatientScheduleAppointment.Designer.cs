@@ -30,16 +30,17 @@
         {
             dgvAlldoctors = new DataGridView();
             btnBack = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvAlldoctors).BeginInit();
             SuspendLayout();
             // 
             // dgvAlldoctors
             // 
             dgvAlldoctors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAlldoctors.Location = new Point(8, 9);
+            dgvAlldoctors.Location = new Point(8, 37);
             dgvAlldoctors.Name = "dgvAlldoctors";
             dgvAlldoctors.RowHeadersWidth = 51;
-            dgvAlldoctors.Size = new Size(1356, 397);
+            dgvAlldoctors.Size = new Size(1356, 369);
             dgvAlldoctors.TabIndex = 0;
             // 
             // btnBack
@@ -52,11 +53,21 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(539, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(350, 20);
+            label1.TabIndex = 2;
+            label1.Text = "Double click on doctor to schedule an appointment";
+            // 
             // PatientScheduleAppointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1367, 450);
+            Controls.Add(label1);
             Controls.Add(btnBack);
             Controls.Add(dgvAlldoctors);
             Name = "PatientScheduleAppointment";
@@ -64,11 +75,13 @@
             Load += PatientScheduleAppointment_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAlldoctors).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dgvAlldoctors;
         private Button btnBack;
+        private Label label1;
     }
 }

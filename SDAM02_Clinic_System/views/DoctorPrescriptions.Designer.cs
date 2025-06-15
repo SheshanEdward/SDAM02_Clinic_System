@@ -31,8 +31,6 @@
             label1 = new Label();
             dgvViewprescriptions = new DataGridView();
             btnCreateprescription = new Button();
-            btnEditprescription = new Button();
-            btnDeletePrescription = new Button();
             btnBack = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)dgvViewprescriptions).BeginInit();
@@ -66,24 +64,6 @@
             btnCreateprescription.Text = "Create new prescription";
             btnCreateprescription.UseVisualStyleBackColor = true;
             // 
-            // btnEditprescription
-            // 
-            btnEditprescription.Location = new Point(560, 340);
-            btnEditprescription.Name = "btnEditprescription";
-            btnEditprescription.Size = new Size(174, 40);
-            btnEditprescription.TabIndex = 3;
-            btnEditprescription.Text = "Edit prescription ";
-            btnEditprescription.UseVisualStyleBackColor = true;
-            // 
-            // btnDeletePrescription
-            // 
-            btnDeletePrescription.Location = new Point(327, 344);
-            btnDeletePrescription.Name = "btnDeletePrescription";
-            btnDeletePrescription.Size = new Size(168, 34);
-            btnDeletePrescription.TabIndex = 4;
-            btnDeletePrescription.Text = "Delete Prescription ";
-            btnDeletePrescription.UseVisualStyleBackColor = true;
-            // 
             // btnBack
             // 
             btnBack.Location = new Point(19, 414);
@@ -100,8 +80,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnBack);
-            Controls.Add(btnDeletePrescription);
-            Controls.Add(btnEditprescription);
             Controls.Add(btnCreateprescription);
             Controls.Add(dgvViewprescriptions);
             Controls.Add(label1);
@@ -118,8 +96,6 @@
         private Label label1;
         private DataGridView dgvViewprescriptions;
         private Button btnCreateprescription;
-        private Button btnEditprescription;
-        private Button btnDeletePrescription;
         private Button btnBack;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }

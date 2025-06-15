@@ -50,6 +50,20 @@ namespace SDAM02_Clinic_System.models
                     }
 
 
+                    string insertToAllAppointments = @"
+                        INSERT INTO all_appointments (patient_id, doctor_id, appointment_date, appointment_time)
+                        VALUES (@patient_id_all, @doctor_id_all, @date_all, @time_all);";
+
+                    using (MySqlCommand cmdAll = new MySqlCommand(insertToAllAppointments, conn))
+                    {
+                        cmdAll.Parameters.AddWithValue("@patient_id_all", patientId);
+                        cmdAll.Parameters.AddWithValue("@doctor_id_all", appointment.doctor_Id);
+                        cmdAll.Parameters.AddWithValue("@date_all", appointment.appointmentDate.Date);
+                        cmdAll.Parameters.AddWithValue("@time_all", appointment.appointmentTime.TimeOfDay);
+                        cmdAll.ExecuteNonQuery();
+                    }
+
+
                     MessageBox.Show("Appointment scheduled successfully.");
                 }
                 catch (Exception ex)

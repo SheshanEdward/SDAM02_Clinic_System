@@ -30,7 +30,6 @@
         {
             label1 = new Label();
             dgvViewprescriptions = new DataGridView();
-            btnCreateprescription = new Button();
             btnBack = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)dgvViewprescriptions).BeginInit();
@@ -55,15 +54,6 @@
             dgvViewprescriptions.Size = new Size(671, 203);
             dgvViewprescriptions.TabIndex = 1;
             // 
-            // btnCreateprescription
-            // 
-            btnCreateprescription.Location = new Point(63, 339);
-            btnCreateprescription.Name = "btnCreateprescription";
-            btnCreateprescription.Size = new Size(199, 41);
-            btnCreateprescription.TabIndex = 2;
-            btnCreateprescription.Text = "Create new prescription";
-            btnCreateprescription.UseVisualStyleBackColor = true;
-            // 
             // btnBack
             // 
             btnBack.Location = new Point(19, 414);
@@ -80,7 +70,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnBack);
-            Controls.Add(btnCreateprescription);
             Controls.Add(dgvViewprescriptions);
             Controls.Add(label1);
             Name = "DoctorPrescriptions";
@@ -95,7 +84,6 @@
 
         private Label label1;
         private DataGridView dgvViewprescriptions;
-        private Button btnCreateprescription;
         private Button btnBack;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }

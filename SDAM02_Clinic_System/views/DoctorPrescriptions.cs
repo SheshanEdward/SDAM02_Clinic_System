@@ -57,13 +57,6 @@ namespace SDAM02_Clinic_System.views
             }
         }
 
-        private void btnCreateprescription_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new DoctorCreatePrescriptions(doctorId).Show();
-        }
-
-
 
         private void btnBack_Click(object sender, EventArgs e)
         {

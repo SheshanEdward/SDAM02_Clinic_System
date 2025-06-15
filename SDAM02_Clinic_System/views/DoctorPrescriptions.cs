@@ -14,7 +14,7 @@ namespace SDAM02_Clinic_System.views
     public partial class DoctorPrescriptions : Form
     {
         private string doctorId;
-        public DoctorPrescriptions(string doctorId)
+        public DoctorPrescriptions()
         {
             InitializeComponent();
             this.doctorId = doctorId;
@@ -120,7 +120,7 @@ namespace SDAM02_Clinic_System.views
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new DoctorDashboard(doctorId).Show();
+            new DoctorDashboard().Show();
         }
 
     }

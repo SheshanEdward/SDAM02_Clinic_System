@@ -47,16 +47,17 @@
             // 
             // btnSchedule
             // 
-            btnSchedule.Location = new Point(315, 392);
+            btnSchedule.Location = new Point(332, 402);
             btnSchedule.Name = "btnSchedule";
             btnSchedule.Size = new Size(212, 36);
             btnSchedule.TabIndex = 1;
             btnSchedule.Text = "Schedule New Appointment";
             btnSchedule.UseVisualStyleBackColor = true;
+            btnSchedule.Click += btnSchedule_Click_1;
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(45, 399);
+            btnLoad.Location = new Point(775, 409);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(96, 29);
             btnLoad.TabIndex = 2;
@@ -65,12 +66,13 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(721, 394);
+            btnBack.Location = new Point(12, 409);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
             btnBack.TabIndex = 3;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click_1;
             // 
             // PatientAllAppointments
             // 

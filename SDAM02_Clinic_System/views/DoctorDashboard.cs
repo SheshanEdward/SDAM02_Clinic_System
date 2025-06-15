@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SDAM02_Clinic_System.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,8 @@ namespace SDAM02_Clinic_System.views
 {
     public partial class DoctorDashboard : Form
     {
-        public DoctorDashboard(string doctorId)
+       
+        public DoctorDashboard()
         {
             InitializeComponent();
         }

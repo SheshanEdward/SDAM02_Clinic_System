@@ -14,103 +14,103 @@ namespace SDAM02_Clinic_System.models
         // Utility: Create connection
         //private MySqlConnection GetConnection()
         //{
-            //return new MySqlConnection(connectionString);
+        //return new MySqlConnection(connectionString);
         //}
 
         // Utility: Generate next appointment ID
         //private string GenerateNextId(MySqlConnection conn)
         //{
-            //string newId = "AP001";
-            //string query = "SELECT appointment_id FROM appointment_data ORDER BY appointment_id DESC LIMIT 1;";
-            //using (MySqlCommand cmd = new MySqlCommand(query, conn))
-            //{
-                //object result = cmd.ExecuteScalar();
-                //if (result != null)
-                //{
-                    //int lastNumber = int.Parse(result.ToString().Substring(2)) + 1;
-                    //newId = $"AP{lastNumber:D3}";
-                //}
-            //}
-            //return newId;
+        //string newId = "AP001";
+        //string query = "SELECT appointment_id FROM appointment_data ORDER BY appointment_id DESC LIMIT 1;";
+        //using (MySqlCommand cmd = new MySqlCommand(query, conn))
+        //{
+        //object result = cmd.ExecuteScalar();
+        //if (result != null)
+        //{
+        //int lastNumber = int.Parse(result.ToString().Substring(2)) + 1;
+        //newId = $"AP{lastNumber:D3}";
+        //}
+        //}
+        //return newId;
         //}
 
         // Utility: Map reader to Appointment object
         //private Appointment MapReaderToAppointment(MySqlDataReader reader)
         //{
-            //return new Appointment
-            //{
-                //AppointmentId = reader["appointment_id"].ToString(),
-                //PatientId = reader["patient_id"].ToString(),
-                //DoctorId = reader["doctor_id"].ToString(),
-                //ServiceId = Convert.ToInt32(reader["service_id"]),
-                //AppointmentDate = Convert.ToDateTime(reader["appointment_date"]),
-                //Status = reader["status"].ToString()
-            //};
+        //return new Appointment
+        //{
+        //AppointmentId = reader["appointment_id"].ToString(),
+        //PatientId = reader["patient_id"].ToString(),
+        //DoctorId = reader["doctor_id"].ToString(),
+        //ServiceId = Convert.ToInt32(reader["service_id"]),
+        //AppointmentDate = Convert.ToDateTime(reader["appointment_date"]),
+        //Status = reader["status"].ToString()
+        //};
         //}
 
         // Public: Check if a doctor is available at a time
         //public bool CheckDoctorAvailability(string doctorId, DateTime date)
         //{
-            //using (var conn = GetConnection())
-            //{
-                //conn.Open();
-                //string query = @"SELECT COUNT(*) FROM appointment_data 
-                             //WHERE doctor_id = @doctor_id AND appointment_date = @date AND status = 'Scheduled';";
-                //using (var cmd = new MySqlCommand(query, conn))
-                //{
-                    //cmd.Parameters.AddWithValue("@doctor_id", doctorId);
-                    //cmd.Parameters.AddWithValue("@date", date);
-                    //return Convert.ToInt32(cmd.ExecuteScalar()) == 0;
-                //}
-            //}
+        //using (var conn = GetConnection())
+        //{
+        //conn.Open();
+        //string query = @"SELECT COUNT(*) FROM appointment_data 
+        //WHERE doctor_id = @doctor_id AND appointment_date = @date AND status = 'Scheduled';";
+        //using (var cmd = new MySqlCommand(query, conn))
+        //{
+        //cmd.Parameters.AddWithValue("@doctor_id", doctorId);
+        //cmd.Parameters.AddWithValue("@date", date);
+        //return Convert.ToInt32(cmd.ExecuteScalar()) == 0;
+        //}
+        //}
         //}
 
         // Public: Book appointment
         //public bool BookAppointment(string patientId, string doctorId, int serviceId, DateTime appointmentDate, out string message)
         //{
-            //message = "";
-            //using (var conn = GetConnection())
-            //{
-               // try
-                //{
-                    //conn.Open();
+        //message = "";
+        //using (var conn = GetConnection())
+        //{
+        // try
+        //{
+        //conn.Open();
 
-                    //if (!CheckDoctorAvailability(doctorId, appointmentDate))
-                    //{
-                        //message = "Doctor is not available at this time.";
-                        //return false;
-                    //}
+        //if (!CheckDoctorAvailability(doctorId, appointmentDate))
+        //{
+        //message = "Doctor is not available at this time.";
+        //return false;
+        //}
 
-                    //string newId = GenerateNextId(conn);
-                    //string query = @"INSERT INTO appointment_data 
-                                 //(appointment_id, patient_id, doctor_id, service_id, appointment_date, status)
-                                 //VALUES (@id, @patient, @doctor, @service, @date, 'Scheduled');";
+        //string newId = GenerateNextId(conn);
+        //string query = @"INSERT INTO appointment_data 
+        //(appointment_id, patient_id, doctor_id, service_id, appointment_date, status)
+        //VALUES (@id, @patient, @doctor, @service, @date, 'Scheduled');";
 
-                    //using (var cmd = new MySqlCommand(query, conn))
-                    //{
-                        //cmd.Parameters.AddWithValue("@id", newId);
-                        //cmd.Parameters.AddWithValue("@patient", patientId);
-                        //cmd.Parameters.AddWithValue("@doctor", doctorId);
-                        //cmd.Parameters.AddWithValue("@service", serviceId);
-                        //cmd.Parameters.AddWithValue("@date", appointmentDate);
-                        //cmd.ExecuteNonQuery();
-                    //}
+        //using (var cmd = new MySqlCommand(query, conn))
+        //{
+        //cmd.Parameters.AddWithValue("@id", newId);
+        //cmd.Parameters.AddWithValue("@patient", patientId);
+        //cmd.Parameters.AddWithValue("@doctor", doctorId);
+        //cmd.Parameters.AddWithValue("@service", serviceId);
+        //cmd.Parameters.AddWithValue("@date", appointmentDate);
+        //cmd.ExecuteNonQuery();
+        //}
 
-                    //message = $"Appointment booked successfully! ID: {newId}";
-                    //return true;
-                //}
-                //catch (Exception ex)
-                //{
-                    //message = "Error: " + ex.Message;
-                    //return false;
-                //}
-            //}
+        //message = $"Appointment booked successfully! ID: {newId}";
+        //return true;
+        //}
+        //catch (Exception ex)
+        //{
+        //message = "Error: " + ex.Message;
+        //return false;
+        //}
+        //}
         //}
 
         // Public: View appointments by patient
         //public List<Appointment> ViewAppointmentsByPatient(string patientId)
         //{
-            //var appointments = new List<Appointment>();
+        //var appointments = new List<Appointment>();
         //    using (var conn = GetConnection())
         //    {
         //        conn.Open();
@@ -223,10 +223,10 @@ namespace SDAM02_Clinic_System.models
         //    return null;
         //}
 
-        public virtual void ScheduleAppointment()
-        {
-            string patient = SessionManager.LoggedIn;
-        }
+        //public virtual void scheduleappointment()
+        //{
+        //    string patient = sessionmanager.loggedin;
+        //}
 
 
 

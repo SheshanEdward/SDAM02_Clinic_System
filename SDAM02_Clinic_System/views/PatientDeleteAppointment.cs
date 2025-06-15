@@ -20,8 +20,8 @@ namespace SDAM02_Clinic_System.views
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            PatientAppointmentDashboard back = new PatientAppointmentDashboard(patientId);
-            back.Show();
+            //PatientAppointmentDashboard back = new PatientAppointmentDashboard(patientId);
+            ////back.Show();
             this.Hide();
         }
     }

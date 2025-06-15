@@ -113,7 +113,7 @@ namespace SDAM02_Clinic_System.views
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Prescription updated successfully.");
                     this.Hide();
-                    new DoctorPrescriptions(doctorId).Show();
+                    new DoctorPrescriptions().Show();
                 }
                 catch (Exception ex)
                 {
@@ -125,7 +125,7 @@ namespace SDAM02_Clinic_System.views
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new DoctorDashboard(doctorId).Show();
+            new DoctorDashboard().Show();
         }
 
         private void lstDrugs_SelectedIndexChanged(object sender, EventArgs e)

@@ -16,7 +16,7 @@ namespace SDAM02_Clinic_System.views
         private string patientId;
         private DataGridView dvgPatientappointments;
 
-        public PatientAllAppointments(string patientId)
+        public PatientAllAppointments()
         {
             InitializeComponent();
             this.patientId = patientId;
@@ -29,8 +29,9 @@ namespace SDAM02_Clinic_System.views
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
+            PatientScheduleAppointment ScheduleAppointment = new PatientScheduleAppointment();
+            ScheduleAppointment.Show();
             this.Hide();
-            new PatientScheduleAppointment(patientId).Show();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -89,6 +90,18 @@ namespace SDAM02_Clinic_System.views
         private void PatientAllAppointments_Load(object sender, EventArgs e)
         {
             //Note to myself, please dont delete 
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            //DO not delete
+        }
+
+        private void btnSchedule_Click_1(object sender, EventArgs e)
+        {
+            PatientScheduleAppointment scheduleAppointment = new PatientScheduleAppointment();
+            scheduleAppointment.Show();
+            this.Hide();
         }
     }
 }

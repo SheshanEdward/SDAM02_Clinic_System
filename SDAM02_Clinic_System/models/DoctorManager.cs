@@ -28,7 +28,7 @@ namespace SDAM02_Clinic_System.models
                         object result = getLastIdCmd.ExecuteScalar();
                         string lastId = result?.ToString() ?? "";
 
-                        if (!string.IsNullOrEmpty(lastId) && lastId.StartsWith("D") && lastId.Length > 1)
+                        if (!string.IsNullOrEmpty(lastId) && lastId.StartsWith("d") && lastId.Length > 1)
                         {
                             int numericPart;
                             if (int.TryParse(lastId.Substring(1), out numericPart))

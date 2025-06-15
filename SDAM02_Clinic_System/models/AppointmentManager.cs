@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SDAM02_Clinic_System.models
 {
@@ -252,6 +253,20 @@ namespace SDAM02_Clinic_System.models
 
                         cmd.ExecuteNonQuery();
                     }
+
+
+                    string insertToDoctorTable = $@"
+                INSERT INTO `appointments_{appointment.doctor_Id}` (patient_id, appointment_date, appointment_time)
+                VALUES (@patient_id, @date, @time);";
+
+                    using (MySqlCommand cmdDoctor = new MySqlCommand(insertToDoctorTable, conn))
+                    {
+                        cmdDoctor.Parameters.AddWithValue("@patient_id", patientId);
+                        cmdDoctor.Parameters.AddWithValue("@date", appointment.appointmentDate.Date);
+                        cmdDoctor.Parameters.AddWithValue("@time", appointment.appointmentTime.TimeOfDay);
+                        cmdDoctor.ExecuteNonQuery();
+                    }
+
 
                     MessageBox.Show("Appointment scheduled successfully.");
                 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace SDAM02_Clinic_System.models
@@ -63,6 +64,35 @@ namespace SDAM02_Clinic_System.models
                             cmd.ExecuteNonQuery();
                             MessageBox.Show($"Account created successfully!  ID: {newDoctorId}");
                         }
+
+                        string safeDoctorId = Regex.Replace(newDoctorId, @"[^\w]", "");
+
+
+
+                        string createAppointmentsTable = $@" 
+
+                        CREATE TABLE IF NOT EXISTS appointments_{safeDoctorId} ( 
+
+                            appointment_id INT AUTO_INCREMENT PRIMARY KEY, 
+
+                            patient_id VARCHAR(50), 
+
+                            appointment_date DATE, 
+
+                            appointment_time TIME 
+
+                        );";
+
+
+
+                        using (MySqlCommand createTableCmd = new MySqlCommand(createAppointmentsTable, conn))
+
+                        {
+
+                            createTableCmd.ExecuteNonQuery();
+
+                        }
+
                     }
 
                 }

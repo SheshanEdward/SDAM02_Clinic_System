@@ -228,8 +228,38 @@ namespace SDAM02_Clinic_System.models
         //    string patient = sessionmanager.loggedin;
         //}
 
+        public void SubmitAppointment(Appointment appointment)
+        {
+            string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
+            string patientId = appointment.patientId;
+            string tableName = $"appointments_patient_{patientId}";
 
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
 
+                    string insertQuery = $@"
+                INSERT INTO `{tableName}` (doctor_id, appointment_date, appointment_time)
+                VALUES (@doctor_id, @date, @time);";
 
+                    using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@doctor_id", appointment.doctor_Id);
+                        cmd.Parameters.AddWithValue("@date", appointment.appointmentDate.Date);
+                        cmd.Parameters.AddWithValue("@time", appointment.appointmentTime.TimeOfDay);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Appointment scheduled successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
     }
 }

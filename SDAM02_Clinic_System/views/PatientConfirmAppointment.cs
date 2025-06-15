@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SDAM02_Clinic_System.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,27 @@ namespace SDAM02_Clinic_System.views
                     }
                 }
             }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            string patientId = SessionManager.LoggedIn;
+            string doctorId = lblDoctorid.Text; 
+
+            DateTime selectedDate = dtpDate.Value;
+            DateTime selectedTime = dtpTime.Value;
+
+            Appointment newAppointment = new Appointment(
+                "", 
+                patientId,
+                doctorId,
+                selectedDate.Date,
+                selectedTime
+            );
+
+            AppointmentManager manager = new AppointmentManager();
+            manager.SubmitAppointment(newAppointment);
+
         }
     }
 }

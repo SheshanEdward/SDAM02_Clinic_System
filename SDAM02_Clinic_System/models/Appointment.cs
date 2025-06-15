@@ -12,6 +12,7 @@ namespace SDAM02_Clinic_System.models
         private string PatientId;
         private string DoctorId;
         private DateTime AppointmentDate;
+        private DateTime AppointmentTime;
 
         //public static class AppointmentStatuses
         //{
@@ -26,11 +27,13 @@ namespace SDAM02_Clinic_System.models
         //  return $"[ID: {AppointmentId}] {AppointmentDate:dd MMM yyyy hh:mm tt} - Patient: {PatientId}, Doctor: {DoctorId}, Status: {Status}";
         //}
 
-        public Appointment(string AppointmentId, string PatientId, string DoctorId, DateTime AppointmentDate)
+        public Appointment(string AppointmentId, string PatientId, string DoctorId, DateTime AppointmentDate, DateTime AppointmentTime)
         {
             this.AppointmentId = AppointmentId;
             this.PatientId = PatientId;
             this.DoctorId = DoctorId;
+            this.AppointmentDate = AppointmentDate;
+            this.AppointmentTime = AppointmentTime;
         }
 
         public string appointmentId
@@ -55,6 +58,12 @@ namespace SDAM02_Clinic_System.models
         {
             get { return AppointmentDate; }
             set { AppointmentDate = value; }
+        }
+
+        public DateTime appointmentTime
+        {
+            get { return AppointmentTime; }
+            set { AppointmentTime = value; }
         }
     }
 }

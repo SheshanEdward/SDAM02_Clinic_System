@@ -23,7 +23,7 @@ namespace SDAM02_Clinic_System.models
             //Need to shrink the code and make it to work using variables and fucntions instead of repeating code.
             string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
 
-            if (ID.StartsWith("P"))
+            if (ID.StartsWith("p"))
             {
                 string query = "SELECT * FROM patient_profiles WHERE patient_id = @id AND password = @password";
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -54,7 +54,7 @@ namespace SDAM02_Clinic_System.models
                 }
             }
 
-            else if (ID.StartsWith("A"))
+            else if (ID.StartsWith("a"))
             {
                 string query = "SELECT * FROM admin_profiles WHERE admin_id = @id AND password = @password";
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -85,7 +85,7 @@ namespace SDAM02_Clinic_System.models
                 }
             }
 
-            else if (ID.StartsWith("D"))
+            else if (ID.StartsWith("d"))
             {
                 string query = "SELECT * FROM doctor_profiles WHERE doctor_id = @id AND password = @password";
                 using (MySqlConnection conn = new MySqlConnection(connectionString))

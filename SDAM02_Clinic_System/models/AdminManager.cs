@@ -22,7 +22,7 @@ namespace SDAM02_Clinic_System.models
 
                     // Generating ID
                     string getLastIdQuery = "SELECT admin_id FROM admin_profiles ORDER BY admin_id DESC LIMIT 1;";
-                    string newAdminId = "A001";
+                    string newAdminId = "a001";
 
                     using (MySqlCommand getLastIdCmd = new MySqlCommand(getLastIdQuery, conn))
                     {
@@ -32,7 +32,7 @@ namespace SDAM02_Clinic_System.models
                             string lastId = result.ToString(); 
                             int numericPart = int.Parse(lastId.Substring(1));
                             numericPart++;
-                            newAdminId = "A" + numericPart.ToString("D3");
+                            newAdminId = "a" + numericPart.ToString("D3");
                         }
                     }
 

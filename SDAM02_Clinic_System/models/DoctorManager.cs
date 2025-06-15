@@ -21,7 +21,7 @@ namespace SDAM02_Clinic_System.models
                     conn.Open();
 
                     string getLastIdQuery = "SELECT doctor_id FROM doctor_profiles ORDER BY doctor_id DESC LIMIT 1;";
-                    string newDoctorId = "D001";
+                    string newDoctorId = "d001";
 
                     using (MySqlCommand getLastIdCmd = new MySqlCommand(getLastIdQuery, conn))
                     {
@@ -34,7 +34,7 @@ namespace SDAM02_Clinic_System.models
                             if (int.TryParse(lastId.Substring(1), out numericPart))
                             {
                                 numericPart++;
-                                newDoctorId = "D" + numericPart.ToString("D3");
+                                newDoctorId = "d" + numericPart.ToString("D3");
                             }
                         }
 

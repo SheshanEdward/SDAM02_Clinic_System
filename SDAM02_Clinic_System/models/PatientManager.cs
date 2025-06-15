@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -23,7 +24,7 @@ namespace SDAM02_Clinic_System.models
 
                     // Generating ID
                     string getLastIdQuery = "SELECT patient_id FROM patient_profiles ORDER BY patient_id DESC LIMIT 1;";
-                    string newPatientId = "P001";
+                    string newPatientId = "p001";
 
                     using (MySqlCommand getLastIdCmd = new MySqlCommand(getLastIdQuery, conn))
                     {
@@ -33,7 +34,7 @@ namespace SDAM02_Clinic_System.models
                             string lastId = result.ToString();
                             int numericPart = int.Parse(lastId.Substring(1));
                             numericPart++;
-                            newPatientId = "P" + numericPart.ToString("D3");
+                            newPatientId = "p" + numericPart.ToString("D3");
                         }
                     }
 
@@ -59,6 +60,37 @@ namespace SDAM02_Clinic_System.models
 
                         cmd.ExecuteNonQuery();
                         MessageBox.Show($"Patient registered successfully! ID: {newPatientId}");
+                    }
+
+                    // Clean patient ID for table name
+                    string safePatientId = Regex.Replace(newPatientId, @"[^\w]", "");
+
+                    // Create appointments table for this patient
+                    string createAppointmentsTable = $@"
+                        CREATE TABLE IF NOT EXISTS appointments_patient_{safePatientId} (
+                            appointment_id INT AUTO_INCREMENT PRIMARY KEY,
+                            doctor_id VARCHAR(50),
+                            appointment_date DATE,
+                            appointment_time TIME
+                        );";
+
+                    using (MySqlCommand createAppointmentsCmd = new MySqlCommand(createAppointmentsTable, conn))
+                    {
+                        createAppointmentsCmd.ExecuteNonQuery();
+                    }
+
+                    // Create prescriptions table for this patient
+                    string createPrescriptionsTable = $@"
+                        CREATE TABLE IF NOT EXISTS prescriptions_patient_{safePatientId} (
+                            prescription_id INT AUTO_INCREMENT PRIMARY KEY,
+                            doctor_id VARCHAR(50),
+                            date DATE,
+                            medication TEXT
+                        );";
+
+                    using (MySqlCommand createPrescriptionsCmd = new MySqlCommand(createPrescriptionsTable, conn))
+                    {
+                        createPrescriptionsCmd.ExecuteNonQuery();
                     }
                 }
                 catch (Exception ex)

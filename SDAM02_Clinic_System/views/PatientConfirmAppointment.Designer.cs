@@ -44,6 +44,12 @@
             lblLastname = new Label();
             lblAvailable = new Label();
             lblTo = new Label();
+            dtpDate = new DateTimePicker();
+            dtpTime = new DateTimePicker();
+            btnConfirm = new Button();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -190,11 +196,69 @@
             lblTo.TabIndex = 15;
             lblTo.Text = "label16";
             // 
+            // dtpDate
+            // 
+            dtpDate.Location = new Point(147, 321);
+            dtpDate.Name = "dtpDate";
+            dtpDate.Size = new Size(250, 27);
+            dtpDate.TabIndex = 16;
+            // 
+            // dtpTime
+            // 
+            dtpTime.Format = DateTimePickerFormat.Time;
+            dtpTime.Location = new Point(582, 321);
+            dtpTime.Name = "dtpTime";
+            dtpTime.Size = new Size(103, 27);
+            dtpTime.TabIndex = 17;
+            // 
+            // btnConfirm
+            // 
+            btnConfirm.Location = new Point(375, 402);
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.Size = new Size(94, 29);
+            btnConfirm.TabIndex = 18;
+            btnConfirm.Text = "Confirm";
+            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(16, 326);
+            label9.Name = "label9";
+            label9.Size = new Size(94, 20);
+            label9.TabIndex = 19;
+            label9.Text = "Choose Date";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(463, 326);
+            label10.Name = "label10";
+            label10.Size = new Size(95, 20);
+            label10.TabIndex = 20;
+            label10.Text = "Choose Time";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(315, 27);
+            label11.Name = "label11";
+            label11.Size = new Size(154, 20);
+            label11.TabIndex = 21;
+            label11.Text = "Confirm Appointment";
+            // 
             // PatientConfirmAppointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(847, 466);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(btnConfirm);
+            Controls.Add(dtpTime);
+            Controls.Add(dtpDate);
             Controls.Add(lblTo);
             Controls.Add(lblAvailable);
             Controls.Add(lblLastname);
@@ -235,5 +299,11 @@
         private Label lblLastname;
         private Label lblAvailable;
         private Label lblTo;
+        private DateTimePicker dtpDate;
+        private DateTimePicker dtpTime;
+        private Button btnConfirm;
+        private Label label9;
+        private Label label10;
+        private Label label11;
     }
 }

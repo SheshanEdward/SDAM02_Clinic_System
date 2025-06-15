@@ -80,7 +80,7 @@ namespace SDAM02_Clinic_System.views
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Profile details updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close(); // Optional: close the form after update
+                        
 
                     }
                     else

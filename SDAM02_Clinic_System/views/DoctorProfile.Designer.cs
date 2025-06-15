@@ -56,11 +56,18 @@
             lblDoctorid = new Label();
             btnSave = new Button();
             btnDelete = new Button();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            txtDay = new TextBox();
+            txtFrom = new TextBox();
+            txtTo = new TextBox();
             SuspendLayout();
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(12, 409);
+            btnBack.Location = new Point(12, 561);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
             btnBack.TabIndex = 0;
@@ -274,7 +281,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(436, 409);
+            btnSave.Location = new Point(424, 561);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(111, 29);
             btnSave.TabIndex = 26;
@@ -284,7 +291,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(844, 409);
+            btnDelete.Location = new Point(844, 561);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(119, 29);
             btnDelete.TabIndex = 27;
@@ -292,11 +299,75 @@
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(63, 466);
+            label15.Name = "label15";
+            label15.Size = new Size(122, 20);
+            label15.TabIndex = 28;
+            label15.Text = "Consultation Day";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(433, 470);
+            label16.Name = "label16";
+            label16.Size = new Size(43, 20);
+            label16.TabIndex = 29;
+            label16.Text = "From";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(739, 470);
+            label17.Name = "label17";
+            label17.Size = new Size(25, 20);
+            label17.TabIndex = 30;
+            label17.Text = "To";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(447, 425);
+            label18.Name = "label18";
+            label18.Size = new Size(69, 20);
+            label18.TabIndex = 31;
+            label18.Text = "Schedule";
+            // 
+            // txtDay
+            // 
+            txtDay.Location = new Point(200, 463);
+            txtDay.Name = "txtDay";
+            txtDay.Size = new Size(199, 27);
+            txtDay.TabIndex = 32;
+            // 
+            // txtFrom
+            // 
+            txtFrom.Location = new Point(483, 467);
+            txtFrom.Name = "txtFrom";
+            txtFrom.Size = new Size(182, 27);
+            txtFrom.TabIndex = 33;
+            // 
+            // txtTo
+            // 
+            txtTo.Location = new Point(770, 467);
+            txtTo.Name = "txtTo";
+            txtTo.Size = new Size(174, 27);
+            txtTo.TabIndex = 34;
+            // 
             // DoctorProfile
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(975, 450);
+            ClientSize = new Size(975, 602);
+            Controls.Add(txtTo);
+            Controls.Add(txtFrom);
+            Controls.Add(txtDay);
+            Controls.Add(label18);
+            Controls.Add(label17);
+            Controls.Add(label16);
+            Controls.Add(label15);
             Controls.Add(btnDelete);
             Controls.Add(btnSave);
             Controls.Add(lblDoctorid);
@@ -361,5 +432,12 @@
         private Label lblDoctorid;
         private Button btnSave;
         private Button btnDelete;
+        private Label label15;
+        private Label label16;
+        private Label label17;
+        private Label label18;
+        private TextBox txtDay;
+        private TextBox txtFrom;
+        private TextBox txtTo;
     }
 }

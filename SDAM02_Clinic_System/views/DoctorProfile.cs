@@ -62,6 +62,9 @@ namespace SDAM02_Clinic_System.views
                                 txtEmail.Text = reader["email"].ToString();
                                 txtAddress.Text = reader["address"].ToString();
                                 txtPassword.Text = reader["password"].ToString();
+                                txtDay.Text = reader["available_days"].ToString();
+                                txtFrom.Text = reader["start_time"].ToString();
+                                txtTo.Text = reader["end_time"].ToString();
                             }
                         }
                     }
@@ -92,7 +95,10 @@ namespace SDAM02_Clinic_System.views
                             mobile = @mobile,
                             email = @email,
                             address = @address,
-                            password = @password
+                            password = @password, 
+                            available_days = @available_days, 
+                            start_time = @start_time, 
+                            end_time = @end_time
                         WHERE doctor_id = @id";
 
                     using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
@@ -107,6 +113,9 @@ namespace SDAM02_Clinic_System.views
                         cmd.Parameters.AddWithValue("@email", txtEmail.Text.Trim());
                         cmd.Parameters.AddWithValue("@address", txtAddress.Text.Trim());
                         cmd.Parameters.AddWithValue("@password", txtPassword.Text.Trim());
+                        cmd.Parameters.AddWithValue("@available_days", txtDay);
+                        cmd.Parameters.AddWithValue("@start_time", txtFrom);
+                        cmd.Parameters.AddWithValue("@end_time", txtTo);
                         cmd.Parameters.AddWithValue("@id", doctorId);
 
                         cmd.ExecuteNonQuery();

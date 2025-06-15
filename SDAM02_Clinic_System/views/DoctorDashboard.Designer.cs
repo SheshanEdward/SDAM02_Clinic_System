@@ -30,7 +30,6 @@
         {
             label1 = new Label();
             btnProfile = new Button();
-            btnSchedule = new Button();
             btnPrescription = new Button();
             SuspendLayout();
             // 
@@ -53,16 +52,6 @@
             btnProfile.UseVisualStyleBackColor = true;
             btnProfile.Click += btnProfile_Click;
             // 
-            // btnSchedule
-            // 
-            btnSchedule.Location = new Point(578, 138);
-            btnSchedule.Name = "btnSchedule";
-            btnSchedule.Size = new Size(108, 33);
-            btnSchedule.TabIndex = 2;
-            btnSchedule.Text = "Schedule";
-            btnSchedule.UseVisualStyleBackColor = true;
-            btnSchedule.Click += btnSchedule_Click;
-            // 
             // btnPrescription
             // 
             btnPrescription.Location = new Point(334, 138);
@@ -79,7 +68,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnPrescription);
-            Controls.Add(btnSchedule);
             Controls.Add(btnProfile);
             Controls.Add(label1);
             Name = "DoctorDashboard";
@@ -92,7 +80,6 @@
 
         private Label label1;
         private Button btnProfile;
-        private Button btnSchedule;
         private Button btnPrescription;
     }
 }

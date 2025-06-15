@@ -26,13 +26,6 @@ namespace SDAM02_Clinic_System.views
             this.Hide();
         }
 
-        private void btnSchedule_Click(object sender, EventArgs e)
-        {
-            DoctorSchedule doctorSchedule = new DoctorSchedule();
-            doctorSchedule.Show();
-            this.Hide();
-        }
-
         private void btnProfile_Click(object sender, EventArgs e)
         {
             DoctorProfile doctorProfile = new DoctorProfile();

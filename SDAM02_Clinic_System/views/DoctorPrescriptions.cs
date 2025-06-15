@@ -24,6 +24,7 @@ namespace SDAM02_Clinic_System.views
         private void DoctorPrescriptions_Load(object sender, EventArgs e)
         {
             LoadPrescriptions();
+            dgvViewprescriptions.CellDoubleClick += dgvViewprescriptions_CellDoubleClick;
         }
 
         private void LoadPrescriptions()
@@ -63,6 +64,29 @@ namespace SDAM02_Clinic_System.views
             this.Hide();
             new DoctorDashboard().Show();
         }
+
+
+        private void dgvViewprescriptions_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        {
+
+            if (e.RowIndex >= 0)
+
+            {
+
+                string selectedPatientId = dgvViewprescriptions.Rows[e.RowIndex].Cells["Patient ID"].Value.ToString();
+                string doctorId = SessionManager.LoggedIn;
+
+
+
+                DoctorCreatePrescriptions detailsForm = new DoctorCreatePrescriptions(doctorId, selectedPatientId);
+                detailsForm.ShowDialog(); 
+
+            }
+
+        }
+
+
 
     }
 }

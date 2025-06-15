@@ -14,15 +14,71 @@ namespace SDAM02_Clinic_System.views
     public partial class DoctorCreatePrescriptions : Form
     {
         private string doctorId;
-        public DoctorCreatePrescriptions(string doctorId)
+        private string patientId;
+        public DoctorCreatePrescriptions(string doctorId, string patientId)
         {
             InitializeComponent();
             this.doctorId = doctorId;
+            this.patientId = patientId;
         }
 
         private void DoctorCreatePrescriptions_Load(object sender, EventArgs e)
         {
-            //LoadPatients();
+            lblPatientid.Text = patientId;
+
+
+
+            string tableName = $"appointments_{doctorId}";
+
+            string connectionString = "server=localhost;user=root;password=;database=clinic_system_db;";
+
+            string query = $"SELECT medication FROM `{tableName}` WHERE patient_id = @patient_id LIMIT 1;";
+
+
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+
+            {
+
+                try
+
+                {
+
+                    conn.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+
+                    {
+
+                        cmd.Parameters.AddWithValue("@patient_id", patientId);
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+
+                        {
+
+                            if (reader.Read())
+
+                            {
+
+                                rtbMedication.Text = reader["medication"].ToString();
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                catch (Exception ex)
+
+                {
+
+                    MessageBox.Show("Error loading medication: " + ex.Message);
+
+                }
+
+            }
         }
 
         //private void LoadPatients()

@@ -54,7 +54,6 @@ namespace SDAM02_Clinic_System.views
                 {
                     MessageBox.Show("Error loading data: " + ex.Message);
                 }
-
             }
         }
 
@@ -73,15 +72,11 @@ namespace SDAM02_Clinic_System.views
             if (e.RowIndex >= 0)
 
             {
-
                 string selectedPatientId = dgvViewprescriptions.Rows[e.RowIndex].Cells["Patient ID"].Value.ToString();
                 string doctorId = SessionManager.LoggedIn;
 
-
-
                 DoctorCreatePrescriptions detailsForm = new DoctorCreatePrescriptions(doctorId, selectedPatientId);
                 detailsForm.ShowDialog(); 
-
             }
 
         }

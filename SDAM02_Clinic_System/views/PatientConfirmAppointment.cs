@@ -78,7 +78,7 @@ namespace SDAM02_Clinic_System.views
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new PatientDashboard(patientId).show();
+            new PatientDashboard().show();
 
         }
     }

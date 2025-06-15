@@ -99,6 +99,9 @@ namespace SDAM02_Clinic_System.views
 
             manager.RegisterRequest(newDoctor);
             this.Close();
+
+            welcome login = new welcome();
+            login.Show();
         }
 
         private void btnAddschedule_Click(object sender, EventArgs e)

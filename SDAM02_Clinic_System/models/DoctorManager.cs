@@ -61,7 +61,7 @@ namespace SDAM02_Clinic_System.models
                             cmd.Parameters.AddWithValue("@end_time", doctor.EndTime);
 
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Account created successfully!");
+                            MessageBox.Show($"Account created successfully!  ID: {newDoctorId}");
                         }
                     }
 

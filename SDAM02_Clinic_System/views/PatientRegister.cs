@@ -53,6 +53,11 @@ namespace SDAM02_Clinic_System.views
 
             PatientManager manager = new PatientManager();
             manager.RegisterPatient(patient);
+
+            this.Close();
+
+            welcome login = new welcome();
+            login.Show();
         }
         // Optional: handle form load event if needed
         private void PatientRegister_Load(object sender, EventArgs e)

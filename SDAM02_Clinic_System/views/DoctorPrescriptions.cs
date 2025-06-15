@@ -17,7 +17,6 @@ namespace SDAM02_Clinic_System.views
         public DoctorPrescriptions()
         {
             InitializeComponent();
-            this.doctorId = doctorId;
         }
 
 

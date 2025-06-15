@@ -38,8 +38,12 @@ namespace SDAM02_Clinic_System.views
                 txtPostalcode.Text);
 
             AdminManager manager = new AdminManager();
-
             manager.RegisterAdmin(newAdmin);
+
+            this.Close();
+
+            welcome login = new welcome();
+            login.Show();
         }
 
         private void dtpDoB_ValueChanged(object sender, EventArgs e)

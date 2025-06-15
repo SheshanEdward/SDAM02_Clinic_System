@@ -13,20 +13,6 @@ namespace SDAM02_Clinic_System.models
         private string DoctorId;
         private DateTime AppointmentDate;
         private DateTime AppointmentTime;
-
-        //public static class AppointmentStatuses
-        //{
-        //public const string Scheduled = "Scheduled";
-        //public const string Cancelled = "Cancelled";
-        //public const string Completed = "Completed";
-        //public const string NoShow = "No Show";
-        //}
-
-        //public override string ToString()
-        //{
-        //  return $"[ID: {AppointmentId}] {AppointmentDate:dd MMM yyyy hh:mm tt} - Patient: {PatientId}, Doctor: {DoctorId}, Status: {Status}";
-        //}
-
         public Appointment(string AppointmentId, string PatientId, string DoctorId, DateTime AppointmentDate, DateTime AppointmentTime)
         {
             this.AppointmentId = AppointmentId;

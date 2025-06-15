@@ -31,6 +31,7 @@
             label1 = new Label();
             btnProfile = new Button();
             btnPrescription = new Button();
+            btnMyappointments = new Button();
             SuspendLayout();
             // 
             // label1
@@ -62,11 +63,22 @@
             btnPrescription.UseVisualStyleBackColor = true;
             btnPrescription.Click += btnPrescription_Click;
             // 
+            // btnMyappointments
+            // 
+            btnMyappointments.Location = new Point(579, 142);
+            btnMyappointments.Name = "btnMyappointments";
+            btnMyappointments.Size = new Size(116, 29);
+            btnMyappointments.TabIndex = 4;
+            btnMyappointments.Text = "Appointments";
+            btnMyappointments.UseVisualStyleBackColor = true;
+            btnMyappointments.Click += btnMyappointments_Click;
+            // 
             // DoctorDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnMyappointments);
             Controls.Add(btnPrescription);
             Controls.Add(btnProfile);
             Controls.Add(label1);
@@ -81,5 +93,6 @@
         private Label label1;
         private Button btnProfile;
         private Button btnPrescription;
+        private Button btnMyappointments;
     }
 }

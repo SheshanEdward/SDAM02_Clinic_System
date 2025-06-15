@@ -13,7 +13,7 @@ namespace SDAM02_Clinic_System.views
 {
     public partial class DoctorDashboard : Form
     {
-       
+
         public DoctorDashboard()
         {
             InitializeComponent();
@@ -30,6 +30,13 @@ namespace SDAM02_Clinic_System.views
         {
             DoctorProfile doctorProfile = new DoctorProfile();
             doctorProfile.Show();
+            this.Hide();
+        }
+
+        private void btnMyappointments_Click(object sender, EventArgs e)
+        {
+            DoctorsAppointments doctorAppointments = new DoctorsAppointments();
+            doctorAppointments.Show();
             this.Hide();
         }
     }

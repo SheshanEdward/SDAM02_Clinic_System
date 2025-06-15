@@ -47,6 +47,7 @@ namespace SDAM02_Clinic_System.views
             new PatientDoctor().Show();
         }
 
+
         internal void show()
         {
             throw new NotImplementedException();

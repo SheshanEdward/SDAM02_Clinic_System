@@ -72,6 +72,7 @@
             btnAppointments.TabIndex = 3;
             btnAppointments.Text = "Appointments";
             btnAppointments.UseVisualStyleBackColor = true;
+            btnAppointments.Click += btnAppointments_Click;
             // 
             // btnDoctors
             // 

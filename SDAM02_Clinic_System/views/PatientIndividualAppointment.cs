@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace SDAM02_Clinic_System.views
 {
-    public partial class DoctorAppointments : Form
+    public partial class PatientIndividualAppointment : Form
     {
-        public DoctorAppointments()
+        public PatientIndividualAppointment(string appointmentId, string doctorId, string date, string time)
         {
             InitializeComponent();
-        }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            DoctorDashboard doctorDashboard = new DoctorDashboard();
-            doctorDashboard.Show();
-            this.Close();
+            lblAppid.Text = appointmentId;
+            txtDocid.Text = doctorId;
+            txtDate.Text = date;
+            txtTime.Text = time;
         }
     }
 }

@@ -30,7 +30,6 @@
         {
             dgvPatientappointments = new DataGridView();
             btnSchedule = new Button();
-            btnLoad = new Button();
             btnBack = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvPatientappointments).BeginInit();
             SuspendLayout();
@@ -47,22 +46,13 @@
             // 
             // btnSchedule
             // 
-            btnSchedule.Location = new Point(332, 402);
+            btnSchedule.Location = new Point(659, 402);
             btnSchedule.Name = "btnSchedule";
             btnSchedule.Size = new Size(212, 36);
             btnSchedule.TabIndex = 1;
             btnSchedule.Text = "Schedule New Appointment";
             btnSchedule.UseVisualStyleBackColor = true;
             btnSchedule.Click += btnSchedule_Click_1;
-            // 
-            // btnLoad
-            // 
-            btnLoad.Location = new Point(775, 409);
-            btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(96, 29);
-            btnLoad.TabIndex = 2;
-            btnLoad.Text = "Load ";
-            btnLoad.UseVisualStyleBackColor = true;
             // 
             // btnBack
             // 
@@ -80,7 +70,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(883, 450);
             Controls.Add(btnBack);
-            Controls.Add(btnLoad);
             Controls.Add(btnSchedule);
             Controls.Add(dgvPatientappointments);
             Name = "PatientAllAppointments";
@@ -94,7 +83,6 @@
 
         private DataGridView dgvPatientappointments;
         private Button btnSchedule;
-        private Button btnLoad;
         private Button btnBack;
     }
 }

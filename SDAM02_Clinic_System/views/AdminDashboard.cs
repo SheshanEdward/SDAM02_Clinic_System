@@ -37,5 +37,12 @@ namespace SDAM02_Clinic_System.views
             viewPatients.Show();
             this.Hide();
         }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            AdminAllAppointments adminAllAppointments = new AdminAllAppointments();
+            adminAllAppointments.Show();
+            this.Hide();
+        }
     }
 }

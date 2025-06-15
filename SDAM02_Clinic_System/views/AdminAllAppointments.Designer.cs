@@ -1,6 +1,6 @@
 ﻿namespace SDAM02_Clinic_System.views
 {
-    partial class DoctorAppointments
+    partial class AdminAllAppointments
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dgvAllappointments = new DataGridView();
             btnBack = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvAllappointments).BeginInit();
             SuspendLayout();
+            // 
+            // dgvAllappointments
+            // 
+            dgvAllappointments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAllappointments.Location = new Point(17, 17);
+            dgvAllappointments.Name = "dgvAllappointments";
+            dgvAllappointments.RowHeadersWidth = 51;
+            dgvAllappointments.Size = new Size(1153, 380);
+            dgvAllappointments.TabIndex = 0;
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(12, 409);
+            btnBack.Location = new Point(17, 409);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
-            btnBack.TabIndex = 0;
+            btnBack.TabIndex = 1;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
-            // DoctorAppointments
+            // AdminAllAppointments
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1182, 450);
             Controls.Add(btnBack);
-            Name = "DoctorAppointments";
-            Text = "DoctorAppointments";
+            Controls.Add(dgvAllappointments);
+            Name = "AdminAllAppointments";
+            Text = "AdminAllAppointments";
+            ((System.ComponentModel.ISupportInitialize)dgvAllappointments).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
+        private DataGridView dgvAllappointments;
         private Button btnBack;
     }
 }
